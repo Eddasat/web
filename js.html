@@ -1,0 +1,219 @@
+ <html>
+<head>
+	<title></title>
+    <style type="text/css">
+        /*div{width:400px;height:120px;margin-top:50px;border:2px solid gray;padding:10px;}*/
+        /*div{
+                width:200px;
+                height:200px;
+                line-height:200px;
+                border:2px solid gray;
+                text-align:center;
+                color:red;
+            }*/
+    </style>
+</head>
+<body>
+    <!--  <h3>会闪烁的文字</h3>
+        <div id="text"> </div> -->
+    <!-- <input type="button" value="删除">
+     <input type="button" value="取消删除">
+    <div>点击"删除"按钮后，里面的内容将在3秒钟后消失；<br/><br/>如点击了"删除"后又不想删除内容，请在点击"删除"按钮3秒之内点击"取消删除"按钮即可</div> -->
+     <!--  <input type="button" name="" value="打开页面"> -->
+    <!-- <input type="button" value="关闭本页面" id="close">
+       <input type="button" value="打开慕课网" id="open"> -->
+     <!-- <h3>古文推荐</h3>
+    <ul>
+        <li>西游记</li>
+        <li>红楼梦</li>
+        <li>三国演义</li>
+        <li>聊斋志异</li>
+        <li>论语</li>
+        <li>孟子</li>
+        <li>中庸</li>
+        <li>大学</li>
+    </ul> -->
+    <input type="button" value="点击获取浏览器信息" id="browser">
+<script type="text/javascript">
+
+    function getBrowser(){
+        var explorer=navigator.userAgent.toLowerCase(),
+            browser;
+        if(explorer.indexOf("msie")>-1){
+             browser="IE";
+        }else if(explorer.indexOf("firefox")>-1){
+            browser="Firefox";
+        }else if(explorer.indexOf("chrome")>-1){
+            browser="Chrome";
+        }
+        return browser;
+    }
+    document.getElementById("browser").onclick=function(){
+        var explorer=getBrowser();
+        alert("您使用的浏览器是"+explorer+"浏览器")；
+    }
+        
+    
+// var div=document.getElementById("text");
+// var num=0;
+// setInterval(function(){
+   
+//     if (num==0) {
+//         div.innerHTML="☆☆☆今日特卖☆☆☆";
+//         num++;
+//     }else{
+//         div.innerHTML="★★★今日特卖★★★";
+//         num--;
+//     }
+    
+// },500);
+
+// var num=1,max=10,timer=null;
+// function increamnum(){
+//     console.log(num);
+//     num++;
+//     if(num<=max){
+//         setTimeout(increamnum,1000);
+//     }else{
+//         clearTimeout(timer);
+//     }
+// }
+// timer=setTimeout(increamnum,1000);
+// var fina=function (){
+//       alert("hello");
+// }
+
+// setTimeout(fina,3000);
+// var input=document.getElementsByTagName("input"),
+//     div=document.getElementsByTagName("div")[0],
+//     timeout1;
+// input[0].onclick=function(){
+//     timeout1=setTimeout(function() {
+//         div.innerHTML="";
+//     }, 3000);
+// }
+// input[1].onclick=function(){
+//     clearTimeout(timeout1);
+// }
+// var input=document.getElementsByTagName("input")[0];
+// input.onclick=function(){
+//     var result=window.confirm("是否打开页面？");
+//     if(result){
+//         window.open("newPage.html","newPage","width=300,height=300,left=600,top=200,menubar=no,scrollbars=no,location=no,status=no")
+//     }else{
+//         window.close();
+//     }
+ 
+// var a=document.getElementById("close"),
+//                b=document.getElementById("open");
+//             b.onclick=function(){
+//                 window.open("http://www.imooc.com");
+//             }
+//             a.onclick=function(){
+//                 window.close();
+//             }
+// var	sorce=prompt("请输入学生的成绩");
+// if (sorce>=90&&sorce<=100) {
+// 	alert("优秀")
+// }else if (sorce>=80&&sorce<90) {
+// 	alert("良好")
+// }else if(sorce>=70&&sorce<80){
+// 	alert("一般")
+// }else if(sorce>=60&&sorce<70){
+// 	alert("及格")
+// }else if(sorce>=0&&sorce<60){
+// 	alert("不及格")
+// }else{
+// 	alert("你输入的成绩有误！！！")
+// };
+// var week=new Date().getDay();
+// var weekstr="";
+// console.log(week);
+// switch(week){
+// 	case 0:
+// 	weekstr="日";
+// 	break;
+// 	case 1:
+// 	weekstr="一";
+// 	break;
+// 	case 2:
+// 	weekstr="二";
+// 	break;
+// 	case 3:
+// 	weekstr="三";
+// 	break;
+// 	case 4:
+// 	weekstr="四";
+// 	break;
+// 	case 5:
+// 	weekstr="五";
+// 	break;
+// 	default:
+// 	weekstr="六";
+// }	
+// document.write("今天是星期"+weekstr);
+// function add(num1,num2){
+// 	var sum=num1+num2;
+// 	document.write(num1+"+"+num2+"="+sum+"<br>")
+
+// }
+// add(1,2);
+
+// var input=prompt("请输入您的密码");
+//     // 补充代码
+//     function funName(string){
+//         if (string.length>=6 && string.length<=12){
+//         	return"密码格式正确";
+//         }else if (string.length<6){
+//             return"密码小于6位数";
+//         }else if (string.length>12){
+//             return"密码不能大于12位数";
+//         } 
+//         else if(string.length<6 && string.length>12){
+//         	 input=prompt("请输入您的密码");
+//         }
+//     }
+
+//     alert(funName(input));
+    // var list=document.getElementsByTagName("li");
+    //     for(var i=0,len=list.length;i<len;i++){
+    //         if(i%2==0){
+    //           list[i].innerHTML="第"+(i+1)+"名: "+list[i].innerHTML;
+    //           list[i].className="red"
+    //         }
+    //     }
+
+
+
+
+
+
+
+//  var soce=prompt("输入成绩")
+//   if(soce<60) {
+//  	alert("不及格")
+//  }else if (soce>80) {
+//  	alert("你的成绩为优")
+//  }else{
+//  	alert("你的成绩刚及格")
+// }
+// var	price=prompt("请输入你的价格"),sum=prompt("请输入你的数量"),result=price*sum;
+// if (result<500) {
+// 	alert("请支付"+result+"元");
+// }else if (result>=500) {
+// 	alert("请支付"+result*0.8+"元");
+// };
+// var	num=prompt("请输入你的手机号码");
+// if (num.length!=11) {
+// 	alert("请输入十一位手机号码")
+// }else{
+// 	if (isNaN(num)) {
+// 		alert("输入的手机号码必须是11位数字")
+// 	}else{
+// 		alert("号码输入正确")
+// 	};
+// };
+
+</script>
+</body>
+</html>
