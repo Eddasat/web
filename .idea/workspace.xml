@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a738b9ca-e378-43aa-9beb-385eaa7a6952" name="Default" comment="" />
+    <list default="true" id="a738b9ca-e378-43aa-9beb-385eaa7a6952" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/calendar.html" afterPath="$PROJECT_DIR$/calendar.html" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -24,17 +27,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="calendar.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="calendar.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/calendar.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+            <state relative-caret-position="190">
+              <caret line="10" column="4" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="buju.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="buju.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/buju.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="152">
@@ -53,8 +56,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/.jshintignore" />
-        <option value="$PROJECT_DIR$/calendar.html" />
         <option value="$PROJECT_DIR$/buju.html" />
+        <option value="$PROJECT_DIR$/calendar.html" />
       </list>
     </option>
   </component>
@@ -131,7 +134,7 @@
       <option name="presentableId" value="Default" />
       <updated>1542767740470</updated>
       <workItem from="1542767741546" duration="6000" />
-      <workItem from="1542767749912" duration="208000" />
+      <workItem from="1542767749912" duration="347000" />
     </task>
     <task id="LOCAL-00001" summary="提交ignore">
       <created>1542767806215</created>
@@ -151,7 +154,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="214000" />
+    <option name="totallyTimeSpent" value="353000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -200,18 +203,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/calendar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/buju.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
           <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/calendar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="4" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
           <folding />
         </state>
       </provider>
