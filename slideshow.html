@@ -6,9 +6,96 @@
     <link rel="stylesheet" href="css/slideshow.css">
 </head>
 <body>
-<div class="main">
+<div class="main" id="main">
+    <div class="menu-box"></div>
+    <!--子菜单-->
+    <div class="sub-menu hide">
+        <!--手机、配件-->
+        <div class="inner-box">
+            <div class="sub-inner-box">
+                <div class="title">手机、配件</div>
+                <div class="sub-row">
+                    <span class="bold mr10">手机通讯：</span>
+                    <a href="#">手机</a>
+                    <span class="mr10 ml10">/</span>
+                    <a href="#">手机维修</a>
+                    <span class="mr10 ml10">/</span>
+                    <a href="#">以旧换新</a>
+                </div>
+                <div class="sub-row">
+                    <span class="bold mr10">手机配件：</span>
+                    <a href="#">手机壳</a>
+                    <span class="mr10 ml10">/</span>
+                    <a href="#">手机存储卡</a>
+                    <span class="mr10 ml10">/</span>
+                    <a href="#">数据线</a>
+                    <span class="mr10 ml10">/</span>
+                    <a href="#">充电器</a>
+                    <span class="mr10 ml10">/</span>
+                    <a href="#">电池</a>
+                </div>
+                <div class="sub-row">
+                    <span class="bold mr10">运营商：</span>
+                    <a href="#">中国联通</a>
+                    <span class="mr10 ml10">/</span>
+                    <a href="#">中国移动</a>
+                    <span class="mr10 ml10">/</span>
+                    <a href="#">中国电信</a>
+                </div>
+                <div class="sub-row">
+                    <span class="bold mr10">智能设备：</span>
+                    <a href="#">智能手环</a>
+                    <span class="mr10 ml10">/</span>
+                    <a href="#">智能家居</a>
+                    <span class="mr10 ml10">/</span>
+                    <a href="#">智能手表</a>
+                    <span class="mr10 ml10">/</span>
+                    <a href="#">其他配件</a>
+                </div>
+                <div class="sub-row">
+                    <span class="bold mr10">娱乐：</span>
+                    <a href="#">耳机</a>
+                    <span class="mr10 ml10">/</span>
+                    <a href="#">音响</a>
+                    <span class="mr10 ml10">/</span>
+                    <a href="#">收音箱</a>
+                    <span class="mr10 ml10">/</span>
+                    <a href="#">麦克风</a>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <!--主菜单-->
+    <div class="menu-content">
+        <div class="menu-item">
+            <a href="">
+                <span>手机、配件</span>
+                <i>&#xe665;</i>
+            </a>
+        </div>
+        <div class="menu-item">
+            <a href="">
+                <span>电脑</span>
+                <i>&#xe665;</i>
+            </a>
+        </div>
+        <div class="menu-item">
+            <a href="">
+                <span>家用电器</span>
+                <i>&#xe665;</i>
+            </a>
+        </div>
+        <div class="menu-item">
+            <a href="">
+                <span>家具</span>
+                <i>&#xe665;</i>
+            </a>
+        </div>
+    </div>
     <!--图片轮播-->
-    <div class="banner">
+    <div class="banner" id="banner">
         <a href="">
             <div class="banner-slide slide1 slide-active"></div>
         </a>
@@ -20,14 +107,15 @@
         </a>
     </div>
     <!--上一张、下一张按钮-->
-    <a href="javascript:void(0)" class="button prev"></a>
-    <a href="javascript:void(0)" class="button next"></a>
+    <a href="javascript:void(0)" class="button prev" id="prev"></a>
+    <a href="javascript:void(0)" class="button next" id="next"></a>
     <!--圆点导航-->
-    <div class="dots">
+    <div class="dots" id="dots">
         <span class="active"></span>
         <span></span>
         <span></span>
     </div>
 </div>
+<script src="js/slideshow.js"></script>
 </body>
 </html>
