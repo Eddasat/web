@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>检测和转换dom和jQuery对象</title>
+</head>
+<body>
+<!--<div id="div">div</div>-->
+<script src="jquery/jquery-3.3.1.min.js"></script>
+<script>
+    // $(function () {
+    //     var DOMObject = document.getElementById("div");
+    //     var jqueryObject=$("#div");
+    //     console.log(DOMObject);
+    //     console.log(jqueryObject);
+    //     console.log(DOMObject.nodeType);->1
+    //     console.log(jqueryObject.jquery);->版本号
+    //     console.log($(DOMObject));  dom转换成jQuery对象
+    //     console.log(jqueryObject.get(0));    jQuery对象转换成dom对象
+    // })
+    $(function () {
+        var div = $("<div>hello</div>");
+        console.log(div);//打印jQuery对象
+        div.appendTo('body');//appendTo()追加到body最后面，放到页面上
+        console.log($("div"));//在内存中而不在页面上 选择器是选择不到的 必须得执行上一步先放到页面上 才能选出来(length为0就是没有选到)
+    })
+</script>
+</body>
+</html>
