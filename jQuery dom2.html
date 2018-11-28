@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>通过关系查找jQuery对象</title>
+</head>
+<body>
+<div id="box1">
+    <div id="box2">
+        <div id="box3">
+            <p id="info">hello</p>
+            <ul>
+                <li class="item1">item1</li>
+                <li class="item2">item2</li>
+                <li class="item3">item3</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script src="jquery/jquery-3.3.1.min.js"></script>
+<script>
+    $(function () {
+        var element = $('#box1'),
+            element1 = $('#info');
+
+        console.log(element.children())
+        console.log(element1.parents('div'))
+        console.log(element1.contents())
+        console.log(element.find('p'))
+        console.log(element1.parent('#box2'))
+        console.log(element1.parents('#box2'))
+        console.log(element1.parentsUntil('#box2'))
+        console.log(element1.closest('#info'))
+        console.log(element1.parents('div'))
+        console.log(element1.closest('div'))
+    })
+</script>
+</body>
+</html>
