@@ -3,7 +3,7 @@
 	<meta charset="utf-8">
 	<title>jquery弹出层案例代码</title>
 	<script type="text/javascript" src="jquery/jquery-3.3.1.min.js"></script>
-	<script type="text/javascript" src=""></script>
+	<script type="text/javascript" src="../js/弹出层.js"></script>
 	<link rel="stylesheet" type="text/css" href="../css/弹出层.css">
 </head>
 <body>
@@ -157,8 +157,51 @@
 		<!-- 弹出层关闭按钮 -->
 		<div id="layer-close" class="layer-close">×</div>
 		<!-- 弹出层内容区域 -->
-		<div id="layer-content" class="layer-content">
-			
+		<div id="layer-content" class="layer-content"></div>
+	</div>
+	<!-- 登录窗体 -->
+	<div id="loginHtml" style="display:none;">
+		<!-- 登录窗体 -->
+		<div class="login">
+			<h4 class="title">登 录</h4>
+			<div class="item">
+				<label>账号</label>
+				<input id="username" class="input" name="username" type="text"/>
+				<p class="error-msg"></p>
+			</div>
+			<div class="item">
+				<label>密码</label>
+				<input id="password" class="input" name="password" type="password"/>
+			</div>
+			<div class="item">
+				<label>&nbsp;</label>
+				<input id="loginSubmitBtn" type="submit" class="submit" value="填写好了"/>
+			</div>
+		</div>
+	</div>
+
+	<!-- 注册窗体 -->
+	<div id="regeHtml" style="display:none;">
+		<!-- 注册窗体 -->
+		<div class="login">
+			<h4 class="title">注 册</h4>
+			<div class="item">
+				<label>账号</label>
+				<input id="username" class="input" name="username" type="text"/>
+				<p class="error-msg"></p>
+			</div>
+			<div class="item">
+				<label>密码</label>
+				<input id="password" class="input" name="password" type="password"/>
+			</div>
+			<div class="item">
+				<label>重复密码</label>
+				<input id="repassword" class="input" name="repassword" type="password"/>
+			</div>
+			<div class="item">
+				<label>&nbsp;</label>
+				<input id="regeSubmitBtn" type="submit" class="submit" value="填写好了"/>
+			</div>
 		</div>
 	</div>
 </body>

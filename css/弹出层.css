@@ -64,4 +64,82 @@ ul, li {
     background: #ccc;
     color: #fff;
 }
+/*登录*/
+.login
+{
 
+}
+.login h4
+{
+    font-size:20px;
+    line-height:50px;
+}
+
+.login label
+{
+    margin-right: 5px;
+    color: #888;
+    display: inline-block;
+    width: 60px;
+    text-align: right;
+}
+
+.login .input
+{
+    border:1px solid #ccc;
+    border-radius:3px;
+    padding:10px 5px;
+    width:250px;
+}
+
+.login .item
+{
+    margin:20px auto;
+}
+
+.login .submit
+{
+    background: #e40;
+    border:1px solid #e40;
+    border-radius:5px;
+    padding:10px 5px;
+    width:250px;
+    color:#fff;
+}
+.login .error-msg
+{
+    color:#e40;
+}
+
+/*慕课网效果*/
+/*顶部*/
+.header
+{
+    height:80px;
+    line-height:80px;
+    text-align : right;
+    margin: 0 20px;
+    overflow:hidden;
+}
+.header .banner
+{
+    float:left;
+}
+.header .banner span
+{
+    font-size:18px;
+    margin:0 15px;
+    line-height:80px;
+}
+.header .banner img
+{
+    width:150px;
+    vertical-align: middle;
+    margin-right:40px;
+}
+.header a
+{
+    color:#666;
+    text-decoration:none;
+    margin-left:20px;
+}

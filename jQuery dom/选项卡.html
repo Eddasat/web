@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        /*此处写代码*/
+        .box1 {
+            width: 350px;
+            height: 200px;
+            border: 1px solid #4a86e8;
+            padding: 10px;
+            font-size: 20px;
+            position: relative;
+            top: -1px;
+            z-index: -1;
+        }
+
+        .box {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .dom {
+            width: 80px;
+            height: 30px;
+            border-radius: 5px 5px 0 0;
+            border: 1px solid #4a86e8;
+            color: #fff;
+            background-color: #4a86e8;
+            float: left;
+            margin-left: 2px;
+            text-align: center;
+            line-height: 30px;
+            cursor: pointer;
+        }
+
+        .dom1 {
+            margin-left: 15px;
+        }
+
+        .box .active {
+            color: #000;
+            background-color: #fff;
+            border-bottom: 1px solid #fff;
+        }
+    </style>
+</head>
+
+<body>
+<!-- 此处写代码 -->
+<div class="box">
+    <div class="dom dom1 active">DOM0</div>
+    <div class="dom ">DOM1</div>
+    <div class="dom">DOM2</div>
+</div>
+
+<div class="box1">
+    DOM0
+</div>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+    // 此处写代码
+    // $('.box').on('click', 'div', function (event) {
+    //     if ($(this).hasClass('active')) {
+    //         $('.box1').text($(this).text());
+    //     } else {
+    //         $(this).addClass('active');
+    //         $('.box1').text($(this).text());
+    //         $(this).siblings().removeClass('active');
+    //     }
+    //
+    // })
+    // $('.box').on('click','div',function(event){
+    //
+    //     $('div').each(function(){
+    //
+    //         $(this).removeClass('active');
+    //
+    //     });
+    //
+    //     $(this).addClass('active');
+    //
+    //     $('.box1').text($(this).text());
+    //
+    // })
+    $('.box').on('toggleTab','div',function () {
+        $('div').each(function () {
+                $(this).removeClass('active')
+            })
+        $(this).addClass('active');
+        $('.box1').text($(this).text())
+    })
+    $('.dom').on('click',function () {
+        $(this).trigger('toggleTab')
+    })
+
+</script>
+</body>
+
+</html>
