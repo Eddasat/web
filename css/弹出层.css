@@ -143,3 +143,106 @@ ul, li {
     text-decoration:none;
     margin-left:20px;
 }
+/*轮播*/
+.swipe
+{
+    width: 1200px;
+    height: 450px;
+    margin : 0 auto;
+    overflow:hidden;
+}
+.swipe .ppt
+{
+    width:100%;
+    height:100%;
+}
+.swipe .ppt.first
+{
+    background:url(../img/001.jpg);
+    background-size: cover;
+}
+.swipe .ppt.second
+{
+    background:url(../img/002.jpg);
+    background-size: cover;
+}
+/*导航*/
+.nav
+{
+    position:absolute;
+    width : 280px;
+    height:450px;
+    background: #000;
+    color:#fff;
+
+    filter:alpha(opacity=50);  /*支持 IE 浏览器*/
+    -moz-opacity:0.50; /*支持 FireFox 浏览器*/
+    opacity:0.50;  /*支持 Chrome, Opera, Safari 等浏览器*/
+}
+.nav .item
+{
+    margin: 5px 20px;
+    padding: 10px;
+    text-align:left;
+    border-bottom:1px solid #aaa;
+}
+.nav .item:hover
+{
+    background:#666;
+    cursor: pointer;
+}
+.nav .item .title
+{
+    font-size:16px;
+    margin-bottom:10px;
+}
+.nav .item span
+{
+    margin-right : 9px;
+}
+/*课程排列*/
+.lessions
+{
+    width : 1200px;
+    margin : 0 auto;
+}
+.lessions .title
+{
+    text-align:left;
+    line-height : 45px;
+    color:#666;
+    font-size:16px;
+    margin-top:30px;
+}
+.lessions ul
+{
+    overflow:hidden;
+}
+.lessions li
+{
+    float : left;
+    width : 23%;
+    margin-right: 32px;
+    margin-top: 32px;
+}
+.lessions li img
+{
+    max-width:100%;
+}
+/*页脚*/
+.footer
+{
+    margin-top:50px;
+    padding:50px 0;
+    background: #eee;
+    border-top : 1px solid #ddd;
+}
+.footer .site
+{
+    line-height:100px;
+}
+.footer .site span
+{
+    margin:0 20px;
+    color :#888;
+}
