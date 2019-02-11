@@ -80,7 +80,7 @@ var waterfall = function(wrap, boxes) {
             //更新最小列的高度
             everyHeight[minIndex] += boxes.eq(i).height() + 40;
         };
-        //鼠标经过呈现半透明的交互效果
+        //鼠标经过呈现半透明的交互效果，我觉得它对
         boxes.eq(i).hover(function(event) {
             $(this).stop().animate({
                 'opacity': '0.5'
