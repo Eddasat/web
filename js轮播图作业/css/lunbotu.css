@@ -1,0 +1,65 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: "Microsoft Yahei";
+}
+.main{
+    width: 1200px;
+    height: 450px;
+    margin: 30px auto;
+    overflow: hidden;
+    cursor: pointer;
+}
+a{
+    text-decoration: none;
+}
+.nav{
+    width: 1200px;
+    height: 50px;
+    overflow: hidden;
+    text-align: center;
+}
+.nav a{
+    float: left;
+    display: block;
+    width: 300px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 22px;
+    color: #666;
+    border-radius: 5px;
+}
+.active{
+    background: #ffcc00;
+    font-weight: bold;
+}
+.banner{
+    width: 1200px;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+}
+.banner-slide{
+    width: 1200px;
+    height: 400px;
+    position: absolute;
+    background-repeat: no-repeat;
+    display: none;
+}
+.slide-active{
+    display: block;
+}
+.slide1{
+    background-image: url("../img/1.jpg");
+}
+.slide2{
+    background-image: url("../img/3.jpg");
+}
+.slide3{
+    background-image: url("../img/4.jpg");
+}
+.slide4{
+    background-image: url("../img/5.jpg");
+}

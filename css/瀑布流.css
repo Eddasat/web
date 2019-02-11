@@ -7,7 +7,9 @@
 body {
     background: #ddd;
 }
-
+.aaa{
+    width: 20px;
+}
 img {
     border: none;
 }

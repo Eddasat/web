@@ -56,7 +56,7 @@ $(document).ready(function ($) {
     }
 
     // 显示弹出层
-    function showLayer(html, width, height, closeCallback) {
+    function showLayer(html, width, height) {
         // 显示弹出层遮罩
         $("#layer-mask").show();
         // 显示弹出层窗体

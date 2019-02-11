@@ -15,7 +15,7 @@ function waterfall(wrap, boxes) {
         } else {
 
             var minHeight = Math.min.apply(null, everyHeight);
-
+            
             var minIndex = getIndex(minHeight, everyHeight);
 
             var leftValue = boxes[minIndex].offsetLeft - 10;
