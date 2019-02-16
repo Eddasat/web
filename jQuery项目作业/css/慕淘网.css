@@ -371,10 +371,9 @@ body {
 
 /*友情链接区*/
 .com {
-    width: 70%;
+    width: 1200px;
     margin: 0 auto;
     height: 200px;
-    line-height: 100px;
     overflow: hidden;
 }
 
@@ -391,7 +390,6 @@ body {
     height: 60px;
     line-height: 60px;
     padding-left: 20px;
-    padding-right: 15px;
     padding-top: 20px;
 }
 
@@ -400,15 +398,6 @@ body {
     height: 40px;
     line-height: 40px;
     padding-left: 20px;
-    padding-right: 15px;
-}
-
-.com .block .text a:link {
-    color: black;
-}
-
-.com .block .text a:visited {
-    color: black;
 }
 
 .com .block .text a:hover {
@@ -440,14 +429,6 @@ body {
     float: left;
 }
 
-.footer ul li a:link {
-    color: black;
-}
-
-.footer ul li a:visited {
-    color: black;
-}
-
 .footer ul li a:hover {
     color: #07111b;
 }
@@ -456,4 +437,133 @@ body {
     width: 100%;
     height: 70px;
     line-height: 30px;
+}
+#too{
+    position: fixed;
+    right:0;
+    top:50%;
+    margin-top:-100px;
+    width:32px;
+    height: 200px;
+}
+#too1{
+    position: relative;
+    width:40px;
+}
+#too1 i{
+    position:absolute;
+    left:0;
+    top:0;
+    background:gray;
+    z-index: 2;
+    height: 32px;
+}
+#too1 span{
+    position:absolute;
+    top:0;
+    left:0;
+    z-index: 1;
+    width: 80px;
+    height: 32px;
+    text-align:center;
+    line-height: 32px;
+}
+#too2 i{
+    position:absolute;
+    left:0;
+    top:33px;
+    background:gray;
+    z-index: 2;
+    height: 32px;
+}
+#too2 span{
+    position:absolute;
+    top:33px;
+    left:0;
+    z-index: 1;
+    width: 80px;
+    height: 32px;
+    text-align:center;
+    line-height: 32px;
+}
+#too3 i{
+    position:absolute;
+    left:0;
+    top:66px;
+    background:gray;
+    z-index: 2;
+    height: 32px;
+}
+#too3 span{
+    position:absolute;
+    top:66px;
+    left:0;
+    z-index: 1;
+    width: 80px;
+    height: 32px;
+    text-align:center;
+    line-height: 32px;
+}
+#too4 i{
+    position:absolute;
+    left:0;
+    top:99px;
+    background:gray;
+    z-index: 2;
+    height: 32px;
+}
+#too4 span{
+    position:absolute;
+    top:99px;
+    left:0;
+    z-index: 1;
+    width: 80px;
+    height: 32px;
+    text-align:center;
+    line-height: 32px;
+}
+#too5 i{
+    position:absolute;
+    left:0;
+    top:132px;
+    background:gray;
+    z-index: 2;
+    height: 32px;
+}
+#too5 a{
+    position:absolute;
+    top:132px;
+    left:0;
+    z-index: 1;
+    width: 80px;
+    height: 32px;
+    text-align:center;
+    line-height: 32px;
+}
+.transition{
+    -o-transition:all 0.5s;
+    -ms-transition:all 0.5s;
+    -moz-transition:all 0.5s;
+    -webkit-transition:all 0.5s;
+    transition:all 0.5s;
+}
+#too1:hover span{
+    left:-80px;
+    background:gray;
+}
+#too2:hover span{
+    left:-80px;
+    background:gray;
+}
+#too3:hover span{
+    left:-80px;
+    background:gray;
+}
+#too4:hover span{
+    left:-80px;
+    background:gray;
+}
+#too5:hover a{
+    left:-80px;
+    background:gray;
 }
