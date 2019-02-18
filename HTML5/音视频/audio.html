@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+
+
+    </style>
+    <!--<audio src='data/imooc.mp3' id='myAudio' controls></audio>-->
+</head>
+<body>
+<input type="button" id='ipt' name="" value='播放'>
+<input type="button" id='pauseNode' name="" value='暂停'>
+<div id='durationNode'></div>
+<div id='currentNode'></div>
+<div>seeked:<span id='seekedNum'></span></div>
+<div>seeking:<span id='seekingNum'></span></div>
+<button id='btnScreen'>全屏</button>
+<button id='loadBtn'>重新加载</button>
+<!-- audio 标签 load -->
+<script type="text/javascript">
+    var sekNum = sekingNum = 0;
+    //生成出一个音频对象
+    var myAudio = new Audio();
+    //音频地址
+    myAudio.src = 'data/imooc.mp3';
+    //音频播放按钮
+    ipt.onclick = function () {
+        myAudio.play();
+    };
+    //音频暂停按钮
+    pauseNode.onclick = function () {
+        myAudio.pause();
+    };
+
+    //返回音频的长度
+    myAudio.addEventListener('canplay', function () {
+        durationNode.innerHTML = myAudio.duration;
+        //currentSrc
+        console.log(myAudio.currentSrc)
+    });
+
+    myAudio.currentTime = '200';
+    //音频的设置和返回
+    setInterval(function () {
+        currentNode.innerHTML = myAudio.currentTime;
+
+    }, 100);
+
+    //音量的控制
+
+    myAudio.volume = '0.5';
+
+
+    //ended
+    console.log(myAudio.ended)
+
+    myAudio.addEventListener('ended', function () {
+        console.log('音频播放结束');
+        console.log(myAudio.ended)
+    });
+
+    //loop 循环
+    myAudio.loop = true;
+
+    //playbackRate
+    //myAudio.playbackRate = '15';
+    //console.log(myAudio.playbackRate)
+
+    //timeupdate
+    myAudio.addEventListener('timeupdate', function () {
+        console.log('音频正在播放中...')
+    });
+
+
+    //seeked
+    myAudio.addEventListener('seeked', function () {
+        console.log('seeked');
+        sekNum++;
+        seekedNum.innerHTML = sekNum;
+    });
+
+    //seeking
+    myAudio.addEventListener('seeking', function () {
+        console.log('seeking');
+        sekingNum++;
+        seekingNum.innerHTML = sekingNum;
+    });
+
+    //volumechange
+    myAudio.addEventListener('volumechange', function () {
+        console.log('音频的声音改变了')
+    });
+
+    //全屏
+    btnScreen.onclick = function () {
+        myAudio.webkitRequestFullScreen();
+    };
+
+    loadBtn.onclick = function () {
+        myAudio.src = 'data/imooc.mp3';
+        //myAudio.load();
+    };
+
+
+</script>
+</body>
+</html>

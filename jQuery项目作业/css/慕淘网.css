@@ -36,7 +36,7 @@ body {
     line-height: 50px;
 }
 
-.front p span a{
+.front p span a {
     color: red;
 }
 
@@ -87,7 +87,7 @@ body {
 }
 
 .logo .picture img {
-     padding-left: 20px;
+    padding-left: 20px;
     padding-top: 20px;
 }
 
@@ -166,7 +166,7 @@ body {
     margin-left: 250px;
 }
 
-.nav ul li a{
+.nav ul li a {
     float: left;
     width: 100px;
     height: 50px;
@@ -201,10 +201,14 @@ body {
     height: 60px;
     line-height: 60px;
 }
-.banner .list .list-title img{
-      margin-right: 10px;
+
+.banner .list .list-title img {
+    margin-right: 10px;
     margin-left: 10px;
+    position: relative;
+    bottom: -3px;
 }
+
 .banner .list li {
     color: white;
     width: 100%;
@@ -212,10 +216,12 @@ body {
     line-height: 35px;
     padding-left: 10px;
 }
-.banner .list li span{
+
+.banner .list li span {
     position: absolute;
     right: 10px;
 }
+
 .banner .list .other:hover {
     background-color: white;
     color: red;
@@ -228,145 +234,272 @@ body {
     float: left;
     overflow: hidden;
 }
-.banner .lunbo .banner-slide{
+
+.banner .lunbo .banner-slide {
     width: 700px;
     height: 500px;
     position: absolute;
     display: none;
 }
+
 .banner .lunbo .slide1 {
     background-image: url("../img/focus-carousel/1.png");
 }
+
 .banner .lunbo .slide2 {
     background-image: url("../img/focus-carousel/2.jpg");
 }
+
 .banner .lunbo .slide3 {
     background-image: url("../img/focus-carousel/3.jpg");
 }
+
 .banner .lunbo .slide4 {
     background-image: url("../img/focus-carousel/4.jpg");
 }
+
 .banner .lunbo .slide5 {
     background-image: url("../img/focus-carousel/5.jpg");
 }
-.banner .lunbo .slide-active{
+
+.banner .lunbo .slide-active {
     display: block;
 }
 
-.banner .news{
+.banner .news {
     width: 245px;
-    height:500px;
-    float:left;
+    height: 500px;
+    float: left;
     margin-left: 10px;
     position: relative;
 }
-.banner .news .new{
-    width:243px;
+
+.banner .news .new {
+    width: 243px;
     height: 200px;
-    border-top:1px solid gray;
-    border-left:1px solid gray;
-    border-right:1px solid gray;
+    border-top: 1px solid gray;
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
 }
-.banner .news .new ul{
-    width:100%;
+
+.banner .news .new ul {
+    width: 100%;
     height: 100%;
     padding-left: 15px;
 }
-.banner .news .new li{
-    width:100%;
-    height:30px;
+
+.banner .news .new li {
+    width: 100%;
+    height: 30px;
     line-height: 30px;
     font-size: 12px;
 }
-.banner .news .new .new-title{
-    width:100%;
-    height:50px;
+
+.banner .news .new .new-title {
+    width: 100%;
+    height: 50px;
     line-height: 50px;
 }
-.banner .news .new .new-title span{
-    font-size:16px;
-    color:red;
+
+.banner .news .new .new-title span {
+    font-size: 16px;
+    color: red;
 }
-.banner .news .new .new-title a{
-    font-size:10px;
+
+.banner .news .new .new-title a {
+    font-size: 10px;
     color: gray;
     position: absolute;
     right: 20px;
 }
-.banner .news .new span{
-    font-weight:bold;
+
+.banner .news .new span {
+    font-weight: bold;
 }
-.banner .news .new a:hover{
-    color:red;
+
+.banner .news .new a:hover {
+    color: red;
 }
-.banner .news .icon{
+
+.banner .news .icon {
     width: 244px;
     height: 201px;
     border-left: 1px solid gray;
     border-top: 1px solid gray;
 }
-.banner .news .icon .icon-block{
+
+.banner .news .icon .icon-block {
     width: 244px;
-    height:66px;
+    height: 66px;
 }
-.banner .news .icon .icon-block div{
-     width: 60px;
-     height: 66px;
-     text-align:center;
-     border-right: 1px solid gray;
-     border-bottom: 1px solid gray;
-     float:left;
+
+.banner .news .icon .icon-block div {
+    width: 60px;
+    height: 66px;
+    text-align: center;
+    border-right: 1px solid gray;
+    border-bottom: 1px solid gray;
+    float: left;
     position: relative;
- }
-.banner .news .icon .icon-block a{
+}
+
+.banner .news .icon .icon-block a {
     font-size: 12px;
     position: absolute;
     top: 7px;
     left: 14px;
 }
-.banner .news .icon img{
-    width:32px;
+
+.banner .news .icon img {
+    width: 32px;
     height: 32px;
 }
-.banner .news .news-img{
+
+.banner .news .news-img {
     width: 245px;
-    height:100px;
+    height: 100px;
 }
-.banner .news .news-img img{
+
+.banner .news .news-img img {
     width: 100%;
-    height:100px;
+    height: 100px;
 }
 
 /*楼层区*/
-.floor {
-    width: 70%;
+.floors {
+    width: 1200px;
     margin: 0 auto;
-    height: 1200px;
+    position: relative;
 }
 
-.floor .cloth {
-    width: 100%;
-    margin: 0 auto;
-    height: 600px;
+.floors .floor .caption {
+    height: 64px;
+    position: relative;
 }
 
-.floor .cloth1 {
-    width: 100%;
-    height: 250px;
-    overflow: hidden;
+.floors .floor .caption .caption-l {
+    width: 130px;
+    height: 64px;
+    line-height: 64px;
+    font-size: 22px;
+    position: relative;
+    text-align: center;
 }
 
-.floor div {
-    width: 16.66%;
-    height: 250px;
+.floors .floor .caption .caption-l .circle {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    color: #fff;
+    background-color: #000;
+    text-align: center;
+    line-height: 24px;
+    font-size: 13px;
+    position: absolute;
+    left: 0;
+    top: 20px;
+}
+
+.floors .floor .caption .caption-l .text {
+    position: absolute;
+    left: 36px;
+}
+
+.floors .floor .caption .caption-r {
+    height: 24px;
+    position: absolute;
+    top: 20px;
+    right: 0;
+}
+
+.floors .floor .caption .caption-r a {
+    padding: 0 12px;
+    font-size: 14px;
+    color: #999;
+}
+
+.floors .floor .caption .caption-r span {
+    color: #ccc;
+    font-size: 13px;
+}
+
+.floors .floor .caption .caption-r .focus {
+    color: red;
+}
+
+.floors .floor .content .item {
+    border-top: 1px solid red;
+    position: relative;
+}
+
+.floors .floor .content .item1 img {
+    position: absolute;
+    right: 139px;
+    top: -8px;
+}
+
+.floors .floor .content .item2 img {
+    position: absolute;
+    right: 80px;
+    top: -8px;
+}
+
+.floors .floor .content .item3 {
+    display: none;
+}
+
+.floors .floor .content .item3 img {
+    position: absolute;
+    right: 19px;
+    top: -8px;
+}
+
+.floors .floor .content .commodity {
+    width: 200px;
+    height: 230px;
+    position: relative;
     text-align: center;
     float: left;
 }
 
-.floor .beauty {
-    width: 100%;
-    margin: 0 auto;
-    height: 600px;
+.floors .floor .content .commodity:hover {
+    cursor: pointer;
+    border: 1px solid #ddd;
+    width: 198px;
+    height: 228px;
+}
+
+.floors .floor .content .commodity img {
+    width: 114px;
+    height: 114px;
+    position: absolute;
+    top: 20px;
+    left: 43px;
+}
+
+.floors .floor .content .commodity .title {
+    font-size: 13px;
+    color: #777;
+    position: absolute;
+    top: 150px;
+    text-align: center;
+    width: 200px;
+}
+
+.floors .floor .content .commodity .price {
+    font-size: 14px;
+    color: red;
+    position: absolute;
+    top: 174px;
+    text-align: center;
+    width: 200px;
+}
+
+.clear:after {
+    content: ' ';
+    display: block;
+    clear: both;
+    zoom: 1;
 }
 
 /*友情链接区*/
@@ -438,132 +571,133 @@ body {
     height: 70px;
     line-height: 30px;
 }
+
 #too{
-    position: fixed;
-    right:0;
-    top:50%;
-    margin-top:-100px;
-    width:32px;
-    height: 200px;
+position: fixed;
+right:0;
+top:50%;
+margin-top:-100px;
+width:32px;
+height: 200px;
 }
 #too1{
-    position: relative;
-    width:40px;
+position: relative;
+width:40px;
 }
 #too1 i{
-    position:absolute;
-    left:0;
-    top:0;
-    background:gray;
-    z-index: 2;
-    height: 32px;
+position:absolute;
+left:0;
+top:0;
+background:gray;
+z-index: 2;
+height: 32px;
 }
 #too1 span{
-    position:absolute;
-    top:0;
-    left:0;
-    z-index: 1;
-    width: 80px;
-    height: 32px;
-    text-align:center;
-    line-height: 32px;
+position:absolute;
+top:0;
+left:0;
+z-index: 1;
+width: 80px;
+height: 32px;
+text-align:center;
+line-height: 32px;
 }
 #too2 i{
-    position:absolute;
-    left:0;
-    top:33px;
-    background:gray;
-    z-index: 2;
-    height: 32px;
+position:absolute;
+left:0;
+top:33px;
+background:gray;
+z-index: 2;
+height: 32px;
 }
 #too2 span{
-    position:absolute;
-    top:33px;
-    left:0;
-    z-index: 1;
-    width: 80px;
-    height: 32px;
-    text-align:center;
-    line-height: 32px;
+position:absolute;
+top:33px;
+left:0;
+z-index: 1;
+width: 80px;
+height: 32px;
+text-align:center;
+line-height: 32px;
 }
 #too3 i{
-    position:absolute;
-    left:0;
-    top:66px;
-    background:gray;
-    z-index: 2;
-    height: 32px;
+position:absolute;
+left:0;
+top:66px;
+background:gray;
+z-index: 2;
+height: 32px;
 }
 #too3 span{
-    position:absolute;
-    top:66px;
-    left:0;
-    z-index: 1;
-    width: 80px;
-    height: 32px;
-    text-align:center;
-    line-height: 32px;
+position:absolute;
+top:66px;
+left:0;
+z-index: 1;
+width: 80px;
+height: 32px;
+text-align:center;
+line-height: 32px;
 }
 #too4 i{
-    position:absolute;
-    left:0;
-    top:99px;
-    background:gray;
-    z-index: 2;
-    height: 32px;
+position:absolute;
+left:0;
+top:99px;
+background:gray;
+z-index: 2;
+height: 32px;
 }
 #too4 span{
-    position:absolute;
-    top:99px;
-    left:0;
-    z-index: 1;
-    width: 80px;
-    height: 32px;
-    text-align:center;
-    line-height: 32px;
+position:absolute;
+top:99px;
+left:0;
+z-index: 1;
+width: 80px;
+height: 32px;
+text-align:center;
+line-height: 32px;
 }
 #too5 i{
-    position:absolute;
-    left:0;
-    top:132px;
-    background:gray;
-    z-index: 2;
-    height: 32px;
+position:absolute;
+left:0;
+top:132px;
+background:gray;
+z-index: 2;
+height: 32px;
 }
 #too5 a{
-    position:absolute;
-    top:132px;
-    left:0;
-    z-index: 1;
-    width: 80px;
-    height: 32px;
-    text-align:center;
-    line-height: 32px;
+position:absolute;
+top:132px;
+left:0;
+z-index: 1;
+width: 80px;
+height: 32px;
+text-align:center;
+line-height: 32px;
 }
 .transition{
-    -o-transition:all 0.5s;
-    -ms-transition:all 0.5s;
-    -moz-transition:all 0.5s;
-    -webkit-transition:all 0.5s;
-    transition:all 0.5s;
+-o-transition:all 0.5s;
+-ms-transition:all 0.5s;
+-moz-transition:all 0.5s;
+-webkit-transition:all 0.5s;
+transition:all 0.5s;
 }
 #too1:hover span{
-    left:-80px;
-    background:gray;
+left:-80px;
+background:gray;
 }
 #too2:hover span{
-    left:-80px;
-    background:gray;
+left:-80px;
+background:gray;
 }
 #too3:hover span{
-    left:-80px;
-    background:gray;
+left:-80px;
+background:gray;
 }
 #too4:hover span{
-    left:-80px;
-    background:gray;
+left:-80px;
+background:gray;
 }
 #too5:hover a{
-    left:-80px;
-    background:gray;
+left:-80px;
+background:gray;
 }
