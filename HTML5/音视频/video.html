@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<video id='myVideo' src='data/imooc.mp4'></video>
+<input type="range" name="" min=0 max=100 value=50 id='range'>
+<div id='playNode'>播放</div>
+<div id='stopNode'>暂停</div>
+<div id='gogogo'>快进</div>
+<div id='loopNode'>不循环</div>
+<div id='timeNode'></div>
+<div id='RateNode'>
+    <span>0.5</span>
+    <span>1</span>
+    <span>2</span>
+</div>
+<div>
+    <span id='seeked'>0</span>
+    <span id='seeking'>0</span>
+</div>
+<input type="button" name="" id='volumeNode' value="声音随机更改">
+<input type="button" name="" id='fullScreenNode' value='全屏'>
+<input type="button" name="" id='reloadNode' value='刷新视频播放器'>
+<script type="text/javascript">
+    //选中video标签
+    var VideoNode = document.getElementById('myVideo');
+    //src控制视频的来源
+    VideoNode.src = 'data/imooc.ogv';
+
+    //load 刷新播放器的事件
+    reloadNode.onclick = function () {
+        VideoNode.src = 'data/imooc.mp4';
+        VideoNode.load();
+    };
+
+    //canplay 视频已经加载好 可以开始播放了
+    VideoNode.addEventListener('canplay', function () {
+        console.log('视频已经加载好 可以开始播放了');
+    });
+
+
+    //requestFullscreen 让video标签变成全屏
+    //VideoNode.webkitRequestFullscreen();
+    //VideoNode.mozRequestFullScreen();
+    fullScreenNode.onclick = function () {
+        //VideoNode.mozRequestFullScreen();
+        if (VideoNode.webkitRequestFullscreen) {
+            VideoNode.webkitRequestFullscreen();
+        } else if (VideoNode.mozRequestFullScreen) {
+            VideoNode.mozRequestFullScreen();
+        }
+    };
+
+    //volumechange 当音量更改时
+    VideoNode.onvolumechange = function () {
+        //console.log(1);
+    };
+
+    volumeNode.onclick = function () {
+        VideoNode.volume = Math.random();
+    };
+
+    //使用变量看一下 seeked 和 seeking 他们俩的触发频率
+    var seekedNum = seekingNum = 0;
+
+    //seeking 当用户开始拖动进度条时 就会触发的事件
+    VideoNode.onseeking = function () {
+        console.log('seeking...');
+        seekingNum++;
+        seeking.innerHTML = seekingNum;
+
+    };
+
+    //seeked 当用户对视频的进度条并且已经完成操作时会触发的事件
+    VideoNode.onseeked = function () {
+        console.log('seeked...');
+        seekedNum++;
+        seeked.innerHTML = seekedNum;
+    };
+
+    //timeupdate监听视频播放的状态
+    VideoNode.addEventListener('timeupdate', function () {
+        //console.log('视频播放了～～～');
+
+        let allTime = parseInt(VideoNode.duration / 60) + ':' + parseInt(VideoNode.duration % 60);
+        let nowTime = parseInt(VideoNode.currentTime / 60) + ':' + parseInt(VideoNode.currentTime % 60);
+        timeNode.innerHTML = nowTime + '/' + allTime;
+    })
+
+
+    //readyState 视频的准备信息
+    /*
+    console.log(VideoNode.readyState);
+    setTimeout(function(){
+        console.log(VideoNode.readyState);
+    },500);
+    */
+
+    //playbackRate 查看或设置视频的一个播放速度
+    //console.log(VideoNode.playbackRate)
+    //Rate设置0.5倍速
+    RateNode.children[0].onclick = function () {
+        VideoNode.playbackRate = 0.5;
+    };
+    //Rate设置1倍速
+    RateNode.children[1].onclick = function () {
+        VideoNode.playbackRate = 1;
+    };
+    //Rate设置2倍速
+    RateNode.children[2].onclick = function () {
+        VideoNode.playbackRate = 2;
+    };
+    //VideoNode.playbackRate = 0.5;
+    //loop的设置
+    //console.log(VideoNode.loop)
+    //VideoNode.loop = true;
+    loopNode.onclick = function () {
+        if (VideoNode.loop == false) {
+            this.innerHTML = '循环';
+            VideoNode.loop = true;
+        } else {
+            this.innerHTML = '不循环';
+            VideoNode.loop = false;
+        }
+    };
+
+    //src返回的数据
+    //console.log('src='+VideoNode.src);
+
+    //ended
+    //console.log(VideoNode.ended)
+    //监听ended事件
+    /*
+    VideoNode.addEventListener('ended',function(){
+        //console.log('视频播放结束了');
+        VideoNode.play();
+    })
+    */
+
+
+
+    //currentSrc返回的数据
+    //console.log('currentSrc='+VideoNode.currentSrc);
+    /*
+    setTimeout(function(){
+        //console.log('currentSrc='+VideoNode.currentSrc);
+        VideoNode.currentSrc = 'data/imooc.mp4';
+    },100);
+    */
+
+
+    //查看一下目前视频的一个网络状态
+    /*
+    console.log(VideoNode.networkState)
+    setTimeout(function(){
+        console.log(VideoNode.networkState)
+    },100)
+    */
+
+    //手动去设置这个控件 controls
+    VideoNode.controls = true;
+
+    //手动去设置这个静音 muted
+    VideoNode.muted = true;
+
+    VideoNode.volume = 0.5;
+    //console.log(VideoNode.volume)
+    range.oninput = function () {
+        VideoNode.volume = this.value / 100;
+    }
+
+    /* 快进 */
+    gogogo.onclick = function () {
+        VideoNode.currentTime = VideoNode.currentTime + 3;
+    };
+
+
+    /* 给playNode-div一个暂停video的事件 */
+    stopNode.onclick = function () {
+        VideoNode.pause();
+    };
+
+    /* 给playNode-div一个播放video的事件 */
+    playNode.onclick = function () {
+        VideoNode.play();
+    };
+
+
+</script>
+</body>
+</html>
+
+
+
+
+
