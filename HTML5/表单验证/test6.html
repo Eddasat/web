@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>test6</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+</head>
+<style>
+    .onelist {
+        margin: 10px 0 5px 12px;
+    }
+
+    .onelist label {
+        width: 80px;
+        display: inline-block
+    }
+
+    .onelist input,
+    .onelist select {
+        height: 25px;
+        line-height: 25px;
+        width: 220px;
+        border-radius: 3px;
+        border: 1px solid #e2e2e2;
+    }
+
+    .onelist input[type="submit"] {
+        width: 150px;
+        height: 30px;
+        line-height: 30px;
+    }
+
+    select:required,
+    input:required,
+    textarea:required {
+        background: #fff url(img/star.jpg) no-repeat 99% center;
+    }
+
+    select:required:valid,
+    input:required:valid,
+    textarea:required:valid {
+        background: #fff url(img/right.png) no-repeat 99% center;
+        box-shadow: 0 0 5px #5cd053;
+        border-color: #28921f;
+    }
+
+    select:focus:invalid,
+    input:focus:invalid,
+    textarea:focus:invalid {
+        background: #fff url(img/error.png) no-repeat 99% center;
+        box-shadow: 0 0 5px red;
+        border-color: red;
+        outline: red solid 1px;
+    }
+</style>
+
+<body>
+<form class="myform" onsubmit="return checkForm();" method="post">
+    <div class="onelist">
+        <label for="UserName">手机号</label>
+        <input name="UserName" id="UserName" type="text" placeholder="请输入手机号码" pattern="^1[0-9]{10}$" required
+               oninvalid="this.setCustomValidity('请输入正确的号码');" oninput="setCustomValidity('')">
+    </div>
+    <div class="onelist">
+        <label for="Password">密码</label>
+        <input name="Password" id="Password" type="password" placeholder="6~20位" class=""
+               pattern="^[a-zA-Z0-9]\w{5,19}$" required oninvalid="this.setCustomValidity('请输入正确密码');"
+               oninput="setCustomValidity('')" onchange="checkPassword()">
+    </div>
+    <div class="onelist">
+        <label for="Repassword">确认密码</label>
+        <input name="Repassword" id="Repassword" type="password" placeholder="确认密码" class="" required
+               onchange="checkPassword()">
+    </div>
+    <div class="onelist">
+        <label for="Repassword">了解方式</label>
+        <select name="konw" required>
+            <option value="">==请选择==</option>
+            <option value="1">搜索引擎</option>
+            <option value="2">朋友圈</option>
+            <option value="3">朋友推广</option>
+            <option value="4">广告投放</option>
+        </select>
+    </div>
+    <div class="onelist">
+        <input type="submit" value="提交">
+    </div>
+</form>
+<script type="text/javascript">
+    function checkPassword() {
+        var pass1 = document.getElementById("Password");
+        var pass2 = document.getElementById("Repassword");
+
+        if (pass1.value != pass2.value)
+            pass2.setCustomValidity("两次输入的密码不匹配");
+        else
+            pass2.setCustomValidity("");
+    }
+</script>
+</body>
+
+</html>

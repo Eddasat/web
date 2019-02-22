@@ -1,0 +1,75 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    font-family: Microsoft YaHei UI;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+/*顶部*/
+header {
+    height: 80px;
+    background: #2e2e2e;
+}
+
+header .container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+header > .container > a {
+    display: block;
+    float: left;
+    margin: 25px 15px;
+}
+
+header > .container > nav {
+    float: right;
+}
+
+header > .container > nav > a {
+    display: block;
+    float: left;
+    width: 110px;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    margin-left: 10px;
+}
+
+header > .container > nav > a:hover {
+    color: #f46208;
+}
+
+/*banner区*/
+.banner {
+    height: 800px;
+    background: url(../img/banner.jpg) no-repeat ;
+    background-size: 100%;
+    color: #ffffff;
+    text-align: center;
+    position: relative;
+}
+.banner > dl{
+    height: 200px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto auto;
+    text-align: center;
+}
+.banner > dl > dt {
+    font-size: 75px;
+    word-spacing: 30px;
+}
+
+.banner > dl > dd {
+    font-size: 20px;
+}
+

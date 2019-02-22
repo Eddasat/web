@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test2</title>
+    <style>
+        input[type="search"]::-webkit-search-cancel-button {
+            -webkit-appearance: none;
+            height: 15px;
+            width: 15px;
+            background-color: red;
+        }
+
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+<form action="" method="get">
+    <input type="text" name="username" id="username" placeholder="请输入" required="required" pattern="^\d{4}$">
+    <input type="text" id="test" name="test" value="" maxlength="5" minlength="2" pattern="^\d{5}"/>
+    <!-- <input type="number" id="numbers" value="8" max="5" min="3" /> -->
+    <input type="number" id="numbers" oninput="checkLength(this,5)" step="0.01"/>
+    <input type="search" id="search" value="">
+    <input type="email" id="emails" value="dsfsdf@123.com"/>
+    <input type="submit" value="提交">
+</form>
+<script type="text/javascript">
+    // console.log(document.getElementById("username")===username);
+    console.log(username.validity);
+    console.log(search.validity);
+    console.log(numbers.validity);
+
+    function checkLength(obj, length) {
+        if (obj.value.length > length) {
+            obj.value = obj.value.substr(0, length);
+        }
+    }
+
+    // if (emails.checkValidity()) {
+    //     alert("是一个邮箱");
+    // }else{
+    //     alert("不是一个邮箱");
+    // }
+    if (username.checkValidity()) {
+        alert("用户名符合");
+    } else {
+        alert("不符合");
+    }
+</script>
+</body>
+
+</html>

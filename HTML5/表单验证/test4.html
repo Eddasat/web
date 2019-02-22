@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test4</title>
+    <style>
+        .container {
+            max-width: 400px;
+            margin: 20px auto;
+        }
+
+        input, select, textarea {
+            width: 240px;
+            margin: 10px 0;
+            border: 1px solid #999;
+            padding: .5em 1em;
+        }
+
+        label {
+            color: #999;
+            margin-left: 10px;
+        }
+
+        input:required, textarea:required {
+            border-right: 3px solid #aa0088;
+        }
+
+        input:optional, select:optional {
+            border-right: 3px solid #999;
+        }
+
+        input:required + label::after {
+            content: "（必填）"
+        }
+
+        input:optional + label::after {
+            content: "（选填）"
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: 0;
+        }
+
+        input:required:focus, textarea:required:focus {
+            box-shadow: 0 0 3px 1px #aa0088;
+        }
+
+        input:optional:focus, select:required:focus {
+            box-shadow: 0 0 3px 1px #999;
+        }
+
+        input[type="submit"] {
+            background-color: #cc00aa;
+            border: 2px solid #aa0088;
+            padding: 10px 0;
+            color: #fff;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #aa0088;
+        }
+    </style>
+</head>
+<body>
+<!-- <div class="contenteditable"></div> -->
+<div class="container">
+    <form action="#">
+        <input type="name" required><label>名称</label>
+        <input type="email" required><label>邮箱</label>
+        <input type="tel"><label>手机</label>
+        <input type="url"><label>网址</label>
+        <select name="" id="">
+            <option value="">非必选项一</option>
+            <option value="">非必选项二</option>
+            <option value="">非必选项三</option>
+            <option value="">非必选项四</option>
+        </select>
+        <textarea name="#" cols="30" rows="10" placeholder="留言（必填）" required></textarea>
+        <input type="submit" value="提交表单">
+    </form>
+</div>
+</body>
+</html>
