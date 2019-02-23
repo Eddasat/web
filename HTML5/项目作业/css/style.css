@@ -93,16 +93,15 @@ header > .container > nav > a:hover {
 .portfolio > dl > dt {
     font-size: 48px;
     color: #f46208;
-    position: relative;
-    height: 100px;
+    margin-bottom: 30px;
     letter-spacing: 10px;
 }
 
-.portfolio > div {
+.portfolio > .btn {
     position: absolute;
     left: 0;
     right: 0;
-    margin: 300px auto;
+    margin: 280px auto;
     text-align: center;
 }
 
@@ -118,10 +117,12 @@ header > .container > nav > a:hover {
     color:#fff;
 }
 .portfolio > .pic {
+    position: absolute;
+    width: 100%;
     height: 500px;
     background: url(../img/portfolio-nav-img.jpg) no-repeat;
     background-size: 100% 100%;
-    margin-top: 400px;
+    bottom: 150px;
 }
 
 .stats {
