@@ -3,6 +3,7 @@
     margin: 0;
     border: 0;
     font-family: Microsoft YaHei UI;
+    font-size: 14px;
 }
 
 a {
@@ -48,13 +49,14 @@ header > .container > nav > a:hover {
 /*banner区*/
 .banner {
     height: 800px;
-    background: url(../img/banner.jpg) no-repeat ;
-    background-size: 100%;
+    background: url(../img/banner.jpg) no-repeat;
+    background-size: 100% 100%;
     color: #ffffff;
     text-align: center;
     position: relative;
 }
-.banner > dl{
+
+.banner > dl {
     height: 200px;
     position: absolute;
     top: 0;
@@ -64,6 +66,7 @@ header > .container > nav > a:hover {
     margin: auto auto;
     text-align: center;
 }
+
 .banner > dl > dt {
     font-size: 75px;
     word-spacing: 30px;
@@ -73,3 +76,207 @@ header > .container > nav > a:hover {
     font-size: 20px;
 }
 
+.portfolio {
+    height: 1000px;
+    position: relative;
+}
+
+.portfolio > dl {
+    height: 200px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 100px auto;
+    text-align: center;
+}
+
+.portfolio > dl > dt {
+    font-size: 48px;
+    color: #f46208;
+    position: relative;
+    height: 100px;
+    letter-spacing: 10px;
+}
+
+.portfolio > div {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 300px auto;
+    text-align: center;
+}
+
+.portfolio > div > button {
+    border: 1px solid #f46208;
+    color: #f46208;
+    background-color: transparent;
+    padding: 5px;
+    margin-left: 10px;
+}
+.portfolio > div > button:hover{
+    background-color:#f46208;
+    color:#fff;
+}
+.portfolio > .pic {
+    height: 500px;
+    background: url(../img/portfolio-nav-img.jpg) no-repeat;
+    background-size: 100% 100%;
+    margin-top: 400px;
+}
+
+.stats {
+    height: 500px;
+    text-align: center;
+}
+
+.stats h1 {
+    color: #f46208;
+    font-size: 48px;
+    letter-spacing: 10px;
+    font-weight: normal;
+}
+
+.stats p {
+    margin-top: 30px;
+}
+
+.stats > .statsPic {
+    float: left;
+    width: 250px;
+    margin-top: 30px;
+}
+
+.stats > .first {
+    margin-left: 280px;
+
+}
+
+.stats > .statsPic > p.Word {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.stats > .statsPic > p.num {
+    color: #f46208;
+    letter-spacing: 5px;
+    font-size: 30px;
+}
+
+.team {
+    height: 700px;
+    background-color: #2e2e2e;
+    color: #ffffff;
+    text-align: center;
+}
+
+.team h1 {
+    color: #f46208;
+    font-size: 48px;
+    letter-spacing: 10px;
+    font-weight: normal;
+    padding-top: 100px;
+    margin-bottom: 30px;
+}
+
+.team p.img {
+    margin-top: 70px;
+}
+
+.team .teamPic {
+    float: left;
+    width: 250px;
+    margin-left: 70px;
+}
+
+.team .first {
+    margin-left: 350px;
+}
+
+.contactus {
+    height: 800px;
+    text-align: center;
+    position: relative;
+}
+
+.contactus h1 {
+    color: #f46208;
+    font-size: 48px;
+    letter-spacing: 10px;
+    font-weight: normal;
+    padding-top: 100px;
+    margin-bottom: 40px;
+}
+
+form {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    bottom: 150px;
+    width: 800px;
+    height: 380px;
+}
+
+input {
+    width: 385px;
+    height: 60px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.username {
+    float: left;
+}
+
+.email {
+    float: right;
+}
+
+textarea {
+    width: 798px;
+    height: 290px;
+    margin-top: 25px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    resize: none;
+}
+
+textarea::-webkit-input-placeholder {
+    height: 290px;
+    line-height: 290px
+}
+
+textarea:-moz-placeholder {
+    height: 290px;
+    line-height: 290px
+}
+
+textarea::-moz-placeholder {
+    height: 290px;
+    line-height: 290px
+}
+
+textarea:-ms-input-placeholder {
+    height: 290px;
+    line-height: 290px
+}
+
+.submit {
+    width: 170px;
+    height: 50px;
+    border: none;
+    background-color: #f46208;
+    color: #fff;
+    font-size: 17px;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    margin-left: -85px;
+    cursor: pointer;
+}
+
+footer {
+    height: 80px;
+    background-color: #000;
+    line-height: 80px;
+    text-align: center;
+    color: white;
+}
