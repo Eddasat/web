@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Attribute</title>
+    <style type="text/css">
+        a[href] {
+            text-decoration: none;
+        }
+
+        a[href="#"] {
+            color: #f00;
+        }
+
+        a[class~="two"] {
+            color: #ff0;
+        }
+
+        a[href^="#"] {
+            color: #0f0;
+        }
+
+        a[href$="#"] {
+            color: #00f;
+        }
+
+        a[href*="#"] {
+            color: #0ff;
+        }
+
+        a[href|="#"] {
+            color: #f0f;
+        }
+    </style>
+</head>
+<body>
+<a href="attribute.html">attribute</a>
+<a href="#">attribute</a>
+<a class="one two" href="#">attribute</a>
+<a class="two three" href="#">attribute</a>
+<a href="#1">attribute</a>
+<a href="#2">attribute</a>
+<a href="#3">attribute</a>
+<a href="#4">attribute</a>
+<a href="1#">attribute</a>
+<a href="2#">attribute</a>
+<a href="3#">attribute</a>
+<a href="4#">attribute</a>
+<a href="1#1">attribute</a>
+<a href="2#2">attribute</a>
+<a href="3#3">attribute</a>
+<a href="4#4">attribute</a>
+<a href="#-1">attribute</a>
+<a href="#-2">attribute</a>
+<a href="#-3">attribute</a>
+<a href="#-4">attribute</a>
+</body>
+</html>
