@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>word-wrap</title>
+    <style type="text/css">
+        h1 {
+            width: 800px;
+            margin: 10px auto;
+            background: #abcdef;
+        }
+
+        h1:nth-child(1) {
+            word-wrap: normal;
+        }
+
+        h1:nth-child(2) {
+            word-wrap: break-word;
+        }
+
+        h1:nth-child(3) {
+            word-wrap: normal;
+        }
+
+        h1:nth-child(4) {
+            word-wrap: break-word;
+        }
+
+        h1 > span {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<h1><span>word-wrap: normal;</span><br>
+    bababadalgharaghtakamminbababadalgharaghtakamminbababadalgharaghtakamminbababadalgharaghtakammin
+</h1>
+<h1><span>word-wrap: break-word;</span><br>
+    bababadalgharaghtakamminbababadalgharaghtakamminbababadalgharaghtakamminbababadalgharaghtakammin
+</h1>
+<h1><span>word-wrap: normal;</span><br>
+    这个字是由100个字母组成的。这个字是由100个字母组成的。这个字是由100个字母组成的。这个字是由100个字母组成的。
+    （http://www.bababadalgharaghtakamminarronnkonnbronntonnerronntuonnthunntrovarrhounawnskawntoohoohoordenenthurnuk.com）
+</h1>
+<h1><span>word-wrap: break-word;</span><br>
+    这个字是由100个字母组成的。这个字是由100个字母组成的。这个字是由100个字母组成的。这个字是由100个字母组成的。
+    （http://www.bababadalgharaghtakamminarronnkonnbronntonnerronntuonnthunntrovarrhounawnskawntoohoohoordenenthurnuk.com）
+</h1>
+</body>
+</html>

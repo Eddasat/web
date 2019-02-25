@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>text-overflow</title>
+    <style type="text/css">
+        h1 {
+            width: 700px;
+            margin: 10px auto;
+            background: #abcdef;
+            overflow: hidden;
+        }
+
+        h1:nth-child(1) {
+            text-overflow: clip;
+        }
+
+        h1:nth-child(2) {
+            text-overflow: ellipsis;
+        }
+
+        h1:nth-child(3) {
+            text-overflow: '>>';
+        }
+
+        h1 > span {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<h1><span>text-overflow: clip;</span><br>bababadalgharaghtakamminbababadalgharaghtakamminbababadalgharaghtakamminbababadalgharaghtakamminbababadalgharaghtakammin
+</h1>
+<h1><span>text-overflow: ellipsis;</span><br>bababadalgharaghtakamminbababadalgharaghtakamminbababadalgharaghtakamminbababadalgharaghtakamminbababadalgharaghtakammin
+</h1>
+<h1><span>text-overflow: '>>';</span><br>bababadalgharaghtakamminbababadalgharaghtakamminbababadalgharaghtakamminbababadalgharaghtakamminbababadalgharaghtakammin
+</h1>
+</body>
+</html>
