@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>rotate</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        a,
+        img {
+            border: 0;
+        }
+
+        body {
+            font: 12px/180% Arial;
+        }
+
+        .main {
+            width: 1000px;
+            margin: 50px auto;
+            position: relative;
+        }
+
+        .pic {
+            width: 300px;
+            height: 290px;
+            border: 1px solid #ccc;
+            background: #fff;
+            box-shadow: 2px 2px 3px #aaa;
+        }
+
+        .pic img {
+            margin: 10px 0 0 8px;
+            width: 285px;
+        }
+
+        .pic p {
+            text-align: center;
+            font-size: 20px;
+        }
+
+        .pic1 {
+            -webkit-transform: rotate(7deg);
+            -moz-transform: rotate(7deg);
+            -ms-transform: rotate(7deg);
+            -o-transform: rotate(7deg);
+            transform: rotate(7deg);
+        }
+
+        .pic2 {
+            -webkit-transform: rotate(-8deg);
+            -moz-transform: rotate(-8deg);
+            -ms-transform: rotate(-8deg);
+            -o-transform: rotate(-8deg);
+            transform: rotate(-8deg);
+        }
+
+        .pic3 {
+            position: absolute;
+            top: 40px;
+            left: 350px;
+            z-index: 2;
+            -webkit-transform: rotate(-35deg);
+            -moz-transform: rotate(-35deg);
+            -ms-transform: rotate(-35deg);
+            -o-transform: rotate(-35deg);
+            transform: rotate(-35deg);
+        }
+
+        .pic4 {
+            position: absolute;
+            top: 360px;
+            left: 350px;
+            z-index: 3;
+            -webkit-transform: rotate(35deg);
+            -moz-transform: rotate(35deg);
+            -ms-transform: rotate(35deg);
+            -o-transform: rotate(35deg);
+            transform: rotate(35deg);
+        }
+
+        .pic5 {
+            position: absolute;
+            top: 150px;
+            left: 600px;
+            z-index: 4;
+            -webkit-transform: rotate(60deg);
+            -moz-transform: rotate(60deg);
+            -ms-transform: rotate(60deg);
+            -o-transform: rotate(60deg);
+            transform: rotate(60deg);
+        }
+
+        .pic6 {
+            position: absolute;
+            top: 180px;
+            left: 280px;
+            z-index: 5;
+            -webkit-transform: rotate(-60deg);
+            -moz-transform: rotate(-60deg);
+            -ms-transform: rotate(-60deg);
+            -o-transform: rotate(-60deg);
+            transform: rotate(-60deg);
+        }
+    </style>
+</head>
+<body>
+<div class="main">
+    <div class="pic pic1">
+        <img src="images/1.jpg">
+        <p>2D转换</p></div>
+    <div class="pic pic2">
+        <img src="images/2.jpg">
+        <p>2D转换</p></div>
+    <div class="pic pic3">
+        <img src="images/3.jpg">
+        <p>2D转换</p></div>
+    <div class="pic pic4">
+        <img src="images/4.jpg">
+        <p>2D转换</p></div>
+    <div class="pic pic5">
+        <img src="images/5.jpg">
+        <p>2D转换</p></div>
+    <div class="pic pic6">
+        <img src="images/6.jpg">
+        <p>2D转换</p></div>
+</div>
+</body>
+</html>

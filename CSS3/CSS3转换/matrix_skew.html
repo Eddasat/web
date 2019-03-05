@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>matrix skew</title>
+    <style type="text/css">
+        div {
+            width: 1500px;
+            height: 250px;
+            background: #abcdef;
+            margin: 100px auto;
+        }
+
+        div:nth-child(1) > img {
+            transform: matrix(1, .5774, .5774, 1, 0, 0);
+        }
+
+        div:nth-child(2) > img {
+            transform: skew(30deg, 30deg);
+        }
+    </style>
+</head>
+<body>
+<div><img src="images/sprite.jpg"></div>
+<div><img src="images/sprite.jpg"></div>
+</body>
+</html>

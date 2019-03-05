@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>matrix3d</title>
+    <style type="text/css">
+        div {
+            width: 1500px;
+            height: 250px;
+            background: #abcdef;
+            margin: 100px auto;
+        }
+
+        div:nth-child(1) > img {
+            transform: matrix3d(.5, 0, 0, 0, 0, .5, 0, 0, 0, 0, .5, 0, 0, 0, 0, 1);
+        }
+
+        div:nth-child(2) > img {
+            transform: scale3d(.5, .5, .5);
+        }
+    </style>
+</head>
+<body>
+<div><img src="images/sprite.jpg"></div>
+<div><img src="images/sprite.jpg"></div>
+</body>
+</html>
