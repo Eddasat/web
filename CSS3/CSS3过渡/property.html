@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>transition-property</title>
+    <style type="text/css">
+        body {
+            background: #abcdef;
+        }
+
+        div {
+            width: 800px;
+            height: 800px;
+            margin: auto;
+            transform: rotate(0deg);
+            background: url(images/imooc.png) no-repeat center center, url(images/circle_outer.png) no-repeat center center;
+            -webkit-transition-property: transform;
+            -moz-transition-property: transform;
+            -ms-transition-property: transform;
+            -o-transition-property: transform;
+            transition-property: transform;
+        }
+
+        div:hover {
+            cursor: pointer;
+            transform: rotate(180deg);
+            -webkit-transition-property: transform;
+            -moz-transition-property: transform;
+            -ms-transition-property: transform;
+            -o-transition-property: transform;
+            transition-property: transform;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+</body>
+</html>
