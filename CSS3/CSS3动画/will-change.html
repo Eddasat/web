@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>will-change</title>
+    <style type="text/css">
+        body {
+            background: #abcdef;
+        }
+
+        div {
+            position: relative;
+            width: 760px;
+            height: 760px;
+            margin: auto;
+            -webkit-transform-style: preserve-3d;
+            -moz-transform-style: preserve-3d;
+            -ms-transform-style: preserve-3d;
+            -o-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+        }
+
+        div > div {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            margin: auto;
+            background-repeat: no-repeat;
+            background-position: center;
+            -webkit-transition: transform 10s ease;
+            -moz-transition: transform 10s ease;
+            -ms-transition: transform 10s ease;
+            -o-transition: transform 10s ease;
+            transition: transform 10s ease;
+            -webkit-will-change: transform;
+            -moz-will-change: transform;
+            will-change: transform;
+        }
+
+        div > .inner {
+            background-image: url(images/circle_inner.png);
+            transform: rotateX(0deg);
+        }
+
+        div > .middle {
+            background-image: url(images/circle_middle.png);
+            transform: rotateY(0deg);
+        }
+
+        div > .outer {
+            background-image: url(images/circle_outer.png);
+            transform: rotateZ(0deg);
+        }
+
+        div > .imooc {
+            background-image: url(images/imooc.png);
+        }
+
+        div:hover > .inner {
+            transform: rotateX(360deg);
+        }
+
+        div:hover > .middle {
+            transform: rotateY(360deg);
+        }
+
+        div:hover > .outer {
+            transform: rotateZ(360deg);
+        }
+    </style>
+</head>
+<body>
+<div>
+    <div class="inner"></div>
+    <div class="middle"></div>
+    <div class="outer"></div>
+    <div class="imooc"></div>
+</div>
+</body>
+</html>
