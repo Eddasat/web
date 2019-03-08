@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>box-sizing</title>
+    <style type="text/css">
+        div {
+            width: 200px;
+            height: 70px;
+            padding: 10px;
+            border: 15px solid #999;
+            background: #eee;
+            margin-top: 20px;
+        }
+
+        .test {
+            -webkit-box-sizing: content-box;
+            -moz-box-sizing: content-box;
+            box-sizing: content-box;
+        }
+
+        .test2 {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+<h1>zoom: normal;</h1>
+<div class="test">content-box</div>
+
+<h1>zoom: 5;</h1>
+<div class="test2">border-box</div>
+</body>
+</html>

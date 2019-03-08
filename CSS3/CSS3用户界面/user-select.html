@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>user-select</title>
+    <style type="text/css">
+        div {
+            width: 200px;
+            height: 70px;
+            padding: 10px;
+            border: 1px solid #000;
+            background: #eee;
+            margin-top: 20px;
+            overflow: hidden;
+        }
+
+        .none {
+            user-select: none;
+        }
+
+        .text {
+            user-select: text;
+        }
+
+        .all {
+            user-select: all;
+        }
+
+        .element {
+            user-select: element;
+        }
+    </style>
+</head>
+<body>
+<h1>user-select: none;</h1>
+<div class="none">none</div>
+
+<h1>user-select: text;</h1>
+<div class="text">text</div>
+
+<h1>user-select: all;</h1>
+<div class="all">all</div>
+
+<h1>user-select: element;</h1>
+<div class="element">element</div>
+</body>
+</html>

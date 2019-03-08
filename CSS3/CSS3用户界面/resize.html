@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>resize</title>
+    <style type="text/css">
+        div {
+            width: 200px;
+            height: 70px;
+            padding: 10px;
+            border: 1px solid #000;
+            background: #eee;
+            margin-top: 20px;
+            overflow: hidden;
+        }
+
+        .none {
+            resize: none;
+        }
+
+        .both {
+            resize: both;
+        }
+
+        .horizontal {
+            resize: horizontal;
+        }
+
+        .vertical {
+            resize: vertical;
+        }
+    </style>
+</head>
+<body>
+<h1>resize: none;</h1>
+<div class="none">none</div>
+
+<h1>resize: both;</h1>
+<div class="both">both</div>
+
+<h1>resize: horizontal;</h1>
+<div class="horizontal">horizontal</div>
+
+<h1>resize: vertical;</h1>
+<div class="vertical">vertical</div>
+</body>
+</html>

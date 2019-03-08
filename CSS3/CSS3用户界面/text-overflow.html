@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Text-overflow</title>
+    <style type="text/css">
+        ul > li {
+            margin-top: 10px;
+        }
+
+        ul > li > p {
+            white-space: nowrap;
+            width: 200px;
+            overflow: hidden;
+        }
+
+        ul > li.clip > p {
+            text-overflow: clip;
+        }
+
+        ul > li.ellipsis > p {
+            text-overflow: ellipsis;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li class="clip">
+        <strong>clip: 直接将溢出的文字裁剪</strong>
+        <p>测试用文字测试用文字测试用文字测试用文字测试用文字测试用文字</p>
+    </li>
+    <li class="ellipsis">
+        <strong>ellipsis: 将溢出的文字显示省略标记（...）</strong>
+        <p>测试用文字测试用文字测试用文字测试用文字测试用文字测试用文字</p>
+    </li>
+</ul>
+</body>
+</html>

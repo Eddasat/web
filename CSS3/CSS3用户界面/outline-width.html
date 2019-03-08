@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>outline-width</title>
+    <style type="text/css">
+        div {
+            width: 100px;
+            margin: 100px;
+            padding: 10px;
+            border: 3px solid #333;
+            outline-style: solid;
+            outline-color: #f00;
+        }
+
+        div.length {
+            outline-width: 10px;
+        }
+
+        div.thin {
+            outline-width: thin;
+        }
+
+        div.medium {
+            outline-width: medium;
+        }
+
+        div.thick {
+            outline-width: thick;
+        }
+    </style>
+</head>
+<body>
+<h1>outline: 10px;</h1>
+<div class="length">注意边框线外面的红色轮廓</div>
+<h1>outline: thin;</h1>
+<div class="thin">注意边框线外面的红色轮廓</div>
+<h1>outline: medium;</h1>
+<div class="medium">注意边框线外面的红色轮廓</div>
+<h1>outline: thick;</h1>
+<div class="thick">注意边框线外面的红色轮廓</div>
+</body>
+</html>
