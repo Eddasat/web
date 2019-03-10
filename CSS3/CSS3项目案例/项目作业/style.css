@@ -1,0 +1,174 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    overflow: hidden;
+}
+
+/*天空草地的样式*/
+.top {
+    height: 60vh;
+    position: relative;
+    -webkit-background: linear-gradient(rgb(196, 228, 253), rgb(255, 255, 255));
+    -moz-background: linear-gradient(rgb(196, 228, 253), rgb(255, 255, 255));
+    -o-background: linear-gradient(rgb(196, 228, 253), rgb(255, 255, 255));
+    background: linear-gradient(rgb(196, 228, 253), rgb(255, 255, 255));
+}
+
+.bottom {
+    height: 40vh;
+    position: relative;
+    -webkit-background: linear-gradient(rgb(255, 255, 255), rgb(148, 190, 89));
+    -moz-background: linear-gradient(rgb(255, 255, 255), rgb(148, 190, 89));
+    -o-background: linear-gradient(rgb(255, 255, 255), rgb(148, 190, 89));
+    background: linear-gradient(rgb(255, 255, 255), rgb(148, 190, 89));
+}
+
+
+/*rabbit样式*/
+
+.rabbit {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    bottom: 50px;
+    right: 200px;
+}
+
+.rabbit img {
+    width: 100%;
+    height: 100%;
+}
+
+/*cloud样式*/
+
+.cloud {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #fff;
+}
+
+.cloud:before {
+    content: ' ';
+    width: 180px;
+    height: 45px;
+    display: block;
+    position: absolute;
+    top: 45px;
+    left: -60px;
+    border-radius: 45px;
+    background-color: #fff;
+}
+
+.cloud:after {
+    height: 45px;
+    width: 90px;
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 40px;
+    left: -50px;
+    border-radius: 45px;
+    transform: rotate(-125deg);
+    background-color: #fff;
+}
+
+/*box的动画及缩放*/
+
+.top > div {
+    position: absolute;
+}
+
+.box1 {
+    top: 10px;
+    opacity: 0.7;
+    transform: scale(0.6);
+    animation: one 7s ease-in infinite;
+}
+
+.box2 {
+    top: 150px;
+    opacity: 0.7;
+    transform: scale(0.6);
+    animation: two 8s ease-in infinite;
+}
+
+.box3 {
+    top: 80px;
+    opacity: 1;
+    transform: scale(0.8);
+    animation: three 6s ease-in infinite;
+}
+
+.box4 {
+    top: 130px;
+    opacity: 0.6;
+    transform: scale(0.4);
+    animation: four 10s ease-in infinite;
+}
+
+.box5 {
+    top: 10px;
+    opacity: 0.7;
+    transform: scale(0.6);
+    animation: five 9s ease-in infinite;
+}
+
+@keyframes one {
+    from {
+        right: -120px;
+    }
+
+    to {
+        right: 150%;
+    }
+
+}
+
+@keyframes two {
+    from {
+        right: -30%;
+    }
+
+    to {
+        right: 150%;
+    }
+
+}
+
+@keyframes three {
+    from {
+        right: -400px;
+    }
+
+    to {
+        right: 150%;
+    }
+
+}
+
+@keyframes four {
+    from {
+        right: -120px;
+    }
+
+    to {
+        right: 150%;
+    }
+
+}
+
+@keyframes five {
+    from {
+        right: -120px;
+    }
+
+    to {
+        right: 150%;
+    }
+
+}
