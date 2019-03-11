@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html style="font-size: 32px">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>CSS 单位</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="" rel="stylesheet">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <script type="text/javascript" src="jquery.min.js"></script>
+</head>
+<body style="font-size: 24px;">
+<p>1REM = 32px</p>
+<p>此时EM=24px</p>
+<p>VW是此时浏览器可视区域宽度的1%：<span id="vw"></span></p>
+<p>同理，VH就是高度的1%：<span id="vh"></span></p>
+<p>还有两个概念： vmin 和 vmax值是 <span id="vmin"></span></p>
+</body>
+<script type="text/javascript">
+    $('#vw').text(window.innerWidth / 100)
+    $('#vh').text(window.innerHeight / 100)
+    $('#vmin').text(Math.min(window.innerHeight, window.innerWidth) / 100 + "," + Math.max(window.innerHeight, window.innerWidth) / 100)
+</script>
+</html>

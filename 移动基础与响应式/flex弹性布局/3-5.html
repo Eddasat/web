@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>justify-content</title>
+    <link rel="stylesheet" href="./reset.css">
+    <style>
+        .flex-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            /*伸缩项目两边碰 中间空间平均分*/
+            justify-content: space-around;
+            /*伸缩项目平均分 剩余空间两边碰*/
+        }
+
+        .flex-item:nth-child(1) {
+            background: yellow;
+        }
+
+        .flex-item:nth-child(2) {
+            background: green;
+        }
+
+        .flex-item:nth-child(3) {
+            background: pink;
+        }
+
+        .flex-item:nth-child(4) {
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<div class="flex-container">
+    <div class="flex-item">A</div>
+    <div class="flex-item">B</div>
+    <div class="flex-item">C</div>
+</div>
+</body>
+</html>
