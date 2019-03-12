@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>flex-shrink</title>
+    <link rel="stylesheet" type="text/css" href="./reset.css">
+    <style>
+        .flex-container {
+            display: flex;
+            width: 300px;
+        }
+
+        .flex-item:nth-child(1) {
+            width: 100px;
+        }
+
+        .flex-item:nth-child(2) {
+            width: 200px;
+        }
+
+        .flex-item:nth-child(3) {
+            width: 150px;
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="flex-container">
+    <div class="flex-item red">A小乔</div>
+    <div class="flex-item blue">B虞姬</div>
+    <div class="flex-item green">C白起</div>
+</div>
+</body>
+</html>

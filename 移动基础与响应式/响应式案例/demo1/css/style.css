@@ -1,0 +1,26 @@
+#dv{
+	border:1px solid #ff0000;
+	font-size:20px;
+	width:100%;
+	height: 400px;
+}
+/* 响应式布局：针对于不同分辨率的样式终端显示不同的
+min-width:370px; 屏幕宽度 > 370 以上执行 @media 中的样式
+*/
+/*
+@media screen and (min-width:370px){
+	#dv{
+		border:1px solid #00ff00;
+		font-size:32px;
+
+	}
+}
+*/
+/* max-width: 370px 屏幕宽度<370 以下执行@media 中的样式*/
+@media screen and (max-width: 370px){
+	#dv{
+		border:1px solid #0000ff;
+		font-size:32px;
+
+	}
+}

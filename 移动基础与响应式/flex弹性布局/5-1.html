@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>practice-card</title>
+    <link rel="stylesheet" type="text/css" href="reset.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /*优惠券容器*/
+        .coupon {
+            width: 440px;
+            height: 120px;
+
+            padding: 16px;
+            margin: 20px;
+            box-sizing: border-box;
+
+            background: #fbfbfb;
+            color: #666666;
+
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /*按钮*/
+        .btn {
+            width: 80px;
+            height: 40px;
+            line-height: 40px;
+            background: #ffffff;
+            color: #FF7400;
+            border: 1px solid #d8d8d8;
+            border-radius: 4px;
+            text-align: center;
+            outline: none;
+        }
+
+        /*金额*/
+        .coupon-body .price {
+            font-size: 18px;
+            font-weight: 500;
+            color: #F6A623;
+        }
+
+        /*日期*/
+        .coupon-body .date {
+            color: #999999;
+            font-size: 14px;
+        }
+
+        .coupon-body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .coupon-control {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+<div class="coupon">
+    <div class="coupon-body">
+        <p class="price">$ 200.000</p>
+        <p class="txt">最低消费金额 $ 300.000</p>
+        <p class="date">03/01/2018 17.40 - 10/01/2018 17.40 CST</p>
+    </div>
+    <div class="coupon-control">
+        <div class="btn">删 除</div>
+    </div>
+</div>
+</body>
+</html>
