@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, \\5FAE\8F6F\96C5\9ED1, Arial, sans-serif;
+    font-size: 14px;
+}
+
+.box {
+    margin: 0 auto;
+    max-width: 6.4rem;
+}
+
+.header {
+    height: 44px;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    background: #ef1313;
+}
+
+.header_address {
+    margin-right: 15px;
+    color: #fff;
+}
+
+.header_message {
+    margin-left: 15px;
+    color: #fff;
+}
+
+.header_form {
+    flex: 1;
+}
+
+.header_form input {
+    width: 100%;
+    box-sizing: border-box;
+    height: 28px;
+    border-radius: 8px;
+    border: none;
+}
+
+.banner {
+    overflow: hidden;
+    position: relative;
+    height: 2.6rem;
+    widows: 6.4rem;
+    background: #666;
+}
+
+.inner {
+    position: relative;
+    width: 9999px;
+    left: 0;
+    top: 0;
+}
+
+.innerwraper {
+    width: 6.4rem;
+    float: left;
+}
+
+.innerwraper img {
+    width: 100%;
+}
+
+.pagination {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.pagination span {
+    display: inline-block;
+    width: .16rem;
+    height: .16rem;
+    background-color: #9aa499;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.pagination .active {
+    background-color: #fff;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    height: 54px;
+    width: 100%;
+    display: flex;
+    text-align: center;
+    font-size: 12px;
+    border-top: 1px solid #ccc;
+    background: #fff;
+}
+
+.footericon {
+    flex: 1;
+}
+
+.icon_a {
+    display: block;
+    margin: 8px 0;
+    /*background:red;*/
+}
+
+.iconactive {
+    color: #c9394a;
+}
