@@ -1,0 +1,79 @@
+<!Doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title></title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<style>
+    .row {
+        border: 1px solid #ff0000;
+    }
+
+    [class*="col-"] {
+        border: 1px solid #00ff00;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        background-color: #eee;
+    }
+</style>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-1">1</div>
+        <div class="col-md-1">2</div>
+        <div class="col-md-1">3</div>
+        <div class="col-md-1">4</div>
+        <div class="col-md-1">5</div>
+        <div class="col-md-1">6</div>
+        <div class="col-md-1">7</div>
+        <div class="col-md-1">8</div>
+        <div class="col-md-1">9</div>
+        <div class="col-md-1">10</div>
+        <div class="col-md-1">11</div>
+        <div class="col-md-1">12</div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">1</div>
+        <div class="col-md-3">2</div>
+        <div class="col-md-3">3</div>
+        <div class="col-md-3">4</div>
+    </div>
+    <!-- offset-3 偏移 3个列 margin-left 像素  -->
+    <div class="row">
+        <div class="col-md-3 col-md-offset-5">1</div>
+    </div>
+    <!-- 嵌套 row元素只能嵌套在 col中 把父row 划分成12列-->
+    <div class="row">
+        <div class="col-sm-9">
+            1
+            <div class="row">
+                <div class="col-md-4">1</div>
+                <div class="col-md-8">2</div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--
+`	超小屏幕 手机 (<768px)  .col-xs-数字
+   小屏幕 平板 (≥768px)  .col-sm-数字
+   中等屏幕 桌面显示器 (≥992px) .col-md-数字
+   大屏幕 大桌面显示器 (≥1200px) .col-lg-数字
+   min-width max-width
+   min-width 400px  最小是400px  400以上都采用制定的样式
+   max-width 600px  最大值 600px  600以采用 样式
+ -->
+<script>
+    // {
+    // 	var a=10;
+    // 	console.log(a);
+    // }
+
+    // console.log(a+10);
+    var a = 10;
+    var b = '10';
+    console.log(a !== b);
+</script>
+</body>
+</html>

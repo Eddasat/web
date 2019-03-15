@@ -1,0 +1,40 @@
+<!Doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title></title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<style>
+    .row {
+        border: 1px solid #ff0000;
+    }
+
+    [class*="col-"] {
+        border: 1px solid #00ff00;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        background-color: #eee;
+    }
+</style>
+<body>
+
+<!--
+`	超小屏幕 手机 (<768px)  .col-xs-数字
+   小屏幕 平板 (≥768px)  .col-sm-数字
+   中等屏幕 桌面显示器 (≥992px) .col-md-数字
+   大屏幕 大桌面显示器 (≥1200px) .col-lg-数字
+   min-width max-width
+   min-width 400px  最小是400px  400以上都采用制定的样式
+   max-width 600px  最大值 600px  600以采用 样式
+ -->
+<div class="container">
+    <div class="row">
+        <div class="col-xs-4 col-sm-4">1</div>
+        <div class="col-xs-4 col-sm-4">2</div>
+        <div class="col-xs-4 col-sm-4">3</div>
+    </div>
+</div>
+</body>
+</html>
