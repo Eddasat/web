@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, 
+    initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<!-- 内联表单 -->
+<form class="form-inline">
+    <div class="from-group">
+        <label for="ep" class="sr-only">邮箱</label>
+        <input type="email" class="form-control" id="ep">
+    </div>
+</form>
+<br><br>
+<!-- 水平 -->
+<form class="form-horizontal">
+    <div class="from-group">
+        <label for="ep" class="col-sm-2">邮箱</label>
+        <div class="col-sm-10">
+            <input type="email" class="form-control" id="ep">
+        </div>
+    </div>
+</form>
+<!-- 
+<input type="checkbox" class="checkbox disabled">
+ -->
+<!-- 静态控件 -->
+<form class="form-horizontal">
+    <div class="from-group">
+        <label for="ep" class="col-sm-2">邮箱</label>
+        <div class="col-sm-10">
+            <p class="form-control-static">aaaaa@aaaa.com</p>
+        </div>
+    </div>
+</form>
+<!-- 校验 has-success  has-warning has-error 
+glyphicon-ok 成功
+glyphicon-warning-sign 警告
+glyphicon-remove 错误
+-->
+<form class="form">
+    <div class="from-group has-error">
+        <label for="ep" class="control-label">邮箱</label>
+        <input type="text" class="class-control" id="txt">
+        <span class="glyphicon glyphicon-warning-sign"></span>
+    </div>
+</form>
+</body>
+</html>
