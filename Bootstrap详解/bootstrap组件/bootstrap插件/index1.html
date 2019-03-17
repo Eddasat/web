@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, 
+    initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <script src="js/jquery-3.1.1.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+<!-- 
+滚动监听
+ -->
+<nav id="test" class="navbar navbar-default">
+    <div class="container">
+        <div>
+            <ul class="nav navbar-nav">
+                <li><a href="#ios">ios</a></li>
+                <li><a href="#php">php</a></li>
+                <li><a href="#java">java</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- 
+data-target="#test" 执行滚动监听的目标
+data-spy = "scroll" 添加滚动监听
+ -->
+<div data-target="#test" data-spy="scroll" style="height:200px;overflow:auto;position:relative">
+    <h4 id="ios">ios</h4>
+    <p>
+        这是ios的内容这是ios的内容这是ios的内容这是ios的内容这是ios的内容
+    </p>
+    <h4 id="php">php</h4>
+    <p>
+        这是php内容
+    </p>
+    <h4 id="java">java</h4>
+    <p>
+        这是java内容
+    </p>
+    <h4 id="java1">java1</h4>
+    <p>
+        这是java内容
+    </p>
+    <h4 id="java2">java2</h4>
+    <p>
+        这是java内容
+    </p>
+    <h4 id="java3">java3</h4>
+    <p>
+        这是java内容
+    </p>
+</div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, 
+    initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <script src="js/jquery-3.1.1.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+<!-- 
+弹出框
+data-container 向制定元素添加弹出框
+data-toggle =“popover” 制定弹出框执行
+data-placement 弹出框的方位 top bottom left right
+data-content 弹出框中的内容
+data-trigger="focus" 控制弹出框消失
+对象.popover();
+ -->
+<div class="container" style="padding:100px 50px 10px;">
+    <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="left"
+            data-content="弹出框内容" data-trigger="focus">
+        弹出框
+    </button>
+</div>
+<script>
+    $(function () {
+        $("[data-toggle='popover']").popover();
+    })
+</script>
+</body>
+</html>
