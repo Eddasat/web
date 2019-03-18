@@ -1,0 +1,339 @@
+@charset "utf-8";
+/* CSS Document */
+
+html{  font-size: 14px;overflow-x: hidden;  }
+body{margin:0; padding:0; color:#414141;min-width:320px;height: auto;overflow-x: hidden; }
+body,button,input,select,textarea{font:14px verdana,"\5FAE\8F6F\96C5\9ED1",tahoma,arial,"Hiragino Sans GB","\5b8b\4f53";}
+input,select,textarea{font-size:100%; }
+a{ color:#666; text-decoration:none;}
+img{ vertical-align:top; border:0;}
+ul,li,ol,dl,dt,dd{margin:0; padding:0; list-style:none;}
+p{margin:0px;padding: 0px;}
+input{
+	-webkit-appearance: none;
+}
+a:hover{
+	text-decoration:none;
+}
+.container{
+
+}
+#page-head{
+	background:#f9f9f9;
+	min-height:100px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1;
+}
+#page-head+* {margin-top: 100px;}
+#logo-head{
+	float:left;
+	margin-top:15px;
+}
+.nav-tall{
+	float:right;
+	background:url(../images/index_08.png);
+	width:186px;
+	height:47px;
+	line-height:47px;
+	font-size:16px;
+	text-indent:50px;
+	color:#ef200d;
+	margin-top:27px;
+}
+.navbar-default{
+	background:#f9f9f9;
+	border:0px;
+	margin-bottom:0px;
+	z-index:99;
+}
+.navbar-nav {
+	margin-left:80px;
+}
+.navbar-nav li{
+	height:100px;
+	width:98px;
+	line-height:100px;
+	text-align:center;
+	font-size:16px;
+	margin-left:40px;
+	float:left;
+	color:#666666;
+}
+.navbar-nav li.on{
+	background:url(../images/index_02.png)
+}
+.navbar-toggle{
+	    margin-top: 30px;
+}
+
+#page-foot{
+	background:#f7f7f7;
+	border-top:1px solid #eeeff0;  
+	min-height:397px;
+}
+.foot-info{
+	margin-top:85px;
+}
+.left-img{
+	float:right;
+	width:94px;
+	margin-right:90px;
+}
+.right-img{
+	float:left;
+	width:121px;
+	margin-left:90px;
+}
+.copy-info{
+	width:100%;
+	text-align:center;
+	color:#999999;
+	line-height:25px;
+	font-size:14px;
+	margin-top:50px;
+
+}
+.copy-info a{
+	color:#999999;
+}
+.copy-info>span {
+	white-space: nowrap;
+	word-break:keep-all;
+}
+@media (max-width: 992px){
+   .navbar-right{
+	   float:left!important;
+	   margin-left:0px;
+   }
+   .navbar-nav{
+	   
+   }
+   .navbar-nav li{
+	margin-left:20px;
+	}
+	.banner{
+		height:400px;
+		background:url(../images/index_12.png) center;
+		background-size: cover;
+	}
+	.newsinfo img{
+		margin-top:45px;
+	}
+	.tiyan-pic {margin-top: 100px;}
+
+}
+@media (min-width: 768px){
+   .navbar-right{
+	   float:left!important;
+   }
+}
+@media (max-width:767px){
+    .navbar-nav li{
+	height:50px;
+	width:100%;
+	line-height:50px;
+	text-align:center;
+	font-size:16px;
+	float:left;
+	color:#666666;
+	margin:0px;
+	}
+	.navbar-nav{
+		width:100%;
+		margin:0px;
+	}
+	#page-head{
+		height: 80px;
+		min-height: 0px;
+        background: #f9f9f9;
+	}
+	#page-head+* {
+		margin-top: 80px;
+	}
+	#logo-head{
+	float:left;
+	margin-top:7px;
+	}
+	.navbar-toggle{
+		margin-top:25px;
+		margin-right:25px;
+	}
+	.pages-title{
+		margin-top:28px;
+	}
+
+	.pages-title h3{
+		font-size:22px;	
+		line-height:30px;
+	}
+	.pages-title  p{
+		font-size:16px;
+		margin-top:15px;
+	}
+	.one-pic img{
+		width:100%;
+	}
+	.one-pic{
+		margin-top:22px;
+		margin-bottom:26px;
+	}
+	.newsinfo{
+	margin-bottom:20px;
+	margin-top:27px;
+	}
+	.info-li li{
+		min-height:38px;
+		line-height:38px;
+		font-size:14px;
+		float:left;
+		width:100%;
+	}
+	.left-img{
+	float:right;
+	width:94px;
+	margin-right:10px;
+	}
+	.right-img{
+		float:left;
+		width:121px;
+		margin-left:10px;
+	}
+	.foot-info{
+	margin-top:45px;
+	}
+	.copy-info{
+	width:100%;
+	text-align:center;
+	color:#999999;
+	line-height:25px;
+	font-size:14px;
+	margin-top:30px;
+	margin-bottom:20px;
+	}
+	.xs-center{
+		text-align:center;
+	}
+	.server-img{
+		width:120px;
+		text-align:center;
+		margin-top:25px;
+		margin-bottom:25px;
+        max-width: 100%;
+	}
+	#fcg, #fjp, #fds, #jm,#fwx, #fpz, #fdl, #sm {
+		min-height: 150px;
+	}
+	.server-info{
+		margin-top:15px;
+		margin-bottom:25px;
+	}
+	.server-info h3{
+		font-size:20px;
+		color:#ef200d;
+	}
+	.server-info p{
+		font-size:16px;
+		color:#838383;
+		line-height:22px;
+	}
+	#tiyan-page{
+	padding-top:40px;
+	padding-bottom:80px;
+	}
+	.tiyan-tit{
+		font-size:20px;
+		margin-top: 30px;
+	}
+	.tiyan-pic {margin-top: 0;}
+	.myinput{
+		height: 35px;
+		line-height: 35px;
+	}
+	.yzm-pic{
+		height:35px;
+	}
+	.about-tit{
+		margin-top:30px;
+		margin-bottom:20px;
+	}
+	#about p{
+		margin-top:15px;
+	}
+	.con-li span{
+		margin-top:20px;
+	}
+	.con-img{
+		width:100%;
+	}
+	.con-info{
+		margin-top:20px;
+		margin-bottom:30px;
+	}
+	.con-pic{
+		margin-top:15px;
+		margin-bottom:30px;
+	}
+	.con-box{
+		margin-top:30px;		
+		margin-bottom:30px;
+	}
+	.head-box{
+		width:100%;
+		padding:0px;
+	}
+}
+@media (max-width:640px){
+    .two-pic li {
+        height: 200px;
+        background-size: auto 80px;
+        background-position: center 10px;
+    }
+    .two-pic li h3 {
+        margin-top: 100px;
+    }
+	.server-img{
+		width:100px;
+		text-align:center;
+		margin-top:20px;
+		margin-bottom:20px;
+		max-width: 100%;
+	}
+	#fcg, #fjp, #fds, #jm,#fwx, #fpz, #fdl, #sm {
+		min-height: 150px;
+	}
+
+}
+@media (max-width:500px) {
+	.ser-banner img {
+		height: 100px;
+		width: auto;
+		max-width: 1920px;
+		position: relative;
+		left: -140px;
+	}
+}
+
+@media (min-width: 1100px) {
+    .servers-body .servers-content{
+        padding: 0 50px;
+    }
+}
+@media (max-width: 1099px) and (min-width: 768px) {
+    .servers-body .servers-content{
+        padding: 0 4%;
+    }
+}
+.J_MiddleImage {
+	position: relative;
+}
+.J_MiddleImage img{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0; right: 0;
+	margin: auto;
+}
+
+.navbar-collapse, .container>.navbar-header {margin-left: 0!important; margin-right:0 !important; padding: 0!important;}
