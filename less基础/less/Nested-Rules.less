@@ -1,0 +1,138 @@
+body{ padding:0;margin:0;}
+
+@header-height:60px;
+@banner-height:560px;
+@courses-height:200px;
+@footer-height:686px;
+
+@header-bottom-bgcolor:#000;
+
+.header{
+	height:@header-height;
+	background:@header-bottom-bgcolor;
+}
+.banner{
+	height:@banner-height;
+}
+.courses{
+	height:@courses-height;
+}
+.footer{
+	height:@header-height;
+	background:@header-bottom-bgcolor;
+}
+
+
+.fl{
+	float: left;
+}
+.fr(){
+	float: right;
+}
+.nav-block-margin(){
+	height: 36px;
+	margin: 12px 25px;
+}
+.border-radius(@radius: 50%){
+	-webkit-border-radius: @radius;
+     -moz-border-radius: @radius;
+          border-radius: @radius;
+}
+.logo{
+	.fl();
+	width: 128px;
+	background: #f01400;
+	.nav-block-margin();
+}
+.nav{
+	.fl();
+	height: 60px;
+}
+
+/* 背景色定义 */
+#bg-color(@name) when(@name=dark) {
+	background-color: #2b333b;
+}
+#bg-color(@name) when(@name=light){
+	background-color: #363c41;
+}
+/* 字体大小定义 */
+#ft-size(@name) when(@name=small){
+	font-size: 12px;
+}
+#ft-size(@name) when(@name=medium){
+	font-size: 14px;
+}
+/* 字体颜色定义 */
+#color(@name) when(@name=white){
+	color: #fbfbfb;
+}
+#color(@name) when(@name=dark){
+	color: #5c646b
+}
+.nav{
+	&__item{
+		display: block;
+		float: left;
+		line-height: 60px;
+		padding: 0 25px;
+		text-decoration: none;
+		#color(white);
+		#ft-size(medium);
+		&:hover{
+			#bg-color(light)
+		}
+		&_icon_new{
+			#bg-color(light)
+		}
+
+	}
+}
+
+.search{
+	padding-right: 25px;
+	position: relative;
+	.fr();
+	.nav-block-margin();
+}
+.search::before{
+	content: '前端入门';
+	display: block;
+	position: absolute;
+	width: 72px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	#bg-color(dark);
+	#color(dark);
+	#ft-size(small)
+}
+.search__input{
+	width: 242px;
+	border:none;
+	background-color: #000;
+	height: 36px;
+	outline: none;
+	color: #fff;
+	border-bottom: 1px solid #ccc;
+}
+.profile{
+	.fr();
+}
+.profile__item{
+	display: block;
+	float: left;
+	width: 60px;
+	height: 60px;
+	background-color: #ccc;
+	margin-left: 1px;
+}
+.profile__item:hover{
+	#bg-color(light)
+}
+.profile__ava{
+	width: 36px;
+	height: 36px;
+	margin: 12px;
+	.border-radius(50px);
+}
