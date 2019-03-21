@@ -1,0 +1,142 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.header {
+    height: 60px;
+    background-color: #000;
+    position: relative;
+}
+
+.header .logo {
+    float: left;
+    width: 128px;
+    background: url(../imgs/logo.png) no-repeat center;
+    background-size: cover;
+    margin: 12px 25px;
+    height: 36px;
+}
+
+.header .nav {
+    float: left;
+    height: 100%;
+}
+
+.header .nav__item {
+    display: block;
+    float: left;
+    line-height: 60px;
+    padding: 0 25px;
+    color: #fbfbfb;
+    font-size: 14px;
+}
+
+.header .nav__item:hover {
+    background-color: #363c41;
+}
+
+.header .nav__item_icon_new {
+    background-color: #363c41;
+}
+
+.header .nav__item_icon_new :after {
+    content: ' ';
+}
+
+.header .search {
+    padding-right: 25px;
+    position: relative;
+    float: right;
+    margin: 12px 25px;
+    height: 36px;
+}
+
+.header .search__input {
+    width: 242px;
+    border: none;
+    background-color: #000;
+    height: 36px;
+    outline: none;
+    color: #fff;
+    border-bottom: 1px solid #ccc;
+}
+
+.header .search::before {
+    content: '前端入门';
+    display: block;
+    position: absolute;
+    width: 72px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background-color: #2b333b;
+    color: #5c646b;
+    font-size: 12px;
+}
+
+.header .search__submit {
+    display: block;
+    position: absolute;
+    right: 25px;
+    top: 4px;
+    background-position: 0 0;
+    width: 22px;
+    height: 22px;
+    background-image: url("../imgs/icon-1-sprite_w22.png");
+    background-repeat: no-repeat;
+}
+
+.header .profile {
+    float: right;
+}
+
+.header .profile__item {
+    display: block;
+    float: left;
+    width: 60px;
+    height: 60px;
+    position: relative;
+}
+
+.header .profile__item:hover {
+    background-color: #363c41;
+}
+
+.header .profile__phone:before,
+.header .profile__message:before,
+.header .profile__mail:before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 19px;
+    top: 19px;
+    width: 22px;
+    height: 22px;
+    background-image: url("../imgs/icon-1-sprite_w22.png");
+    background-repeat: no-repeat;
+}
+
+.header .profile__phone:before {
+    background-position: 0 -22px;
+}
+
+.header .profile__message:before {
+    background-position: 0 -44px;
+}
+
+.header .profile__mail:before {
+    background-position: 0 -66px;
+}
+
+.header .profile__ava {
+    width: 36px;
+    height: 36px;
+    margin: 12px;
+    background-color: #363c41;
+    border-radius: 50%;
+}
