@@ -1,0 +1,633 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+// 布局样式
+#layout(@name) {
+  & when (@name=header) {
+    height: 60px;
+    #bg-color(black);
+  }
+  & when (@name=banner) {
+    height: 560px;
+    background-color: #6a6593;
+  }
+  & when (@name=recommend) {
+    height: 200px;
+    #bg-color(white);
+  }
+  & when (@name=courses) {
+    height: 686px;
+    #bg-color(pale);
+  }
+  & when (@name=footer) {
+    height: 98px;
+    #bg-color(black);
+  }
+}
+
+#layout(@name) {
+  position: relative;
+}
+
+#bg-color(@name) { // 背景色定义
+  & when (@name=black) {
+    background-color: #000;
+  }
+  & when (@name=white) {
+    background-color: #fff;
+  }
+  & when (@name=pale) {
+    background-color: #f3f5f7;
+  }
+  & when (@name=night) {
+    background-color: #4d555d;
+  }
+  & when (@name=dark) {
+    background-color: #2b333b;
+  }
+  & when (@name=light) {
+    background-color: #363c41;
+  }
+}
+
+#ft-size(@name) { // 字体大小定义
+  & when (@name=small) {
+    font-size: 12px;
+  }
+  & when (@name=medium) {
+    font-size: 14px;
+  }
+  & when (@name=lagre) {
+    font-size: 16px;
+  }
+  & when (@name=title) {
+    font-size: 32px;
+  }
+  & when (@name=big) {
+    font-size: 22px;
+  }
+}
+
+#color(@name) { //字体颜色定义
+  & when (@name=dark) {
+    color: #5c646b;
+  }
+  & when (@name=black) {
+    color: #141914;
+  }
+  & when (@name=white) {
+    color: #fbfbfb;
+  }
+  & when (@name=yellow) {
+    color: #ffcc33;
+  }
+  & when (@name=red) {
+    color: red;
+  }
+  & when (@name=weak) {
+    color: #959aa0;
+  }
+}
+
+// 小样式定义
+#course-box(@name) {
+  & when (@name=recommend) {
+    width: 285px;
+    height: 342px;
+    position: absolute;
+    top: -210px;
+    box-shadow: 0 8px 16px rgba(7, 17, 27, .2);
+    background-color: #fff;
+    #bg-img("course-b-bg.png");
+    #center-h(285px);
+    #decorate-bottom();
+  }
+  & when (@name=standard) {
+    width: 224px;
+    height: 206px;
+    float: left;
+    box-shadow: 0 4px 8px rgba(7, 17, 27, .1);
+    background-color: #fff;
+    position: relative;
+    margin: 0 20px 34px 0;
+    #bg-img("course-s-bg.png");
+    #decorate-bottom();
+
+    &:nth-child(5n) {
+      margin-right: 0;
+    }
+  }
+}
+
+#decorate-bottom() {
+  &:before {
+    content: ' ';
+    display: block;
+    width: 98%;
+    left: 1%;
+    bottom: -5px;
+    height: 3px;
+    background-color: #fff;
+    position: absolute;
+    border-radius: 4px;
+    box-shadow: 0 8px 16px rgba(7, 17, 27, .2);
+  }
+  &:after {
+    content: ' ';
+    display: block;
+    width: 96%;
+    left: 2%;
+    bottom: -11px;
+    height: 3px;
+    background-color: #fff;
+    position: absolute;
+    border-radius: 4px;
+    box-shadow: 0 8px 16px rgba(7, 17, 27, .2);
+  }
+}
+
+// 功能函数定义
+#radius(@radius:50%) {
+  border-radius: @radius
+}
+
+#square(@w:10px) {
+  width: @w;
+  height: @w;
+}
+
+#bg-img(@src) {
+  background-image: url("../imgs/@{src}");
+  background-repeat: no-repeat;
+}
+
+#center-h(@width) {
+  left: 50%;
+  margin-left: @width*-.5;
+}
+
+#line-height(@height) {
+  height: @height;
+  line-height: @height;
+}
+
+// 无参数函数定义
+.fl() {
+  float: left;
+}
+
+.fr() {
+  float: right;
+}
+
+.clearfix() {
+  &:after {
+    content: ' ';
+    display: block;
+    font-size: 0;
+    line-height: 0;
+    clear: both;
+    zoom: 1;
+  }
+}
+
+.cover-background() {
+  background+_: no-repeat center;
+  background-size: cover;
+}
+
+// 模块样式
+.header {
+  #layout(header);
+  @standard-height: 36px;
+
+  .logo {
+    .fl();
+    width: 128px;
+    background+_: url(../imgs/logo.png);
+    .cover-background();
+    margin: 12px 25px;
+    height: @standard-height;
+  }
+
+  .nav {
+    .fl();
+    height: 100%;
+
+    &__item {
+      display: block;
+      float: left;
+      line-height: 60px;
+      padding: 0 25px;
+      #color(white);
+      #ft-size(medium);
+
+      &:hover {
+        #bg-color(light)
+      }
+
+      &_icon_new {
+        #bg-color(light);
+
+        :after {
+          content: ' ';
+        }
+      }
+
+    }
+  }
+
+  .search {
+    padding-right: 25px;
+    position: relative;
+    .fr();
+    margin: 12px 25px;
+    height: @standard-height;
+
+    &__input {
+      width: 242px;
+      border: none;
+      background-color: #000;
+      height: 36px;
+      outline: none;
+      color: #fff;
+      border-bottom: 1px solid #ccc;
+    }
+
+    &::before {
+      content: '前端入门';
+      display: block;
+      position: absolute;
+      width: 72px;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      #bg-color(dark);
+      #color(dark);
+      #ft-size(small)
+    }
+
+    &__submit {
+      display: block;
+      position: absolute;
+      right: 25px;
+      top: 4px;
+      background-position: 0 0;
+      #square(22px);
+      #bg-img("icon-1-sprite_w22.png");
+    }
+  }
+
+  .profile {
+    .fr();
+
+    &__item {
+      display: block;
+      float: left;
+      width: 60px;
+      height: 60px;
+      position: relative;
+
+      &:hover {
+        #bg-color(light)
+      }
+    }
+
+    &__phone:before, &__message:before, &__mail:before {
+      content: ' ';
+      display: block;
+      position: absolute;
+      left: 19px;
+      top: 19px;
+      #square(22px);
+      #bg-img("icon-1-sprite_w22.png");
+    }
+
+    &__phone:before {
+      background-position: 0 -22px;
+    }
+
+    &__message:before {
+      background-position: 0 -44px;
+    }
+
+    &__mail:before {
+      background-position: 0 -66px;
+    }
+
+    &__ava {
+      width: 36px;
+      height: 36px;
+      margin: 12px;
+      #bg-color(light);
+      #radius(50%);
+    }
+  }
+}
+
+.banner {
+  background-position: center;
+  background-size: cover;
+  #layout(banner);
+  #bg-img("banner.jpg");
+
+  .caption {
+    text-align: center;
+    padding-top: 50px;
+    #ft-size(title);
+    #color(white);
+
+    &__text {
+      display: inline-block;
+    }
+
+    img {
+      vertical-align: middle;
+    }
+  }
+
+  .tips {
+    position: absolute;
+    top: 208px;
+    width: 602px;
+    #center-h(602px);
+
+    &__item {
+      position: relative;;
+      float: left;
+      margin-right: 202px;
+      text-align: center;
+      #square(64px);
+      #bg-img("propaganda-h64.png");
+    }
+
+    &__title {
+      width: 200%;
+      position: absolute;
+      margin-left: -50%;
+      top: 74px;
+      #ft-size(big);
+      #color(yellow);
+    }
+
+    &__text {
+      width: 200%;
+      position: absolute;
+      margin-left: -50%;
+      top: 106px;
+      #ft-size(medium);
+      #color(white);
+    }
+
+    &__item:last-child {
+      margin-right: 0;
+    }
+
+    &__item:nth-child(2) {
+      background-position: -80px 0;
+    }
+
+    &__item:nth-child(3) {
+      background-position: -156px 0;
+    }
+  }
+}
+
+.recommend {
+  #layout(recommend);
+
+  .recommend-course {
+    #course-box(recommend);
+
+    .caption {
+      margin: 0;
+      padding: 0 35px;
+      #line-height(24px);
+      #ft-size(lagre);
+      #color(black);
+    }
+
+    &__cover {
+      width: 100%;
+      height: 172px;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    &__plan {
+      position: absolute;
+      width: 100%;
+      top: 135px;
+      padding: 30px 0 20px;
+      #bg-img("course-b-bg.png");
+
+    }
+
+    &__times {
+      padding: 0 35px 8px;
+      #line-height(22px);
+      #ft-size(small);
+      #color(weak);
+    }
+
+    &__preson {
+
+      padding-left: 1em;
+    }
+
+    &__desc {
+      border-top: 1px solid #d9dde1;
+      padding-top: 8px;
+      margin: 0 35px;
+      #ft-size(small);
+      #color(weak);
+    }
+
+    &__price {
+      position: absolute;
+      bottom: 0;
+      padding: 20px 35px;
+      #ft-size(small);
+      #color(red);
+      #line-height(30px);
+
+      i {
+        font-style: normal;
+        padding: 0 3px;
+        vertical-align: super;
+      }
+    }
+
+  }
+}
+
+.courses {
+  #layout(courses);
+  overflow: hidden;
+
+  &__header {
+    text-align: center;
+    padding: 30px 0 34px 0;
+    #line-height(32px);
+  }
+
+  &__item {
+    display: inline-block;
+    padding: 0 12px;
+    margin: 0 12px;
+    #line-height(32px);
+    #color(black);
+
+    &:nth-child(1), &:hover {
+      #color(white);
+      #bg-color(night);
+    }
+  }
+
+  &__list {
+    width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    .clearfix();
+
+    .standard-course {
+      #course-box(standard);
+
+      &__plan {
+        position: absolute;
+        top: 90px;
+        width: 184px;
+        padding: 16px 20px 0 20px;
+        #bg-img("course-s-bg.png");
+      }
+
+      &__cover {
+        height: 90px;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      &__caption {
+        #ft-size(small);
+        #color(black);
+        #line-height(18px);
+      }
+
+      &__category {
+        #ft-size(small);
+        #color(weak);
+        #line-height(34px);
+      }
+
+      &__times {
+        padding-top: 10px;
+        #ft-size(small);
+        #color(weak);
+        #line-height(34px);
+      }
+
+      &__preson {
+        .fr();
+      }
+    }
+  }
+
+  .pagination {
+    text-align: center;
+    padding: 40px 0 60px 0;
+    #line-height(32px);
+
+    @disabled: #d6dade;
+    @link: #4d555d;
+    @hover: #fefefe;
+
+    &__page {
+      display: inline-block;
+      text-align: center;
+      margin: 0 12px;
+      color: @link;
+
+      &_status_disabled {
+        color: @disabled;
+      }
+
+      &_status_current {
+        color: @hover;
+        background: @link;
+      }
+    }
+
+    &__number {
+      #square(32px);
+      border-radius: 50%;
+
+      &:hover {
+        color: @hover;
+        background-color: @link;
+      }
+    }
+  }
+}
+
+.footer {
+  #layout(footer);
+  #ft-size(small);
+
+  .footer-link {
+    width: 1200px;
+    margin: 0 auto;
+    height: 12px;
+    padding: 30px 0 16px 40px;
+
+    &__item {
+      display: inline-block;
+      margin-right: 30px;
+      float: left;
+      #color(white);
+    }
+  }
+
+  .footer-copy {
+    width: 1200px;
+    margin: 0 auto;
+    height: 12px;
+    padding: 0 0 0 40px;
+    #color(weak);
+  }
+
+  .footer-share {
+    position: absolute;
+    width: 135px;
+    height: 32px;
+    right: 40px;
+    top: 34px;
+
+    &__item {
+      color: #787d82;
+      padding-left: 13px;
+      display: inline-block;
+      .fl();
+      #square(32px);
+      #bg-img('icon-6-sprit_w32.png');
+
+      &:nth-child(2) {
+        background-position: 0 -32px;
+      }
+
+      &:nth-child(3) {
+        background-position: 0 -64px;
+      }
+    }
+  }
+}
