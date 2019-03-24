@@ -1,0 +1,194 @@
+<!Doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Learn IndexedDB</title>
+</head>
+<body>
+<script>
+    var db = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
+    var request, result, version = 2,
+        dbName = 'testDB',
+        osName = 'os1';
+    function createDB() {
+        request = db.open(dbName, version)
+        //请求有三种状态，如下：
+        request.onsuccess = function () { // 打开数据库成功
+            db = request.result;
+            console.log('open success');
+        }
+
+        request.onerror = function (e) { // 打开数据库失败
+            console.log(e.currentTarget.errormessage)
+        }
+
+        request.onupgradeneeded = function (e) { //请求数据库版本变化时
+            var store = null;
+            db = e.target.result;
+            console.log('upgradeneeded');
+            if (!db.objectStoreNames.contains(osName)) {
+                // db.createObjectStore(osName, {autoIncrement: true}) // 创建的表的主建是自增型的
+                store = db.createObjectStore(osName, {keyPath: 'id'}) // 创建的表以字段为主建
+                store.createIndex('idIndex', 'id', {unique: true}); //创建索引字段id唯一
+                store.createIndex('categoryIndex', 'category', {multiEntry: true}); //创建索引字段为数组
+                store.createIndex('hpIndex', 'hp', {unique: false});
+            }
+        }
+    }
+    createDB()
+    // save data
+    var data = [{
+        name: '史莱姆',
+        id: '001',
+        hp: 3,
+        category: ['怪物', '容易逃跑']
+    }, {
+        name: '小蝙蝠',
+        id: '002',
+        hp: 5,
+        category: ['怪物', '飞行']
+    }, {
+        name: '小恶魔',
+        id: '003',
+        hp: 9,
+        category: ['怪物', '恶魔']
+    }]
+
+    // use IDBObjectStore.add to save data
+    console.log(db);
+    function addData() {
+        if (!db) {
+            alert("db");
+        }
+        var transaction, store;
+        transaction = db.transaction(osName, 'readwrite'); //打开一个事务，读写模式
+        store = transaction.objectStore(osName) ///获取osName指定的 object store
+
+        data.map(function (o) {
+            store.add(o)
+            // request = store.add(o) //增加数据
+            //   if (data.length - 1 === i) {
+            //     request.onsuccess = function () {
+            //       console.log('alreay add all data to db')
+            //       showCurrentData()
+            //     }
+            //   }
+        })
+    }
+    function getData(id) {
+        var transaction = db.transaction(osName, 'readwrite'), //打开一个事务，读写模式
+            store = transaction.objectStore(osName);
+        var request = store.get(id);
+        request.onsuccess = function () {
+            console.log(request.result);
+        }
+    }
+    function getAllData() {
+        var transaction = db.transaction(osName, 'readwrite'), //打开一个事务，读写模式
+            store = transaction.objectStore(osName);
+        var request = store.getAll();
+        request.onsuccess = function () {
+            console.log(request.result);
+        }
+    }
+    function updateData(id) {
+        var transaction = db.transaction(osName, 'readwrite'), //打开一个事务，读写模式
+            store = transaction.objectStore(osName);
+        var request = store.get(id);
+        request.onsuccess = function () {
+            request = store.put({ //更新即可以更新也可以添加，取决于关键字是否有重复
+                name: '小花猫',
+                id: id,
+                hp: 9
+            });
+        }
+
+    }
+    function deleteData(id) {
+        var transaction = db.transaction(osName, 'readwrite'), //打开一个事务，读写模式
+            store = transaction.objectStore(osName);
+        var request = store.delete(id);
+
+        request.onsuccess = function () {
+            console.log('delete success');
+        }
+
+    }
+
+    function clear() {
+        var transaction = db.transaction(osName, 'readwrite'), //打开一个事务，读写模式
+            store = transaction.objectStore(osName);
+        var request = store.clear();
+        request.onsuccess = function () {
+            console.log('clear success');
+        }
+
+    }
+
+
+    function useCursorGetData() {
+        var transaction = db.transaction(osName, 'readwrite'), //打开一个事务，读写模式
+            store = transaction.objectStore(osName),
+            // request=store.openCursor();  //创建游标
+            // request=store.openCursor(IDBKeyRange.only('002'));  //指定游标KeyRange，only一个
+            request = store.openCursor(null, 'prev');
+        request.onsuccess = function () {
+            var cursor = request.result;
+            if (cursor) {
+                console.log(cursor.value);
+                cursor.continue();
+            }
+        }
+
+    }
+
+    function useIndexGetData() { // 索引只能查询数据，并不能操作数据
+        var transaction = db.transaction(osName, 'readwrite'), //打开一个事务，读写模式
+            store = transaction.objectStore(osName),
+            // request=store.openCursor();  //创建游标
+            // request=store.openCursor(IDBKeyRange.only('002'));  //指定游标KeyRange，only一个
+            index = store.index('categoryIndex');
+        request = index.getAll('飞行');
+
+        request.onsuccess = function () {
+            console.log(request.result);
+        }
+    }
+    function useIndexAndCursorOperateData() { // 索引和游标结合，可以查询和操作数据
+        var transaction = db.transaction(osName, 'readwrite'), //打开一个事务，读写模式
+            store = transaction.objectStore(osName),
+            // request=store.openCursor();  //创建游标
+            // request=store.openCursor(IDBKeyRange.only('002'));  //指定游标KeyRange，only一个
+            // index=store.index('categoryIndex');
+            index = store.index('hpIndex');
+        // request = index.openCursor(IDBKeyRange.upperBound(5)); // 5（包含5）以下
+        request = index.openCursor(IDBKeyRange.bound(5, 10, true, true)); // 范围（5到10）
+
+        request.onsuccess = function () {
+            var cursor = request.result, value = null;
+            if (cursor) {
+                // if(cursor.value.id==='002'){
+                // cursor.update({  // 更新数据
+                //       name: '小蝙蝠',
+                //       id: '002',
+                //       hp: 10,
+                //       category:['怪物','飞行']
+                //     }) 
+
+                // cursor.delete().onsuccess=function () {  // 删除数据
+                //   console.log('delete');         
+
+                // }        
+
+                // }
+                value = cursor.value;
+                value.hp += 20;
+                cursor.update(value);
+                console.log(cursor.value);
+                cursor.continue();
+            }
+        }
+    }
+</script>
+</body>
+</html>

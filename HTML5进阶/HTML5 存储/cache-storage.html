@@ -1,0 +1,66 @@
+<!Doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>cache storage</title>
+</head>
+<body>
+<script>
+    'use strict';
+    (function () {
+        var ls = window.localStorage;
+        function oops() {
+            return console.warn('your browser is not supported localStorage API')
+        }
+
+        function getItem(key) {
+            var data = ls.getItem(key);  //在没有数据项的情况下，data为null
+            data = JSON.parse(data) || {};
+
+            if (data.time === 0) {// 上句如是data = JSON.parse(data)，在data.time时，就会报错。所以调整成data = JSON.parse(data)||{}
+                return data.value
+            } else if (Date.now() > data.time) { // 判断是否超时
+                ls.removeItem(key);
+                return ''
+            } else {
+                return typeof data.value !== 'undefined' ? data.value : ''
+            }
+        }
+
+        function setItem(key, value, time) {
+            if (typeof key === 'undefined') {
+                return
+            }
+            var data = {
+                time: time ? Date.now() + time : 0,
+                value: value
+            }
+            data = JSON.stringify(data);
+            try {
+                ls.setItem(key, data)
+            } catch (e) {
+                ls.clear()
+                ls.setItem(key, data)
+            }
+
+        }
+
+        function removeItem(key) {
+            ls.removeItem(key)
+        }
+
+        function clear() {
+            ls.clear()
+        }
+
+        window.cacheStorage = {//浏览器支持使用localStorage，不支持输出提示语
+            getItem: ls ? getItem : oops,
+            setItem: ls ? setItem : oops,
+            removeItem: ls ? removeItem : oops,
+            clear: ls ? clear : clear
+        }
+    })()
+</script>
+</body>
+</html>
+  

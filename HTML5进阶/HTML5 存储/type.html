@@ -1,0 +1,30 @@
+<!Doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>quota exceed test</title>
+</head>
+<body>
+	<button class="str" onclick="save('abc')">字符串 abc</button><br/>
+	<button class="bool" onclick="save(false)">布尔值 false</button><br/>
+	<button class="undef" onclick="save(window.undefined)">未定义 window.undefined</button><br/>
+	<button class="null" onclick="save(null)">空值 null</button><br/>
+	<button class="num" onclick="save(0)">数字 0</button><br/>
+	<button class="arr1" onclick="save([])">数组 []</button><br/>
+	<button class="arr2" onclick="save([1,2,3])">数组 [1,2,3]</button><br/>
+	<button class="obj1" onclick="save({})">对象 {}</button><br/>
+	<button class="obj2" onclick="save({x: 1})">对象 {x: 1}</button><br/>
+	<button class="obj3" onclick="save({toString: function () {return 'toStringed'}})">对象 {toString: function () {return 'toStringed'}}</button><br/>
+	<button class="obj4" onclick="save({toString: function () {return 100}})">对象 {toString: function () {return 100}}</button><br/>
+<script>
+function save (data) {
+	localStorage.setItem('key', data)
+	show(localStorage.getItem('key'))
+}
+function show (value) {
+	console.log(value, '|', typeof value)
+}
+</script>
+</body>
+</html>
+  
