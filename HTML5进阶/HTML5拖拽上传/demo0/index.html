@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Drag</title>
+    <script type="text/javascript" src="../jquery.min.js"></script>
+    <style type="text/css">
+        .dialog {
+            position: absolute;
+            left: 100px;
+            top: 50px;
+            width: 200px;
+        }
+
+        .title {
+            background: #D7DEF0;
+            width: 100%;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            cursor: move;
+        }
+
+        .content {
+            background: #F0F0F0;
+            width: 100%;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+<div id="dialog" class="dialog">
+    <div id="title" class="title">Title</div>
+    <div class="content"></div>
+</div>
+<script>
+    var isMouseDown = false;
+    var lastPoint = {};
+    $("#title").on("mousedown", function (e) {
+        console.log(e);
+        isMouseDown = true;
+        lastPoint.x = e.pageX;
+        lastPoint.y = e.pageY;
+    }).on("mousemove", function (e) {
+        if (isMouseDown) {
+            var dialog = $("#dialog");
+            var targetX = parseInt(dialog.css("left")) + e.pageX - lastPoint.x;
+            var targetY = parseInt(dialog.css("top")) + e.pageY - lastPoint.y;
+            dialog.css("left", targetX + "px");
+            dialog.css("top", targetY + "px");
+            lastPoint.x = e.pageX;
+            lastPoint.y = e.pageY;
+        }
+    }).on("mouseup", function () {
+        isMouseDown = false;
+        lastPoint = {};
+    });
+</script>
+</body>
+</html>
+
+
+
+
+
+
+

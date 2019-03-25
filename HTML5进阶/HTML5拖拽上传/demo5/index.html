@@ -1,0 +1,171 @@
+<!Doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>drag</title>
+    <script src="../jquery.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 400px;
+            height: 300px;
+            margin: 100px auto;
+            border: 2px dashed black;
+            box-sizing: border-box;
+            overflow: auto;
+        }
+
+        .containerDrag {
+            border: 2px dashed #B0E24B;
+        }
+
+        .tips {
+            line-height: 290px;
+            text-align: center;
+        }
+
+        .file {
+            width: 100%;
+            height: 40px;
+            display: block;
+            position: relative;
+            list-style-type: none;
+        }
+
+        .text {
+            line-height: 40px;
+            font-size: 20px;
+            position: relative;
+            z-index: 2;
+            padding-left: 10px;
+        }
+
+        .progress {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 0%;
+            height: 100%;
+            background-color: #B0E24B;
+        }
+
+        .loading, .right {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            vertical-align: middle;
+            padding-right: 10px;
+        }
+
+        .loading {
+            background: url('images/loading.png') no-repeat;
+        }
+
+        .right {
+            background: url('images/right.png') no-repeat;
+        }
+
+        .wrong {
+            background: url('images/wrong.png') no-repeat;
+        }
+
+        .none {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="container" id="container">
+    <div class="tips" id="tips">拖动文件至此区域，即可上传</div>
+    <ul class="none" id="files">
+    </ul>
+</div>
+<div id="template" class="none">
+    <li class="file">
+        <span class="text"><span class="loading"></span><span class="name">aaa</span></span>
+        <div class="progress"></div>
+    </li>
+</div>
+<script>
+    (function ($) {
+
+        $("#container")[0].ondragenter = function () {
+            if (!$("#tips").hasClass("none")) {
+                $("#tips").text("松开鼠标，即可上传");
+            }
+            $("#container").addClass("containerDrag");
+        }
+
+        $("#container")[0].ondragleave = function () {
+            if (!$("#tips").hasClass("none")) {
+                $("#tips").text("拖动文件至此区域，即可上传");
+            }
+            $("#container").removeClass("containerDrag");
+        }
+
+        $("#container")[0].ondragover = function (e) {
+            e.preventDefault();
+        }
+
+        $("#container")[0].ondrop = function (e) {
+            e.preventDefault();
+            if (!$("#tips").hasClass("none")) {
+                $("#tips").addClass("none");
+                $("#files").removeClass("none");
+            }
+            $("#container").removeClass("containerDrag");
+            var files = e.dataTransfer.files;
+            for (var i = 0; i < files.length; i++) {
+                var file = files[i];
+                var li = $("#template li").clone();
+                var icon = li.find(".loading");
+                var name = li.find(".name");
+                var progress = li.find(".progress");
+                name.text(file.name);
+                $("#files").append(li);
+                simuUpload(file, progress, icon);
+                //upload(file, progress, icon);
+            }
+        }
+
+        var simuUpload = function (file, progressEle, iconEle) {
+            var progress = 0;
+            var timer = setInterval(function () {
+                progress = progress + Math.floor(Math.random() * 3);
+                if (progress <= 100) {
+                    progressEle.css('width', progress + '%');
+                } else {
+                    clearInterval(timer);
+                    progressEle.css('width', '0px');
+                    iconEle.removeClass('loading').addClass('right');
+                }
+            }, 100);
+        }
+
+        var upload = function (file, progressEle, iconEle) {
+            var fd = new FormData();
+            fd.append("pic", file);
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'http://localhost/test/upload.php', true);
+            xhr.upload.onprogress = function (e) {
+                percent = 100 * e.loaded / e.total;
+                progressEle.css('width', percent + '%');
+            }
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    progressEle.css('width', '0px');
+                    iconEle.removeClass('loading').addClass('right');
+                } else {
+                    iconEle.removeClass('loading').addClass('wrong');
+                }
+            }
+            xhr.send(fd);
+        }
+    })(jQuery);
+</script>
+</body>
+</html>

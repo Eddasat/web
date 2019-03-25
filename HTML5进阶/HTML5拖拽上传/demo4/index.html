@@ -1,0 +1,57 @@
+<!Doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>drag</title>
+    <script src="../jquery.min.js"></script>
+    <style>
+        ul {
+            width: 600px;
+        }
+
+        li {
+            list-style-type: none;
+            width: 200px;
+            height: 200px;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <ul>
+        <li draggable="true"><img src="images/2.jpg"/></li>
+        <li draggable="true"><img src="images/1.jpg"/></li>
+        <li draggable="true"><img src="images/5.jpg"/></li>
+        <li draggable="true"><img src="images/4.jpg"/></li>
+        <li draggable="true"><img src="images/3.jpg"/></li>
+        <li draggable="true"><img src="images/6.jpg"/></li>
+        <li draggable="true"><img src="images/9.jpg"/></li>
+        <li draggable="true"><img src="images/7.jpg"/></li>
+        <li draggable="true"><img src="images/8.jpg"/></li>
+    </ul>
+</div>
+<script>
+    (function ($) {
+        var dragSrc;
+
+        $('li').each(function (index, ele) {
+            ele.ondragstart = function (e) {
+                dragSrc = this;
+                e.dataTransfer.setData('text/html', this.innerHTML);
+            }
+            ele.ondragover = function (e) {
+                e.preventDefault();
+            }
+            ele.ondrop = function (e) {
+                if (dragSrc != this) {
+                    dragSrc.innerHTML = this.innerHTML;
+                    this.innerHTML = e.dataTransfer.getData('text/html');
+                }
+            }
+        });
+    })(jQuery);
+
+</script>
+</body>
+</html>

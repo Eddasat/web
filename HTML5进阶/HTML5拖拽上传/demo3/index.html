@@ -1,0 +1,132 @@
+<!Doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>drag</title>
+    <script src="../jquery.min.js"></script>
+    <style>
+        .page {
+            width: 1000px;
+            margin: 0px auto;
+        }
+
+        .left {
+            width: 500px;
+            float: left;
+        }
+
+        .left .container {
+            padding: 10px;
+            min-height: 500px;
+            box-sizing: border-box;
+        }
+
+        .left .containerDrop {
+            background: #eeeeee;
+        }
+
+        .left .container h1 {
+            text-align: center;
+        }
+
+        .right {
+            width: 500px;
+            float: left;
+            box-sizing: border-box;
+            border-left: 1px solid red;
+        }
+
+        .right .ctrlList {
+            padding: 10px;
+        }
+
+        .right .ctrlList .box {
+            border: 1px dashed gray;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .line {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <div class="left">
+        <div id="container" class="container">
+            <h1>问卷</h1>
+        </div>
+    </div>
+    <div class="right">
+        <div class="ctrlList">
+            <div class="box" draggable="true">
+                <div class="line">
+                    <span>姓名：</span>
+                    <input type="text" name="name" placeholder="请输入真实姓名"></input>
+                </div>
+            </div>
+            <div class="box" draggable="true">
+                <div class="line">
+                    <span>年龄：</span>
+                    <input type="number" name="age" placeholder="请输入年龄"></input>
+                </div>
+            </div>
+            <div class="box" draggable="true">
+                <div class="line">
+                    <span>性别：</span>
+                    <input type="radio" name="gender" value="male">男</input>
+                    <input type="radio" name="gender" value="female">女</input>
+                </div>
+            </div>
+            <div class="box" draggable="true">
+                <div class="line">
+                    <span>兴趣爱好：</span>
+                    <input type="checkbox" name="hobby" value="basketball">篮球</input>
+                    <input type="checkbox" name="hobby" value="football">足球</input>
+                    <input type="checkbox" name="hobby" value="tennis">网球</input>
+                    <input type="checkbox" name="hobby" value="	badminton">羽毛球</input>
+                    <input type="checkbox" name="hobby" value="tabletennis">乒乓球</input>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    (function ($) {
+
+        var dragSrc;
+
+        $(".box").each(function (index, ele) {
+            ele.ondragstart = function (event) {
+                dragSrc = this;
+            }
+        });
+
+        $("#container")[0].ondrop = function (e) {
+            e.preventDefault();
+            $(this).append($(dragSrc).find('.line').clone());
+            $(this).removeClass("containerDrop");
+        };
+
+        $("#container")[0].ondragover = function (e) {
+            e.preventDefault();
+        };
+
+        $("#container")[0].ondragenter = function (e) {
+            e.preventDefault();
+            $(this).addClass("containerDrop");
+        };
+
+        $("#container")[0].ondragleave = function (e) {
+            e.preventDefault();
+            $(this).removeClass("containerDrop");
+        };
+
+    })(jQuery);
+
+</script>
+</body>
+</html>

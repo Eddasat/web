@@ -1,0 +1,39 @@
+<!Doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>drag</title>
+    <style>
+        .container {
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+        }
+
+        .target {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<div id="container" class="container" ondrop="drop(event)" ondragover="dragover(event)"></div>
+<div id="target" class="target" draggable="true" ondragstart="dragstart(event)"></div>
+<script>
+    function dragover(e) {
+        e.preventDefault();
+    }
+
+    function dragstart(e) {
+        e.dataTransfer.setData("Text", e.target.id);
+    }
+
+    function drop(e) {
+        e.preventDefault();
+        var data = e.dataTransfer.getData("Text");
+        e.target.appendChild(document.getElementById(data));
+    }
+</script>
+</body>
+</html>

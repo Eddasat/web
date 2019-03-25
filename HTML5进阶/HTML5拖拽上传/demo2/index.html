@@ -1,0 +1,75 @@
+<!Doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>drag</title>
+    <script src="../jquery.min.js"></script>
+    <style>
+        .container {
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+        }
+
+        .containerDrop {
+            background-color: green;
+        }
+
+        .target {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+
+        .hide {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="container" class="container"></div>
+<div id="target" class="target" draggable="true"></div>
+<img id="image" src="imooc.png" class="hide"/>
+<script>
+    (function ($) {
+
+        $("#container")[0].ondrop = function (e) {
+            e.preventDefault();
+            console.log(e.dataTransfer);
+            var id = e.dataTransfer.getData("Text");
+            $(this).append($('#' + id));
+        };
+
+        $("#container")[0].ondragover = function (e) {
+            e.preventDefault();
+        };
+
+        $("#container")[0].ondragenter = function (e) {
+            e.preventDefault();
+            $(this).addClass("containerDrop");
+        };
+
+        $("#container")[0].ondragleave = function (e) {
+            e.preventDefault();
+            $(this).removeClass("containerDrop");
+        };
+
+        $("#target")[0].ondragstart = function (e) {
+            console.log(e.dataTransfer);
+            e.dataTransfer.setData("Text", e.target.id);
+            e.dataTransfer.setDragImage($("#image").clone().removeClass("hide")[0], 0, 0);
+        };
+
+        $("#target")[0].ondrag = function (e) {
+            console.log('drag');
+        }
+
+        $("#target")[0].ondragend = function (e) {
+            console.log('dragend');
+        }
+
+    })(jQuery);
+
+</script>
+</body>
+</html>
