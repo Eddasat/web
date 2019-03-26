@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>viewBox_show</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+
+        .svg {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 800px;
+            height: 600px;
+            border: 1px solid red;
+            margin: auto;
+        }
+
+        .viewBox {
+            width: 80px;
+            height: 60px;
+            border: 1px solid green;
+            box-sizing: border-box;
+            transition: all 1s linear;
+        }
+
+        .rect {
+            width: 40px;
+            height: 30px;
+            background: #abcedf;
+            transition: all 1s linear;
+        }
+
+        .viewBox:hover {
+            width: 800px;
+            height: 600px;
+        }
+
+        .viewBox:hover > .rect {
+            width: 50%;
+            height: 50%;
+        }
+    </style>
+</head>
+<body>
+<div class="svg">
+    <div class="viewBox">
+        <div class="rect"></div>
+    </div>
+</div>
+</body>
+</html>
