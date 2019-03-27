@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1_text</title>
+</head>
+<body>
+<h1>基础</h1>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 50" xml:space="preserve">
+    <text font-size="12px" font-weight="bold" x="0" y="10">www.imooc.com</text>
+</svg>
+<h1>tspan元素</h1>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 50" xml:space="preserve">
+    <text font-size="12px" font-weight="bold">
+        <tspan x="0" y="10" stroke="#C7000B" stroke-width="0.1" fill="transparent">www.imooc.com</tspan>
+        <tspan x="0" y="25" fill="#C7000B">www.imooc.com</tspan>
+    </text>
+</svg>
+<h1>terf元素(SVG 2.0规范中已经删除)</h1>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 50" xml:space="preserve">
+    <defs>
+        <text id="temp">www.imooc.com</text>
+    </defs>
+    <text font-size="12px" font-weight="bold" x="0" y="10">
+        <tref xlink:href="#temp"/>
+    </text>
+</svg>
+<h1>textPath元素</h1>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 50" xml:space="preserve">
+    <path id="my_path" d="M 5,10 C 40,40 60,40 95,10" stroke="#C7000B" fill="transparent"/>
+    <text font-size="12px" font-weight="bold">
+      <textPath xlink:href="#my_path">www.imooc.com</textPath>
+    </text>
+</svg>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>img</title>
+</head>
+<body>
+<svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="100" cy="100" r="30" fill="#d8210d">
+        <animate id="a1" attributeName="r" attributeType="XML" from="0" to="30" begin="0s" dur=".2s"
+                 fill="freeze"></animate>
+    </circle>
+    <circle cx="150" cy="100" r="30" fill="#e61b64">
+        <animate id="a2" attributeName="r" attributeType="XML" from="0" to="30" begin="a1.end" dur=".2s"
+                 fill="freeze"></animate>
+    </circle>
+    <circle cx="200" cy="100" r="30" fill="#d7006f">
+        <animate id="a3" attributeName="r" attributeType="XML" from="0" to="30" begin="a2.end" dur=".2s"
+                 fill="freeze"></animate>
+    </circle>
+    <circle cx="250" cy="100" r="30" fill="#ee869a">
+        <animate id="a4" attributeName="r" attributeType="XML" from="0" to="30" begin="a3.end" dur=".2s"
+                 fill="freeze"></animate>
+    </circle>
+    <circle cx="300" cy="100" r="30" fill="#e5004f">
+        <animate id="a5" attributeName="r" attributeType="XML" from="0" to="30" begin="a4.end" dur=".2s"
+                 fill="freeze"></animate>
+    </circle>
+    <circle cx="350" cy="100" r="30" fill="#ea5520">
+        <animate id="a6" attributeName="r" attributeType="XML" from="0" to="30" begin="a5.end" dur=".2s"
+                 fill="freeze"></animate>
+    </circle>
+    <circle cx="400" cy="100" r="30" fill="#e61b64">
+        <animate id="a7" attributeName="r" attributeType="XML" from="0" to="30" begin="a6.end" dur=".2s"
+                 fill="freeze"></animate>
+    </circle>
+</svg>
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+    <polygon points="122 59,72 205,194 114,49 114,171 205" fill="#ff6600" transform="rotate(96.6337 125 135)">
+        <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 125 135" to="360 125 135"
+                          begin="0s" dur="10s" repeatCount="indefinite"></animateTransform>
+    </polygon>
+</svg>
+<svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+    <path d="M100 100, A120 120, -45 0 1, 300 300 A120 120, -45 0 1, 100 100" stroke="#ccc" stroke-width="2"
+          fill="none"></path>
+    <polygon points="-12 -69,-58 85,64 -14,-81 -14,41 85" fill="#ff6600">
+        <animateMotion dur="6s" repeatCount="indefinite"
+                       path="M100 100, A120 120, -45 0 1, 300 300 A120 120, -45 0 1, 100 100"
+                       rotate="auto"></animateMotion>
+    </polygon>
+</svg>
+</body>
+</html>

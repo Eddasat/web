@@ -1,0 +1,5 @@
+<svg width="400" height="400" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="200" cy="200" r="50" style="fill:#ff6600" >
+        <animate attributeName="r" from="50" to="80" begin="0s" dur="3s" />
+    </circle>
+</svg>

@@ -1,0 +1,5 @@
+<svg width="400" height="400" xmlns="http://www.w3.org/2000/svg">
+    <polygon points="-12 -69,-58 85,64 -14,-81 -14,41 85" style="fill: #ff6600;" >
+        <animateMotion path="M100 100, A120 120, -45 0 1, 300 300 A120 120, -45 0 1, 100 100" dur="3s" rotate="auto" />
+    </polygon>
+</svg>

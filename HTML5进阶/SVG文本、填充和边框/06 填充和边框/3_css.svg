@@ -1,0 +1,14 @@
+<svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+    <style type="text/css">
+    	.style {
+    		stroke: #F47983;
+    		fill: #ABCDEF;
+    	}
+    	.style:hover {
+    		stroke: #ABCDEF;
+    		fill: #F47983;
+    		cursor: pointer;
+    	}
+    </style>
+    <rect class="style" x="10" y="10" width="180" height="80" />
+</svg>
