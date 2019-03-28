@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>canvas</title>
+    <style>
+        #myCanvas {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+<canvas id="myCanvas">
+    您的浏览器不支持Canvas，请升级浏览器
+</canvas>
+<script>
+    var canvas = document.getElementById('myCanvas');
+    var ctx = canvas.getContext('2d');
+    // ctx.canvas.width = 600;
+    // ctx.canvas.height = 400;
+    // ctx.fillStyle = "#000000";
+    // ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+    var img = new Image();
+    img.src = "logo.png";
+    img.onload = function () {
+        var pattern = ctx.createPattern(img, "repeat");
+        ctx.fillStyle = pattern;
+        ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+        // 修改图像数据
+        var imageData = ctx.getImageData(100, 100, ctx.canvas.width - 200, ctx.canvas.height - 200);
+        for (var i = 0; i < imageData.data.length; i += 4) {
+            imageData.data[i + 0] = 255 - imageData.data[i + 0];
+            imageData.data[i + 1] = 255 - imageData.data[i + 1];
+            imageData.data[i + 2] = 255 - imageData.data[i + 2];
+        }
+        ctx.putImageData(imageData, 100, 100);
+    }
+</script>
+</body>
+</html>

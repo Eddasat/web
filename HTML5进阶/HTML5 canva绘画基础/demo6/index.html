@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>canvas</title>
+    <style>
+        #myCanvas {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+<canvas id="myCanvas">
+    您的浏览器不支持Canvas，请升级浏览器
+</canvas>
+<script>
+    var canvas = document.getElementById('myCanvas');
+    var ctx = canvas.getContext('2d');
+    ctx.canvas.width = 600;
+    ctx.canvas.height = 400;
+    ctx.font = "bold 100px sans-serif";
+    ctx.textAlign = "center";
+    ctx.fillStyle = "#FF0000";
+    ctx.fillText("慕课网", 300, 100);
+    ctx.strokeStyle = "#0000FF";
+    ctx.strokeText("慕课网", 300, 300);
+    console.log(ctx.measureText("慕课网").width);
+</script>
+</body>
+</html>

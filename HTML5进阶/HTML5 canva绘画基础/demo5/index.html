@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>canvas</title>
+    <style>
+        #myCanvas {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+<canvas id="myCanvas">
+    您的浏览器不支持Canvas，请升级浏览器
+</canvas>
+<script>
+    var canvas = document.getElementById('myCanvas');
+    var ctx = canvas.getContext('2d');
+    ctx.canvas.width = 600;
+    ctx.canvas.height = 400;
+    var linearGradient = ctx.createLinearGradient(50, 50, 150, 150);
+    linearGradient.addColorStop(0, 'rgb(255,0,0)');
+    linearGradient.addColorStop(0.5, 'rgb(0,255,0)');
+    linearGradient.addColorStop(1, 'rgb(0,0,255)');
+    ctx.fillStyle = linearGradient;
+    ctx.fillRect(0, 0, 200, 200);
+    ctx.beginPath();
+    ctx.arc(400, 150, 100, 0, Math.PI * 2, true);
+    ctx.closePath();
+    var radialGradient = ctx.createRadialGradient(400, 150, 0, 400, 150, 100);
+    radialGradient.addColorStop(0, 'rgb(255,0,0)');
+    radialGradient.addColorStop(1, 'rgb(0,0,255)');
+    ctx.fillStyle = radialGradient;
+    ctx.fill();
+</script>
+</body>
+</html>

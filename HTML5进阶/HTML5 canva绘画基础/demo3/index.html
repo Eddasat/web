@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>canvas</title>
+    <style>
+        #myCanvas {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+<canvas id="myCanvas">
+    您的浏览器不支持Canvas，请升级浏览器
+</canvas>
+<script>
+    var canvas = document.getElementById('myCanvas');
+    var ctx = canvas.getContext('2d');
+    ctx.canvas.width = 600;
+    ctx.canvas.height = 400;
+    // 线条样式
+    ctx.strokeStyle = "#FF0000";
+    ctx.lineWidth = 10;
+    ctx.beginPath();
+    ctx.moveTo(100, 100);
+    ctx.lineTo(200, 100);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.strokeStyle = "#00FF00";
+    ctx.lineWidth = 5;
+    ctx.moveTo(100, 200);
+    ctx.lineTo(200, 200);
+    ctx.stroke();
+    //填充
+    ctx.beginPath();
+    ctx.moveTo(300, 100);
+    ctx.lineTo(400, 100);
+    ctx.lineTo(400, 200);
+    ctx.closePath();
+    //ctx.stroke();
+    ctx.fillStyle = "#0000FF";
+    ctx.fill();
+    ctx.beginPath();
+    ctx.moveTo(300, 150);
+    ctx.lineTo(400, 150);
+    ctx.lineTo(400, 250);
+    ctx.closePath();
+    //ctx.stroke();
+    ctx.fillStyle = "rgba(255, 0, 0, 0.5)";
+    ctx.fill();
+</script>
+</body>
+</html>

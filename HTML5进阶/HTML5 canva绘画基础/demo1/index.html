@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>canvas</title>
+    <style>
+        #myCanvas1 {
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+        }
+
+        #myCanvas2 {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+<canvas id="myCanvas1">
+    您的浏览器不支持Canvas，请升级浏览器
+</canvas>
+<canvas id="myCanvas2">
+    您的浏览器不支持Canvas，请升级浏览器
+</canvas>
+<script>
+    var canvas1 = document.getElementById('myCanvas1');
+    var ctx1 = canvas1.getContext('2d');
+    ctx1.canvas.width = 100;
+    ctx1.canvas.height = 100;
+    ctx1.moveTo(0, 0);
+    ctx1.lineTo(100, 100);
+    ctx1.stroke();
+    var canvas2 = document.getElementById('myCanvas2');
+    var ctx2 = canvas2.getContext('2d');
+    ctx2.canvas.width = 200;
+    ctx2.canvas.height = 200;
+    ctx2.moveTo(0, 0);
+    ctx2.lineTo(200, 200);
+    ctx2.stroke();
+</script>
+</body>
+</html>

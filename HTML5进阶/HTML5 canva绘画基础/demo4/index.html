@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>canvas</title>
+    <style>
+        #myCanvas {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+<canvas id="myCanvas">
+    您的浏览器不支持Canvas，请升级浏览器
+</canvas>
+<script>
+    var canvas = document.getElementById('myCanvas');
+    var ctx = canvas.getContext('2d');
+    ctx.canvas.width = 600;
+    ctx.canvas.height = 400;
+    ctx.beginPath();
+    //ctx.save();
+    for (var i = 0; i < 10; i++) {
+        ctx.translate(0, 20);
+        ctx.moveTo(50, 50);
+        ctx.lineTo(150, 50);
+    }
+    //ctx.restore();
+    ctx.stroke();
+    //ctx.fillRect(-5, -5, 10, 10);
+    ctx.beginPath();
+    ctx.translate(300, 0);
+    //ctx.fillRect(-5, -5, 10, 10);
+    //ctx.scale(0.5, 1);
+    for (var i = 0; i < 10; i++) {
+        ctx.rotate(Math.PI / 5);
+        ctx.moveTo(-50, 0);
+        ctx.lineTo(50, 0);
+    }
+    ctx.stroke();
+</script>
+</body>
+</html>

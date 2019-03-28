@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>canvas</title>
+    <style>
+        #myCanvas {
+            border: 1px solid red;
+        }
+
+        #offCanvas {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<canvas id="myCanvas">
+    您的浏览器不支持Canvas，请升级浏览器
+</canvas>
+<canvas id="offCanvas">
+    您的浏览器不支持Canvas，请升级浏览器
+</canvas>
+<script>
+    // 要显示的canvas
+    var canvas = document.getElementById('myCanvas');
+    var ctx = canvas.getContext('2d');
+    ctx.canvas.width = 600;
+    ctx.canvas.height = 400;
+    // 不显示的canvas（离屏）
+    var offCanvas = document.getElementById('offCanvas');
+    var offCtx = offCanvas.getContext('2d');
+    offCtx.canvas.width = 600;
+    offCtx.canvas.height = 400;
+
+    ctx.fillStyle = "#FF0000";
+    ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+    offCtx.strokeStyle = "#00FF00";
+    offCtx.lineWidth = 10;
+    offCtx.moveTo(0, 0);
+    offCtx.lineTo(offCtx.canvas.width, offCtx.canvas.height);
+    offCtx.stroke();
+
+    // 把离屏canvas的内容搬过来
+    ctx.drawImage(offCanvas, 0, 0, ctx.canvas.width, ctx.canvas.height,
+        0, 0, offCtx.canvas.width, offCtx.canvas.height);
+</script>
+</body>
+</html>

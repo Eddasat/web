@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>canvas</title>
+    <style>
+        #myCanvas {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+<canvas id="myCanvas">
+    您的浏览器不支持Canvas，请升级浏览器
+</canvas>
+<script>
+    var showPoint = function (ctx, x, y) {
+        ctx.fillRect(x - 5, y - 5, 10, 10);
+    }
+    var canvas = document.getElementById('myCanvas');
+    var ctx = canvas.getContext('2d');
+    ctx.canvas.width = 600;
+    ctx.canvas.height = 400;
+    ctx.beginPath();
+    ctx.arc(150, 150, 100, 0, Math.PI, true);
+    ctx.stroke();
+    // 二次样条
+    ctx.beginPath();
+    ctx.moveTo(50, 350);
+    ctx.quadraticCurveTo(100, 250, 150, 350);
+    ctx.stroke();
+    showPoint(ctx, 50, 350);
+    showPoint(ctx, 100, 250);
+    showPoint(ctx, 150, 350);
+    // 贝塞尔
+    ctx.beginPath();
+    ctx.moveTo(200, 350);
+    ctx.bezierCurveTo(200, 250, 300, 250, 300, 350);
+    ctx.stroke();
+    showPoint(ctx, 200, 350);
+    showPoint(ctx, 200, 250);
+    showPoint(ctx, 300, 250);
+    showPoint(ctx, 300, 350);
+</script>
+</body>
+</html>
