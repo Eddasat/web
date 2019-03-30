@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8"/>
+    <title>内存问题</title>
+</head>
+<body>
+<script>
+    //垃圾收集机制：释放无用的数据，回收内存
+    //自动
+    //JS
+    //手动
+    //Objective-C
+    //原理：找出没用数据，打上标记，释放其内存；周期性执行
+    //标识无用数据的策略
+    //标记清除
+    //环境中的变量
+    //引用计数
+    var xm = {
+        name: 'xm',
+        age: 18
+    }; // 1
+    var xh = xm; // 2
+    xh = {}; // 1
+    xm = {}; // 0
+
+    //网景Netscape
+    //循环引用
+    function fn(argument) {
+        var xm = {}; // 1
+        var xh = {}; // 1
+    }
+
+    fn();
+    xm = null; // 0
+    xh = null; // 0
+
+    function fn(argument) {
+        var xm = {}; // 1
+        var xh = {}; // 1
+        xm.wife = xh; // 2
+        xh.husband = xm; // 2
+    }
+
+    fn();
+    xm = null; // 1
+    xh = null; // 1
+
+    //IE
+    //JS：DOM和BOM
+    //C++ COM
+
+    var obj = {};
+    var elem = document.getElementById('box'); // DOM
+    elem.someAttr = obj;
+    obj.someProperty = elem;
+
+    elem.someAttr = null;
+    obj.someProperty = null;
+
+</script>
+</body>
+</html>

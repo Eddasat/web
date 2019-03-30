@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8"/>
+    <title>作用域</title>
+</head>
+<body>
+<script>
+    // JS解析机制
+    // var name = 'xm';
+    // var age = 18;
+    // function fn() {
+    // 	var name = 'xh';
+    // 	var age = 10;
+    // 	console.log(name);
+    // }
+    // fn();
+
+    // JS的解析过程
+    // 	预解析
+    // 	逐行解读代码
+
+    // var name = 'xm';
+    // var age = 18;
+    // function fn(argument) {
+    // 	console.log(name);
+    // 	var name = 'xh';
+    // 	var age = 10;
+    // }
+    // fn();
+
+    // window
+    // 	name = undefined
+    // 	age = undefined
+    // 	function fn(argument) {
+    // 		console.log(name);
+    // 		var name = 'xh';
+    // 		var age = 10;
+    // 	}
+    // fn
+    // 	name = undefined
+    // 	age = undefined
+    // 	argument = undefined
+
+    // var name = 'xm';
+    // var age = 18;
+    // function fn(argument) {
+    // 	console.log(name);
+    // 	var name = 'xh';
+    // 	var age = 10;
+    // }
+    // ...
+    // ...
+    // var name = 'xhei';
+    // fn();
+
+    // var name = 'xm';
+    // var age = 18;
+    // function name(argument) {
+    // 	console.log(name);
+    // 	var name = 'xh';
+    // 	var age = 10;
+    // }
+    // fn();
+
+    // var age = 18;
+    // function name(argument) {
+    // 	console.log(name);
+    // 	var name = 'xh';
+    // 	var age = 10;
+    // }
+
+    // function name(argument) {
+    // 	console.log(name);
+    // 	var name = 'xhei';
+    // 	var age = 12;
+    // }
+    // fn();
+
+    // if () {
+    // 	var
+    // 	function function_name(argument) {
+    // 		// body...
+    // 	}
+    // }
+    // for () {
+    // 	function function_name(argument) {
+    // 		// body...
+    // 	}
+    // }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8"/>
+    <title>作用域</title>
+</head>
+<body>
+<script>
+    // 1.JS作用域问题一
+    // console.log(a);
+    // var a = 1;
+    // console.log(a);
+    // a = 1;
+
+    // 2.JS作用域问题二
+    // console.log(a);
+    // var a = 1;
+    // console.log(a);
+    // function a() {
+    // 	console.log(2);
+    // }
+    // console.log(a);
+    // var a = 3;
+    // console.log(a);
+    // function a() {
+    // 	console.log(4);
+    // }
+    // console.log(a);
+    // a();
+    // 预解析
+    // 	function a() {
+    // 		console.log(4);
+    // 	}
+
+    // 3.JS作用域问题三
+    // var a =1;
+    // function fn() {
+    // 	console.log(a);
+    // 	var a =2;
+    // }
+    // fn();
+    // console.log(a);
+    // var a = 1;
+    // function fn() {
+    // 	console.log(a);
+    // 	a = 2;
+    // }
+    // fn();
+    // console.log(a);
+    // var a = 1;
+    // function fn(a) {
+    // 	console.log(a);
+    // 	a = 2;
+    // }
+    // fn();
+    // console.log(a);
+    var a = 1;
+
+    function fn(a) {
+        console.log(a);
+        a = 2;
+    }
+
+    fn(a);
+    console.log(a);
+</script>
+<script>
+    // var a = 1;
+</script>
+<script>
+    // console.log(a);
+</script>
+</body>
+</html>
