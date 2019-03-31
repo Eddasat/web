@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>splitText()</title>
+    <script src="domReady.js"></script>
+    <script>
+        myReady(function () {
+            var div = document.createElement("div");
+            var textNode = document.createTextNode("DOM探索之节点操作篇");
+            div.appendChild(textNode);
+            document.body.appendChild(div);
+
+            var newNode = div.firstChild.splitText(5);
+            console.log(div.firstChild.nodeValue);
+            console.log(newNode.nodeValue);
+            console.log(div.childNodes.length);
+        });
+    </script>
+</head>
+<body>
+<ul id="myUl">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+</ul>
+</body>
+</html>

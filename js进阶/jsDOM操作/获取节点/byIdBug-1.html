@@ -1,0 +1,22 @@
+<!Doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>IE getElementById bug</title>
+    <script src="domReady.js"></script>
+    <script>
+        myReady(function () {
+            var bn = document.getElementById("button");
+            bn.onclick = function () {
+                var target = document.getElementById("target");
+                console.log(target.innerHTML);
+            }
+        });
+    </script>
+</head>
+<body>
+<a name="target" href="http://www.cnblogs.com/rubylouvre/">这是错误的元素</a>
+<p id="target">这是正确的元素</p>
+<button id="button" type="button">开始测试</button>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>removeNode()</title>
+    <script src="domReady.js"></script>
+    <script>
+        myReady(function () {
+            var myUl = document.getElementById('myUl');
+            var removedNode = myUl.removeNode(true);
+            console.log(removedNode.outerHTML);
+        });
+    </script>
+</head>
+<body>
+<ul id="myUl">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+</ul>
+</body>
+</html>

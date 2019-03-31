@@ -1,0 +1,35 @@
+<!Doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>getElementById bugfix</title>
+    <script src="domReady.js"></script>
+    <script>
+        myReady(function () {
+            var getElementById = function (id) {
+                var el = document.getElementById(id);
+                if (!+"\v1") {
+                    if (el && el.id === id) {
+                        return el;
+                    } else {
+                        var els = document.all[id],
+                            n = els.length;
+                        for (var i = 0; i < n; i++) {
+                            if (els[i].id === id) {
+                                return els[i];
+                            }
+                        }
+                    }
+                }
+                return el;
+            };
+            console.log(getElementById("target").tagName);
+        });
+    </script>
+</head>
+<body>
+<a name="target" href="http://www.cnblogs.com/rubylouvre/">这是错误的元素</a>
+<p id="target">这是正确的元素</p>
+<button id="button" type="button">开始测试</button>
+</body>
+</html>

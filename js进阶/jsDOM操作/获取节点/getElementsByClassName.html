@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>getElementsByClassName()</title>
+    <script src="domReady.js"></script>
+    <script>
+        myReady(function () {
+            var ul = document.getElementById('myUl');
+            var lis1 = ul.getElementsByClassName('light');
+            var lis2 = ul.getElementsByClassName('light dark');
+            console.log(lis1);
+            console.log(lis2);
+        });
+    </script>
+</head>
+<body>
+<ul id="myUl">
+    <li class="light">1</li>
+    <li class="dark light">2</li>
+    <li class="light">3</li>
+</ul>
+</body>
+</html>

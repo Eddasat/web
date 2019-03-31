@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>innerText</title>
+    <script src="domReady.js"></script>
+    <script>
+        myReady(function () {
+            var content = document.getElementById("content");
+
+            function getInnerText(element) {
+                return typeof (element.textContent == "string") ? element.textContent : element.innerText;
+            }
+
+            function setInnerText(element, text) {
+                if (typeof element.textContent == "string") {
+                    element.textContent = text;
+                } else {
+                    element.innerText = text;
+                }
+            }
+
+            setInnerText(content, "Hello world!");
+            console.log(getInnerText(content));
+        });
+    </script>
+</head>
+<body>
+<div id="content">
+    <p>This is a <strong>paragraph</strong> with a list following it.</p>
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+</div>
+</body>
+</html>

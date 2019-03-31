@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>dom Tree walker</title>
+    <script src="domReady.js"></script>
+    <script>
+        myReady(function () {
+            var oHtml = document.documentElement;
+            var p = document.getElementById("paragraph");
+            var txt = p.childNodes[0];
+            //var oHead = oHtml.firstChild;
+            //var oHead = oHtml.childNodes[0];
+            var oHead = oHtml.childNodes.item(0);
+            //var oBody = oHtml.childNodes.item(1);
+            var oBody = oHtml.childNodes[1];
+
+            //console.log(oHead.parentNode == oHtml);
+            //console.log(oBody.parentNode == oHtml);
+
+            //console.log(oBody.previousSibling == oHead);
+            //console.log(oHead.nextSibling == oBody);
+            //console.log(oBody);
+            //console.log(oHead);
+            //console.log(oHtml.tagName);
+
+            //console.log(p.ownerDocument == document);
+            console.log(p.hasChildNodes());
+            console.log(txt.hasChildNodes());
+        });
+    </script>
+</head>
+<body>
+<p id="paragraph">文本叶子节点</p>
+</body>
+</html>

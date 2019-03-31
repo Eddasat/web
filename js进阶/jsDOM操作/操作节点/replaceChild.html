@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>replaceChild()</title>
+    <script src="domReady.js"></script>
+    <script>
+        myReady(function () {
+            var myUl = document.getElementById('myUl');
+            var txt = document.createTextNode('4');
+            var liNew = document.createElement('li');
+            liNew.appendChild(txt);
+            var li2 = myUl.children.item(1);
+            var returnNode = myUl.replaceChild(liNew, li2);
+            console.log(returnNode);
+        });
+    </script>
+</head>
+<body>
+<ul id="myUl">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>getElementsByTagName()</title>
+    <script src="domReady.js"></script>
+    <script>
+        myReady(function () {
+            var lis1 = document.getElementsByTagName('li');
+            var lis2 = document.getElementsByTagName('Li');
+            var inputs = document.getElementsByTagName('input');
+            var comment = document.getElementsByTagName('!');
+            var all = document.getElementsByTagName('*');
+            /*console.log(lis1.length);
+            console.log(lis2.length);
+            console.log(inputs[0].value);
+            console.log(comment[0].nodeValue);
+            console.log(comment[1].nodeValue);*/
+            for (var i = 0, len = all.length; i < len; i++) {
+                console.log(all[i].tagName);
+            }
+        });
+    </script>
+</head>
+<body>
+<!--页面元素-->
+<input type="text" name="myDiv" value="请输入内容"/>
+<div id="myDiv">
+    You are my sunshine.
+    <ul id="myUl">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+</div>
+</body>
+</html>

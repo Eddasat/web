@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>getElementsByClassName() 兼容浏览器方案</title>
+    <script src="domReady.js"></script>
+    <script src="getElementsByClassName.js"></script>
+    <script>
+        myReady(function () {
+            var myUl2 = document.getElementById("myUl2");
+            var r = getElementsByClassName({
+                searchClass: "light dark",
+                node: myUl2
+            });
+            console.log(r[0].innerHTML);
+        });
+    </script>
+</head>
+<body>
+<ul id="myUl">
+    <li class="light">1</li>
+    <li class="light dark">2</li>
+    <li class="light">3</li>
+</ul>
+<ul id="myUl2">
+    <li class="light">1</li>
+    <li class="light dark">second</li>
+    <li class="light">3</li>
+</ul>
+</body>
+</html>

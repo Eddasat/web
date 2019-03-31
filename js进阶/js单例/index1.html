@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8"/>
+    <title>传统的单例模式</title>
+</head>
+<body>
+<script>
+    function Minister(name) { // 大臣
+        this.name = name;
+    }
+
+    Minister.prototype.say = function () {
+        console.log(this.name + '：大王，冤枉啊！');
+    };
+    var Emperor = (function () {
+        var instance = null;
+
+        function Emperor() {
+            if (instance) {
+                return instance;
+            }
+            this.name = '大王';
+            this.id = Math.random();
+            return instance = this;
+        }
+
+        Emperor.prototype.say = function () {
+            console.log(this.name + this.id + '：滚……');
+        };
+
+        return Emperor;
+    })();
+    var minister1 = new Minister('张三');
+    var emperor1 = new Emperor();
+    var minister2 = new Minister('李四');
+    var emperor2 = new Emperor();
+    var minister3 = new Minister('王二麻子');
+    var emperor3 = new Emperor();
+    minister1.say();
+    emperor1.say();
+    minister2.say();
+    emperor2.say();
+    minister3.say();
+    emperor3.say();
+</script>
+</body>
+</html>

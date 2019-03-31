@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>getElementsByName()</title>
+    <script src="domReady.js"></script>
+    <script>
+        myReady(function () {
+            //var myUl = document.getElementsByName('myUl');
+            var myDiv = document.getElementById('myDiv');
+            //var myUl = myDiv.getElementsByName('myUl');
+            var citys = document.getElementsByName('city');
+            console.log(myUl);
+            console.log(myDiv);
+            console.log(citys.length);
+        });
+    </script>
+</head>
+<body>
+北京<input type="checkbox" id="beijing" name="city" value="北京"/>
+天津<input type="checkbox" name="city" value="天津"/>
+上海<input type="checkbox" name="city" value="上海"/>
+<div id="myDiv">
+    You are my sunshine.
+    <ul id="myUl" name="myUl">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+</div>
+</body>
+</html>

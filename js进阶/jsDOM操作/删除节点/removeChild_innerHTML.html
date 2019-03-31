@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>removeChild() 与 innerHTML比较</title>
+    <script src="domReady.js"></script>
+    <script>
+        myReady(function () {
+            var div = document.createElement("div");
+            // console.log(div.parentNode);
+            document.body.removeChild(document.body.appendChild(div));
+
+            // console.log(div.parentNode);
+            // console.log(div.parentNode.nodeType);
+
+            var myUl = document.getElementById('myUl');
+            //document.body.innerHTML = '';
+            //console.log(myUl.parentNode);
+
+            myUl.parentNode.removeChild(myUl);
+            console.log(myUl.id + ":" + myUl.innerHTML);
+            var myUl2 = document.getElementById('myUl2');
+            myUl2.parentNode.innerHTML = '';
+            console.log(myUl2.id + ":" + myUl2.innerHTML);
+        });
+    </script>
+</head>
+<body>
+<ul id="myUl">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+</ul>
+<ul id="myUl2">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+</ul>
+</body>
+</html>

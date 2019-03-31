@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>querySelector()</title>
+    <script src="domReady.js"></script>
+    <script>
+        myReady(function () {
+            var myDiv = document.getElementById('myDiv');
+            //var ul = myDiv.querySelector('#myUl');
+            var ul = document.querySelector('#myUl');
+            var li = myDiv.querySelector('li:last-child');
+            var els = document.querySelector('input, li');
+            var span = document.querySelector('span');
+            var input = document.querySelector('.foo\\:bar');
+            //console.log(ul);
+            //console.log(li);
+            //console.log(els);
+            //console.log(span);
+            console.log(input);
+        });
+    </script>
+</head>
+<body>
+<input type="text" class="foo:bar" value="请输入内容"/>
+<div id="myDiv">
+    You are my sunshine.
+    <ul id="myUl">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+</div>
+</body>
+</html>

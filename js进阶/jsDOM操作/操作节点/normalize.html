@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>normalize()</title>
+    <script src="domReady.js"></script>
+    <script>
+        myReady(function () {
+            var div = document.createElement("div");
+            var textNode = document.createTextNode("DOM探索");
+            div.appendChild(textNode);
+
+            var textNode2 = document.createTextNode("之节点操作篇");
+            div.appendChild(textNode2);
+            document.body.appendChild(div);
+
+            console.log(div.childNodes.length);
+            div.normalize();
+            console.log(div.childNodes.length);
+            console.log(div.firstChild.nodeValue);
+        });
+    </script>
+</head>
+<body>
+<ul id="myUl">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+</ul>
+</body>
+</html>

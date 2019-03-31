@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>querySelectorAll()</title>
+    <script src="domReady.js"></script>
+    <script>
+        myReady(function () {
+            var myDiv = document.getElementById('myDiv');
+            var ul = myDiv.querySelectorAll('ul');
+            var li = myDiv.querySelectorAll('li');
+            var span = myDiv.querySelectorAll('span');
+            //console.log(ul);
+            //console.log(li);
+            console.log(span);
+        });
+    </script>
+</head>
+<body>
+<input type="text" name="myDiv" value="请输入内容"/>
+<div id="myDiv">
+    You are my sunshine.
+    <ul id="myUl">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+</div>
+</body>
+</html>

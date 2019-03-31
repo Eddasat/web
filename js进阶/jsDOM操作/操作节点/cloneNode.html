@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>cloneNode()</title>
+    <script src="domReady.js"></script>
+    <script>
+        myReady(function () {
+            var myUl = document.getElementById('myUl');
+            var newNode = myUl.cloneNode(true);
+            console.log(newNode);
+            document.body.appendChild(newNode);
+        });
+    </script>
+</head>
+<body>
+<ul id="myUl">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+</ul>
+</body>
+</html>

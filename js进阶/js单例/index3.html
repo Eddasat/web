@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8"/>
+    <title>具有JavaScript特色的单例模式--惰性单例</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+        }
+
+        #loginLayer {
+            position: absolute;
+            left: 240px;
+            top: 80px;
+            z-index: 2;
+            width: 200px;
+            height: 200px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        #maskLayer {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            opacity: 0.3;
+        }
+    </style>
+</head>
+<body>
+
+<button id="loginBtn">登录</button>
+<!-- <div id="loginLayer">登录窗口</div>
+<div id="maskLayer"></div> -->
+
+<script>
+    // var loginLayer = (function () {
+    // 	var loginLayer = document.createElement('div');
+    // 	loginLayer.id = 'loginLayer';
+    // 	loginLayer.innerHTML = '登录窗口';
+    // 	loginLayer.style.display = 'none';
+    // 	document.body.appendChild(loginLayer);
+    // 	return loginLayer;
+    // })();
+    // var maskLayer = (function () {
+    // 	var maskLayer = document.createElement('div');
+    // 	maskLayer.id = 'maskLayer';
+    // 	maskLayer.style.display = 'none';
+    // 	document.body.appendChild(maskLayer);
+    // 	return maskLayer;
+    // })();
+    // document.getElementById('loginBtn').onclick = function () {
+    // 	loginLayer.style.display = 'block';
+    // 	maskLayer.style.display = 'block';
+    // };
+
+    // function createLoginLayer() {
+    // 	var loginLayer = document.createElement('div');
+    // 	loginLayer.id = 'loginLayer';
+    // 	loginLayer.innerHTML = '登录窗口';
+    // 	loginLayer.style.display = 'none';
+    // 	document.body.appendChild(loginLayer);
+    // 	return loginLayer;
+    // }
+    // function createMaskLayer() {
+    // 	var maskLayer = document.createElement('div');
+    // 	maskLayer.id = 'maskLayer';
+    // 	maskLayer.style.display = 'none';
+    // 	document.body.appendChild(maskLayer);
+    // 	return maskLayer;
+    // }
+    // document.getElementById('loginBtn').onclick = function () {
+    // 	var loginLayer = createLoginLayer();
+    // 	// var maskLayer = createMaskLayer();
+    // 	loginLayer.style.display = 'block';
+    // 	// maskLayer.style.display = 'block';
+    // };
+
+    // 惰性单例
+    // var createLoginLayer = (function () {
+    // 	var loginLayer = null;
+
+    // 	return function () {
+    // 		if (!loginLayer) {
+    // 			loginLayer = document.createElement('div');
+    // 			loginLayer.id = 'loginLayer';
+    // 			loginLayer.innerHTML = '登录窗口';
+    // 			loginLayer.style.display = 'none';
+    // 			document.body.appendChild(loginLayer);
+    // 		}
+    // 		return loginLayer;
+    // 	};
+    // })();
+    // var createMaskLayer = (function () {
+    // 	var maskLayer = null;
+
+    // 	return function () {
+    // 		if (!maskLayer) {
+    // 			maskLayer = document.createElement('div');
+    // 			maskLayer.id = 'maskLayer';
+    // 			maskLayer.innerHTML = '登录窗口';
+    // 			maskLayer.style.display = 'none';
+    // 			document.body.appendChild(maskLayer);
+    // 		}
+    // 		return maskLayer;
+    // 	};
+    // })();
+    // document.getElementById('loginBtn').onclick = function () {
+    // 	var loginLayer = createLoginLayer();
+    // 	var maskLayer = createMaskLayer();
+    // 	loginLayer.style.display = 'block';
+    // 	maskLayer.style.display = 'block';
+    // };
+
+    // 通用惰性单例
+    function createLoginLayer() {
+        var loginLayer = document.createElement('div');
+        loginLayer.id = 'loginLayer';
+        loginLayer.innerHTML = '登录窗口';
+        loginLayer.style.display = 'none';
+        document.body.appendChild(loginLayer);
+        return loginLayer;
+    }
+
+    function createMaskLayer() {
+        var maskLayer = document.createElement('div');
+        maskLayer.id = 'maskLayer';
+        maskLayer.style.display = 'none';
+        document.body.appendChild(maskLayer);
+        return maskLayer;
+    }
+
+    function getSingleton(fn) {
+        var instance = null;
+
+        return function () {
+            return instance || (instance = fn.apply(null, arguments));
+        };
+    }
+
+    var createSingletonLoginLayer = getSingleton(createLoginLayer);
+    var createSingletonMaskLayer = getSingleton(createMaskLayer);
+    document.getElementById('loginBtn').onclick = function () {
+        var loginLayer = createSingletonLoginLayer();
+        var maskLayer = createSingletonMaskLayer();
+        loginLayer.style.display = 'block';
+        maskLayer.style.display = 'block';
+    };
+</script>
+</body>
+</html>

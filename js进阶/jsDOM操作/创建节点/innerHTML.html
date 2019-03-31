@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>innerHTML</title>
+    <script src="domReady.js"></script>
+    <script>
+        myReady(function () {
+            var content = document.getElementById("content");
+            var str = "<p>This is a <strong>paragraph</strong> with a list following it.</p>"
+                + "<ul>"
+                + "<li>Item 1</li>"
+                + "<li>Item 2</li>"
+                + "<li>Item 3</li>"
+                + "</ul>";
+            content.innerHTML = str;
+            alert(content.innerHTML);
+        });
+    </script>
+</head>
+<body>
+<div id="content"></div>
+</body>
+</html>

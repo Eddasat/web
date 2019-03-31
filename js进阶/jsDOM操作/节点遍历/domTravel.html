@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DOM Travel</title>
+    <script src="domReady.js"></script>
+    <script>
+        myReady(function () {
+            var s = "";
+
+            function travel(space, node) {
+                if (node.tagName) { // 如果当前节点是标签，不是空的，就拼接字符串
+                    s += space + node.tagName + "<br/>";
+                }
+                var len = node.childNodes.length; //保存当前节点的子节点的个数
+                for (var i = 0; i < len; i++) { //遍历节点的子节点
+                    travel(space + "|-", node.childNodes[i]);
+                }
+            }
+
+            travel("", document);
+            document.write(s);
+        });
+    </script>
+</head>
+<body>
+<form>
+    <input type="button" id="button1" name="button1" value="Click Me!"/>
+</form>
+</body>
+</html>
