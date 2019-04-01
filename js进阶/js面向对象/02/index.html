@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+</head>
+<script type="text/javascript">
+/*    //字面式
+    var person = {
+        name: "zhangsan",
+        age: 26,
+        sex: "man",
+        eat: function (fds) {
+            alert("我在吃" + fds);
+        },
+        play: function (ga) {
+            alert("我在玩" + ga);
+        }
+    }
+    //alert(person.age);
+    //person.eat("面条");
+    alert(person instanceof Object);*/
+
+ /*   //Object
+    var box = new Object();
+    box.name = "zhangsan";
+    box.age = 100;
+    box.infos = function (str) {
+        return this.name + "---" + this.age + "---" + str; //this 当前对象
+    }
+    //alert(box.name);
+    var con = box.infos("吃饭那");
+    alert(con);*/
+
+    /*//构造函数：
+    function person(name, sex, age) {
+        this.name = name;  //this.name属性     name参数 习惯上 属性名称==参数
+        this.sex = sex;
+        this.age = age;
+        this.show = function () {
+            alert(this.name + "---" + this.sex + "---" + this.age);
+        }
+    }
+    var obj1 = new person("zhangsan", "nan", 18);
+    //alert(obj1.sex);
+    obj1.show();
+    var obj2 = new person("lisi", "nv", 20);
+    obj2.show();
+    //注意： this 代表当前对象，obj1和obj2两者之间是独立的，函数内部只能用this访问属性和方法*/
+</script>
+<body>
+</body>
+</html>

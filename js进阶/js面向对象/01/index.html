@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+</head>
+<script type="text/javascript">
+   /* //Object 是javascript 父对象
+    function F() { //自定义函数
+
+    }
+    //alert(F.prototype); //对象   F.prototype ---》 内存地址----》存储一个对象
+    alert(F.prototype instanceof Object);*/
+
+
+   /* //构造函数对象： 函数构造器 创建函数对象
+    //var obj = new Function(var1,var2,...,functionBody());
+    //var1,var2 正常变量  functionBody() 自定函数
+    //注意： 构造器构造的对象，效率低，var1 var2 顺序在functionBody中不能变
+    var obj = new Function("a", "b", "return a+b");
+    var s = obj(2, 5);
+    alert(s);
+    //说明：对象  ---》函数对象，普通对象， new Function（函数对象）*/
+
+
+   /* //闭包 全局变量在函数内部可以访问
+    /!*
+    var n = 999;
+    function f1(){
+        alert(n); //访问到全局n
+    }
+    f1();
+    *!/
+    function f1(){
+        var n = 999; //函数内var 声明的变量 局部变量，省略var 是一个全局变量
+    }
+    f1();
+    alert(n); //n 没有定义
+    //js ---》 在f1 里面 在定义一个函数*/
+
+
+    /*//闭包 全局变量在函数内部可以访问
+    function a(){
+        var i = 0;
+        function b(){
+            alert(++i);
+        }
+        return b;
+    }
+    var c = a();
+    c(); //1
+    //特点： 函数b 实在a内嵌套的，函数a需要返回函数b
+    //用途： 1 读取函数内部变量 2，让i 变量的值 保留在内存中*/
+
+
+   /* //闭包 全局变量在函数内部可以访问
+    function f1(){
+        var n = 999;
+        nAdd = function(){
+            n = n+1;
+        }
+        function f2(){
+            alert(n);
+        }
+        return f2;
+    }
+    var rs =f1();
+    rs();// 999
+    nAdd(); // --->执行了
+    rs();// 1000
+    // 闭包的优缺点
+    //优点： 有利于封装，可以访问局部变量
+    //缺点： 内存占用浪费严重，内存泄漏*/
+</script>
+<body>
+</body>
+</html>

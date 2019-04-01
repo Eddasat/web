@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>class attributes</title>
+    <script src="domReady.js"></script>
+    <script>
+        var CC = {
+            getClass: function (ele) {
+                return ele.className.replace(/\s+/, " ").split(" ");
+            },
+
+            hasClass: function (ele, cls) {
+                return -1 < (" " + ele.className + " ").indexOf(" " + cls + " ");
+            },
+
+            addClass: function (ele, cls) {
+                if (!this.hasClass(ele, cls))
+                    ele.className += " " + cls;
+            },
+
+            removeClass: function (ele, cls) {
+                if (this.hasClass(ele, cls)) {
+                    var reg = new RegExp('(\\s|^)' + cls + '(\\s|$)', "gi");
+                    ele.className = ele.className.replace(reg, " ");
+                }
+            },
+
+            toggleClass: function (ele, cls) {
+                if (this.hasClass(ele, cls)) {
+                    this.removeClass(ele, cls);
+                } else {
+                    this.addClass(ele, cls);
+                }
+            }
+        };
+
+        myReady(function () {
+            var body = document.body;
+            console.log(CC.getClass(body));
+            console.log(CC.hasClass(body, 'bbb'));
+            CC.addClass(body, 'ccc');
+            CC.removeClass(body, 'aaa');
+            CC.toggleClass(body, 'bbb');
+        });
+    </script>
+</head>
+<body class="aaa bbb aaa">
+TEST
+</body>
+</html>

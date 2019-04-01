@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+</head>
+<script type="text/javascript">
+   /* function createObject(name, age) {
+        var obj = new Object();
+        obj.name = name;// obj.name 属性  name参数
+        obj.age = age;
+        obj.run = function () { //在obj对象中 调用obj对象的属性 this 代表的当前对象***
+            return this.name + "----" + this.age + "运行中....";
+        }
+        obj.say = function () {
+            return "今天天气不错";
+        }
+        return obj;
+    }
+    var box1 = createObject("张三", 18);
+    //alert(box1.name); //调用属性成功
+    //alert(box1.run()); //调用方法成功
+    var box2 = createObject("李四", 20);
+    //alert(box2.name);
+    alert(box2.run());
+    //box1 和 box2 有关系？？？
+    // 构造和 工厂模式 不同：
+    //1 构造方式不会显示创建对象 将属性赋值给 this ，不需要return 对象
+    //2 工厂 在方法内部创建 object对象  返回object对象 ，属性和方法都是赋给object对象*/
+
+
+/*    //原型模式
+    function test(){
+    }
+    //alert(test.prototype instanceof Object); //自带该对象 prototype是Object子对象
+    test.prototype.color 	= "red";
+    test.prototype.heights 	= "1.7";
+    test.prototype.widths 	= "1.2";
+    test.prototype.showInfo 			= function(){
+        alert(this.color+"---"+this.heights+"---"+this.widths);
+    }
+    test.prototype.getinfo 			= function(){
+        alert("aaaaa");
+    }
+    var car1 = new test();
+    car1.getinfo();*/
+
+
+   /*//原型模式
+   function test(){
+   }
+   //json数据定义属性和方法
+   test.prototype={
+       color:"red",
+       heights:"1.7",
+       widths:"1.2",
+       showinfo:function(){
+           alert(this.color+"---"+this.heights+"---"+this.widths);
+       },
+       getinfo:function(str){
+           alert(str);
+       }
+   }
+   var car1 = new test();
+   car1.getinfo("abc");*/
+
+   
+   /*//混合模式：构造+原型
+   function blog(name,url,friend){
+       this.name 	= name;
+       this.url	= url;
+       this.friend	= friend;
+   }
+   blog.prototype={
+       test:"awt",
+       showinfo:function(){
+           alert(this.name+"---"+this.url);
+       },
+       gets:function(){
+           alert(this.friend);
+       }
+   }
+   var peo = new blog("张三","http://www.baidu.com","李四");
+   peo.showinfo();*/
+</script>
+
+<body>
+</body>
+</html>

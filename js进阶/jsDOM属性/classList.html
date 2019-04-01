@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>classList</title>
+    <script src="domReady.js"></script>
+    <script>
+        var CL = {
+            addClass: function (ele, cls) {
+                ele.classList.add(cls);
+            },
+
+            removeClass: function (ele, cls) {
+                ele.classList.remove(cls);
+            },
+
+            hasClass: function (ele, cls) {
+                return ele.classList.contains(cls);
+            },
+
+            toggleClass: function (ele, cls) {
+                return ele.classList.toggle(cls);
+            }
+        };
+
+        myReady(function () {
+            var body = document.body;
+            console.log(CL.hasClass(body, 'bbb'));
+            CL.addClass(body, 'ccc');
+            CL.removeClass(body, 'aaa');
+            CL.toggleClass(body, 'bbb');
+
+            setTimeout(function () {
+                alert(document.body.classList.toString());
+            }, 2000);
+        });
+    </script>
+</head>
+<body class="aaa bbb aaa">
+TEST
+</body>
+</html>

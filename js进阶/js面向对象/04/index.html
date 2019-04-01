@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+</head>
+<script type="text/javascript">
+    //遍历对象的属性 对象可以当作数组处理 for in
+    /*
+    var ren1 = {};
+    ren1.name = "zhangsan";
+    ren1.age = "18";
+    ren1.len = "180";
+    ren1.demo = function(){
+        alert(this.name);
+    }
+    */
+    function ren() {
+        this.name = "zhangsan";
+        this.age = "18";
+        this.leng = "180";
+        this.demo = function () {
+            alert(this.name);
+        }
+    }
+
+    //alert(ren.age);
+    var r = new ren();
+    for (var i in r) { //i是属性或方法名称
+        alert(r[i]); //取得是属性的值 或者是方法的定义代码
+    }
+    //对象在内存中的分布：
+</script>
+
+<body>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>data attributes</title>
+    <script src="domReady.js"></script>
+    <script>
+        myReady(function () {
+            var btn = document.getElementById('btn');
+            console.log(btn.dataset.toggle);
+            console.log(btn.dataset.xxxYyy);
+        });
+    </script>
+</head>
+<body>
+<button id="btn" type="button" data-xxx-yyy="abc" data-toggle="modal">Small modal</button>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Attributes</title>
+    <script src="domReady.js"></script>
+    <script>
+        myReady(function () {
+            var div = document.querySelector('div');
+            // console.log(div.xxx);
+            console.log(div.attributes.getNamedItem('xxx').nodeValue);
+            // console.log(div.nodeName);
+            // console.log(div.attributes.getNamedItem('nodeName').nodeValue);
+            //console.log(div.attributes.getNamedItem('id').nodeValue);
+            // console.log(div.attributes['id'].nodeValue);
+            div.attributes.removeNamedItem('yyy');
+            //div.attributes.setNamedItem('data-title', 'ddd');
+            var attr = document.createAttribute('data-title');
+            attr.value = 'ddd';
+            div.attributes.setNamedItem(attr);
+        });
+    </script>
+</head>
+<body>
+<div id="div0" url="http://www.baidu.com" xxx="aaa" yyy="bbb"></div>
+</body>
+</html>
