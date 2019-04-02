@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+</head>
+<script type="text/javascript">
+    // js 继承：
+    // 原型继承：用到原型链的概念
+    function person(name, age) {//父
+        this.name = name;
+        this.age = age;
+    }
+
+    person.prototype.sayhello = function () {
+        alert("属性name值" + this.name);
+    }
+
+    /*
+    var per = new person("zhangsan",20);
+    per.sayhello();
+    */
+    function student() {
+    };
+    student.prototype = new person("李四", 18);// 原型继承
+    student.prototype.grade = 3;
+    student.prototype.test = function () {
+        alert(this.grade);
+    }
+    var s = new student();
+    s.sayhello();
+    alert(s.grade);
+    //过程分析：
+    // s.__proto__ = student.prototype = p1    p1.__proto__ = person.protype.sayhello();
+
+
+</script>
+<body>
+</body>
+</html>

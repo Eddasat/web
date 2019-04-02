@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+</head>
+<script type="text/javascript">
+    // js 继承：
+    //构造函数继承：
+    function parents(name) {
+        this.name = name;
+        this.say = function () {
+            alert("父亲的名字:" + this.name);
+        }
+    }
+
+    function child(name, age) { //继承parents
+        this.pObj = parents;//用父对象来创建子对象
+        this.pObj(name);
+        this.age = age;
+        this.sayC = function () {
+            alert("child:" + this.name + "---" + "age:" + this.age);
+        }
+    }
+
+    var p = new parents("zhangsan");
+    p.say();
+    var c = new child("李四", 20);
+    c.sayC();
+    //  李四---》 this.pObj(name); ---》 parents（name） ---> this.name=name="李四"
+    // this.sayC --->this.name--->parents-->this.name
+    //父对象 被子对象继承   所有的属性和方法，都将传递到子对象中*****
+
+
+</script>
+<body>
+</body>
+</html>

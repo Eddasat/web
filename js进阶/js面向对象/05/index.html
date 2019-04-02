@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+</head>
+<script type="text/javascript">
+    //封装
+    /*
+    function demo(){
+        var n	=	1; //局部变量，在方法外部不能直接访问
+        function test(){ //外部调用的出口
+            n++;
+        }
+        test();//n++ =2
+        return n;
+    }
+    alert(demo());
+    */
+    /* function demo() {
+         var n = 1;
+
+         function test() { //特权方法
+             return ++n;
+         }
+
+         /!*
+         this.test = function(){
+             return ++n;
+         }
+         *!/
+         return test;
+     }
+     var at = demo();
+     alert(at());*/
+
+
+    /*//封装
+    function A(){
+        var t = 3;
+        function _xx(){ alert(11+"****") ;}
+        this.xx = function(){
+            return _xx;
+        }
+    }
+    A.prototype = {
+        oth:function(){
+            alert("普通方法");
+        }
+    }
+    var a = new A();
+    var b = a.xx(); // a.xx()  ---> function _xx()
+    //b();
+    a.oth();
+    // 缺陷： 1 占用内存  2 不利于继承*/
+</script>
+<body>
+</body>
+</html>

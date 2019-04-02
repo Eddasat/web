@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+</head>
+<script type="text/javascript">
+    // js 继承：
+    //原型：用prototype对象来添加属性和方法
+    var person = function () {
+        __proto__
+    };
+    var p = new person(); //三个阶段  p.__proto__
+    // 1 var p = {}; 创建对象
+    // 2 p.__proto__ = person.prototype  __proto__ 自带的一个属性  ***
+    // 3 创建对象（初始化对象）p --> person.call(p)
+    //alert(p.__proto__ instanceof Object);
+    // alert(p.__proto__ == person.prototype)
+    //
+    // p.name 不存在 --》 __proto__去查找 p.__proto__对象 -->p.__proto__.__proto__....
+
+    var person = function () {
+    };
+    person.prototype.say = function () {
+        alert("天气挺好");
+    }
+    person.prototype.gongzi = 500;
+
+    var programmer = function () {
+    };
+    programmer.prototype = new person();
+    programmer.prototype.wcd = function () {
+        alert("明天天气也不错");
+    }
+    programmer.prototype.gongzi = 1000;
+
+
+    var p = new programmer();
+    //p.say(); //可以调用
+    //p.wcd();
+    alert(p.gongzi);
+    // var p = new programmer();  p.__proto__ = programmer.prototype   = new person();
+    //var p1 = new person();   programmer.prototype = p1
+    // p.say(); p.__proto__ --> programmer.prototype ==p1 --->p1.__proto__  ==person.prototype.say();
+    //原型链实现过程 ***
+
+</script>
+
+<body>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+</head>
+<script type="text/javascript">
+    // js 继承：
+    // call apply
+    //call --》 obj.call(方法,var1,var2,var3....)
+    //apply--> obj.apply(方法,[var1,var2,var3]);
+    function person(name, age, len) {
+        this.name = name;
+        this.age = age;
+        this.len = len;
+        this.say = function () {
+            alert(this.name + ":" + this.age + ":" + this.len);
+        }
+    }
+
+    //call继承
+    function student(name, age) {
+        person.call(this, name, age);
+    }
+
+    //apply继承
+    function teacher(name, age, len) {
+        person.apply(this, [name, age, len])
+    }
+
+    var per = new person("张三", 25, "170");
+    per.say();
+    var stu = new student("李四", 18);
+    stu.say(); // 李四 18 undefined
+    var tea = new teacher("王武", 20, "180");
+    tea.say();
+
+
+</script>
+<body>
+</body>
+</html>

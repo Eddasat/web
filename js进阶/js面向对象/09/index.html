@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+</head>
+<script type="text/javascript">
+    // 对象冒充
+    function person(name, age) {
+        this.name = name;
+        this.age = age;
+        this.sayHi = function () {
+            alert("hi");
+        }
+    }
+
+    person.prototype.walk = function () {
+        alert("walk......");
+    }
+
+    function student(name, age, grade) {
+        this.newMethod = person; //冒充person对象，传递特权属性和特权方法给子类
+        this.newMethod(name, age)
+        this.grade = grade;
+    }
+
+    var s1 = new student("zhangsan", 15, 5); //s1 是student 对象 ，继承person，拥有person所有属性和方法
+    s1.sayHi();
+    //注意 s1继承了 person中的特权方法和属性，没有继承共有方法和属性
+
+
+</script>
+<body>
+</body>
+</html>

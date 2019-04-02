@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+</head>
+<script type="text/javascript">
+/*// 关键词
+//instanceof  变量是否是对象的实例
+//var arr = new Array();
+//alert(arr instanceof Array);
+//alert(arr instanceof Object);
+
+function test(){}
+var obj = new test();
+//alert(obj instanceof test);
+alert(obj instanceof Object);*/
+
+
+/*// 关键词
+//delete 删除对象的属性：
+function fun(){
+    this.name = "zhangsan";
+    this.say = function(){
+        alert(this.name);
+    }
+}
+var obj = new fun();
+/!*
+alert(obj.name);
+delete obj.name; //删除name属性
+alert(obj.name);//undefined
+*!/
+
+var demo = "lisi";
+alert(demo);
+delete demo; //删除不了变量
+alert(demo);
+//注意：delete 不能删除原型链中的属性和变量*/
+
+
+
+/*// 关键词
+//call apply
+/!*
+function add(a,b){
+	alert(a+b);
+}
+function subs(a,b){
+	alert(a-b);
+}
+//add.call(subs,5,3); // subs-->add  ===>add(5,3)  subs只能引用一个存在的对象
+add.apply(subs,[5,3]);
+*!/
+function animal(){
+    this.name = "ani";
+    this.showName = function(){
+        alert(this.name);
+    }
+}
+function cat(){
+    this.name = "cat";
+}
+var an = new animal();
+var c = new cat();
+//an.showName.call(c,","); // 通过call方法，将showName--》cat使用了
+an.showName.apply(c,[]);*/
+
+
+
+/*// 关键词
+//callee：返回正在执行的function对象，function 内容
+//arguments.callee  默认值 正在执行的function对象****
+/!*
+function demo(){
+	//alert(11);
+	//alert(arguments.callee); //callee当作属性 ，函数内容
+	//alert(arguments.callee());//报错：陷入死循环
+}
+demo();
+*!/
+var sum = function(n){
+    if(n<=1){
+        return 1;
+    }else{
+        return n+arguments.callee(n-1); //在函数内部调用本函数
+    }
+}
+alert(sum(5));*/
+
+
+
+/*// 关键词
+//arguments: 每个函数都有一个 Arguments对象的实例arguments，引用函数的参数（实参）
+// 可以用数组下标方式引用arguments元素
+//arguments.length,参数个数
+//arguments.callee 引用函数自身
+function test(a,b,c){
+    //alert(arguments.length);
+    //alert(arguments[1]); //arguments如果是表示参数，可以遍历的
+    alert(arguments.callee);
+}
+test(1,2,3);*/
+
+
+
+/*// 关键词
+//this 可以在函数内部定义属性/变量
+/!*
+function test(){
+	this.x = 1; //this全局变量 global  == 》 x=1
+	alert(this.x);
+}
+test();
+
+var x = 1;
+function test(){
+	this.x = 0 //改变了 全局变量 x 值
+}
+test();
+alert(x);
+*!/
+// 作为方法调用 --构造函数内 this指当前对象
+/!*
+function test(){
+	this.name = "zhangsan"; //this表示当前对象 --》 t
+	this.age = 18;
+}
+var t = new test();
+alert(t.name);
+*!/
+//在call  apply  this第一个参数
+var x = 0;
+function test(){
+    alert(this.x)
+}
+var o = {};
+o.x = 1;
+o.m = test
+//o.m.apply(); // 0
+o.m.apply(o); //1;*/
+</script>
+<body>
+</body>
+</html>
