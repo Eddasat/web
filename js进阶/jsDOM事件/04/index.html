@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<button id="myBtn">点击我</button>
+<script type="text/javascript">
+    var EventUtil = {
+        addHandler: function (element, type, handler) {
+            //绑定事件
+            //Chrome Firefox IE9等     addEventListener
+            //IE8及IE8以下的浏览器     attachEvent
+            if (element.addEventListener) {
+                element.addEventListener(type, handler, false);
+            } else if (element.attachEvent) {
+                element.attachEvent("on" + type, handler);
+            } else {
+                element["on" + type] = handler
+            }
+        },
+        removeHandler: function (element, type, handler) {
+            //移除事件
+            //Chrome Firefox IE9等
+            //IE8及IE8以下的浏览器
+            if (element.removeEventListener) {
+                element.removeEventListener(type, handler, false);
+            } else if (element.detachEvent) {
+                element.detachEvent("on" + type, handler);
+            } else {
+                element["on" + type] = handler
+            }
+        }
+    }
+    var btn = document.getElementById("myBtn");
+    var handler = function () {
+        alert("Clicked");
+    }
+    EventUtil.addHandler(btn, "click", handler);
+    //EventUtil.removeHandler(btn,"click",handler);
+</script>
+</body>
+</html>

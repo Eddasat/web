@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>创建正则表达式的两种方式</title>
+</head>
+<body>
+<script>
+    // 字面量或直接量
+    // []
+    // {}
+    // /js/
+    // // 构造函数
+    // new Array()
+    // new Object()
+    // // regular expression
+    // new RegExp()
+
+    // var str = 'I love js';
+    // var pattern = /js/;
+    // '3.4'
+    // /js5_正则 ,;!@./
+
+    // var str = 'I love js';
+    // var pattern = /js/;
+    // // test exec
+    // console.log(pattern.test(str));
+    // console.log(pattern.exec(str));
+
+    // var str = 'I love Js';
+    // var pattern = /js/;
+    // // test exec
+    // console.log(pattern.test(str));
+    // console.log(pattern.exec(str));
+
+    // var str = 'I love Js';
+    // var pattern = /Js/;
+    // console.log(pattern.test(str));
+    // console.log(pattern.exec(str));
+    // i ignoreCase
+    // g global
+    // m multiline
+
+    // var str = 'I love Js';
+    // var pattern = /js/i;
+    // console.log(pattern.test(str));
+    // console.log(pattern.exec(str));
+
+    // /js/ig
+    // /js/gi
+    // /js/igm
+    // /js/img
+
+    // var str = 'I love js';
+    // var pattern = new RegExp('js');
+    // console.log(pattern.test(str));
+    // console.log(pattern.exec(str));
+
+    // var str = 'I love Js';
+    // var pattern = new RegExp('js', 'i');
+    // console.log(pattern.test(str));
+    // console.log(pattern.exec(str));
+
+    // /js/i
+    // new RegExp('js', 'i')
+
+    // var str = 'I love Js';
+    // var userInput = 'love';
+    // var pattern = /userInput/i;
+
+    // var str = 'I love Js';
+    // var userInput = 'love';
+    // var pattern = '/' + userInput + '/i';
+    // console.log(typeof pattern);
+
+    var str = 'I love Js';
+    var userInput = 'love';
+    var pattern = new RegExp(userInput, 'i');
+    console.log(pattern);
+    console.log(typeof pattern);
+    console.log(pattern.exec(str));
+</script>
+</body>
+</html>

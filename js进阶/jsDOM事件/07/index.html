@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<button id="myBtn"></button>
+<a href="http://www.baidu.com" id="a">跳转链接</a>
+<div id="parent">
+    <div id="child">点击我</div>
+</div>
+<button id="target">target按钮</button>
+<script type="text/javascript">
+    var myBtn = document.getElementById("myBtn");
+    myBtn.attachEvent("onclick", function (event) {
+        //event.type事件类型
+        alert(event.type)
+    })
+    //event.returnValue = false 阻止默认行为同preventDefault
+    var a = document.getElementById("a");
+    a.attachEvent("onclick", function (event) {
+        event.returnValue = false;
+    })
+    //event.cancelBubble = true 取消事件冒泡同stopPropagation
+    var parent = document.getElementById("parent");
+    parent.attachEvent("onclick", function (event) {
+        alert("parent被触发了");
+    })
+    var child = document.getElementById("child");
+    child.attachEvent("onclick", function (event) {
+        event.cancelBubble = true;
+        alert("child被触发了");
+    })
+    //srcElement 同target
+    var target = document.getElementById("target");
+    target.attachEvent("onclick", function (event) {
+        console.log(event.srcElement);
+    })
+</script>
+</body>
+</html>

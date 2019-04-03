@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+</head>
+<body>
+<button id="btn">点击我</button>
+<script type="text/javascript">
+    var btn = document.getElementById("btn");
+    //方法一
+    var clickme = function () {
+        alert("我已经被点击");
+    }
+    btn.addEventListener('click', clickme)
+    //方法二
+    /*btn.addEventListener('click',function(){
+        alert("我已经被点击");
+    })*/
+</script>
+</body>
+</html> 

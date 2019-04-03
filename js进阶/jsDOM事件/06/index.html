@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #gaodu {
+            height: 2000px;
+            background: lightgreen;
+        }
+    </style>
+</head>
+<body>
+<button id="myBtn">点击我</button>
+<div id="parent">
+    <div id="child">点击我</div>
+</div>
+<a href="http://baidu.com" id="a">跳转链接</a>
+<div id="gaodu"></div>
+<script type="text/javascript">
+    var myBtn = document.getElementById("myBtn");
+    //myBtn.addEventListener("click", function(event) {
+    //event
+    //type：告诉我们现在的事件类型是什么
+    //alert(event.type);
+    //})
+    //myBtn.addEventListener("mouseout",function(){
+    //	alert(event.type)
+    //})
+    //event.type事件类型
+    var eventFun = function (event) {
+        if (event.type == "click") {
+            alert("click事件被触发了")
+        } else if (event.type == "mouseout") {
+            alert("mouseout事件被触发了")
+        }
+    }
+    myBtn.addEventListener("click", eventFun);
+    myBtn.addEventListener("mouseout", eventFun);
+    //target和currentTarget
+    //var parent = document.getElementById("parent");
+    //var parent = document.getElementById("child");
+    //parent.addEventListener("click", function(event) {
+    //点击儿子，事件是在父亲上面
+    //target 点击谁谁就是target， 事件源
+    //currentTarget   事件绑定在谁身上，就是指向谁
+    //console.log(event.target)
+    //console.log(event.currentTarget)
+    //console.log(event.target)
+    //console.log(event.currentTarget)
+    //})
+    //event.preventDefault 阻止默认行为
+    var a = document.getElementById("a");
+    //a.addEventListener("click",function(){
+    //alert(11)
+    //});
+    a.addEventListener("click", function (event) {
+        event.preventDefault();
+        alert(11)
+    });
+    //event.stopPropagation     阻止事件冒泡或者捕获
+    var parent = document.getElementById("parent");
+    parent.addEventListener("click", function () {
+        alert("parent")
+    })
+    child.addEventListener("click", function (event) {
+        alert("child");
+        event.stopPropagation();
+    })
+    //clientY   pageY   screenY
+    //clientY就是指浏览器顶部底边到鼠标的位置，不计算滚动轴的距离
+    //pageY就是指浏览器顶部底边到鼠标位置，但是它计算滚动轴的距离
+    //screenY就是指屏幕顶部到鼠标位置
+    var gaodu = document.getElementById("gaodu");
+    gaodu.addEventListener("click", function (event) {
+        alert("clientY:" + event.clientY + "; pageY:" + event.pageY + ";  screenY:" + event.screenY);
+    })
+</script>
+</body>
+</html>

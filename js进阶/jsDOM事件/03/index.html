@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<button id="myBtn">按钮</button>
+<script type="text/javascript">
+    var btn = document.getElementById("myBtn");
+    var clickme = function () {
+        alert("Clicked");
+    }
+    //btn.attachEvent("onclick",function(){
+    //	alert("Clicked");
+    //});
+    btn.attachEvent("onclick", clickme);
+    //绑定多个事件类型，归于DOM2级事件
+    //btn.attachEvent("onclick",function(){
+    //	alert("二 Clicked");
+    //});
+    //解除绑定
+    //btn.detachEvent("onclick",function(){
+    //
+    //});
+    btn.detachEvent("onclick", clickme);
+    //this指向window
+    btn.attachEvent("onclick", function () {
+        alert(this === window);
+    })
+</script>
+</body>
+</html>

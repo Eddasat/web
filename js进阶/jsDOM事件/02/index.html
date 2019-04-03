@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<!--<button onclick="alert('我被点击了')"></button>-->
+<button onclick="alertWindow()">点击我</button>
+<button id="btn">DOM0级事件绑定方式</button>
+<button id="btn2">DOM2级事件绑定方式</button>
+<script type="text/javascript">
+    /*
+     * 1、事件对象  button
+     * 2、事件对象绑定一个事件类型
+     * 3、事件句柄
+     */
+    function alertWindow() {
+        alert("我被点击了")
+    }
+
+    //DOM0级事件
+    //方法二
+    var Dom0 = function () {
+        alert("DOM0级事件绑定方式 ");
+    }
+    var Dom0_1 = function () {
+        alert("DOM0级事件绑定方式 ");
+    }
+    var btn = document.getElementById("btn");
+    btn.onclick = Dom0;
+    btn.onclick = Dom0_1;
+    //方法一
+    /*btn.onclick = function(){
+        alert("DOM0级事件绑定方式 ");
+    }*/
+    //DOM二级事件
+    var btn2 = function () {
+        alert("DOM2级事件绑定方式")
+    }
+    var btn2 = document.getElementById("btn2");
+    //第一个参数是事件类型，第二个参数是事件句柄，第三个参数默认是false，可以设置成true
+    //btn2.addEventListener('click',function(){
+    //	alert("DOM2级事件绑定方式")
+    //,false);
+    btn2.addEventListener('click', Dom2, false);
+    //btn2.addEventListener('click',function(){
+    //	alert("DOM2_1级事件绑定方式")
+    //},false);
+    //事件解绑
+    //btn2 = removeEventListener('click', function() {
+    //	alert("DOM2级事件绑定方式")
+    //});
+    //事件解绑
+    btn2.removeEventListener('click', Dom2);
+    //事件解绑成功的主要原因是：保持addxx和removexx里面的参数相同
+</script>
+</body>
+</html>

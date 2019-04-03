@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="parent">
+    <div id="child" class="child">点击儿子</div>
+</div>
+<ul id="ul">
+    <li id="one">item1</li>
+    <li id="two">item2</li>
+    <li id="thr">item3</li>
+    <li id="four">item4</li>
+    <li id="fiv">item5</li>
+    <li id="six">item6</li>
+</ul>
+<script type="text/javascript">
+    //事件冒泡
+    //			 document.getElementById("parent").addEventListener("click",function(e){
+    //			 	alert("parent事件被触发，"+this.id);
+    //			 },false)
+    //			 document.getElementById("child").addEventListener("click",function(e){
+    //			 	alert("child事件被触发，"+this.id);
+    //			 },false)
+    //
+    //父  添加了事件
+    //    子   添加了事件
+
+    //直系亲属树结构
+    //html
+    //body     添加了事件
+    //parent ul  添加了事件
+    //child  li  添加事件
+    //事件冒泡： 直系亲属树结构中，点击某个元素，由于冒泡作用，亲属树上的元素凡是添加的事件的，都会被触发
+
+    //事件捕获：
+    //直系亲属树结构               1
+    //html                 1
+    //body                 1
+    //parent   添加了事件     1
+    //child    添加事件         1
+    //			 document.getElementById("parent").addEventListener("click",function(e){
+    //			 	alert("parent事件被触发"+this.id);
+    //			 },true)
+    //			 document.getElementById("child").addEventListener("click",function(e){
+    //			 	alert("child事件被触发"+this.id)
+    //			 },true)
+
+    //事件委托     (原理就是事件冒泡)
+    //			 var one = document.getElementById("one");
+    //			 one.addEventListener("click",function(){
+    //			 	alert(1);
+    //			 })
+    //			 var two = document.getElementById("two");
+    //			 two.addEventListener("click",function(){
+    //			 	alert(1);
+    //			 })
+    //			 var thr = document.getElementById("thr");
+    //			 thr.addEventListener("click",function(){
+    //			 	alert(1);
+    //			 })
+    //			 var four = document.getElementById("four");
+    //			 four.addEventListener("click",function(){
+    //			 	alert(1);
+    //			 })
+    //			 var fiv = document.getElementById("fiv");
+    //			 fiv.addEventListener("click",function(){
+    //			 	alert(1);
+    //			 })
+    //			 var six = document.getElementById("six");
+    //			 six.addEventListener("click",function(){
+    //			 	alert(1);
+    //			 })
+    //保证只添加一次事件了     事件委托，利用了冒泡机制
+    var ul = document.getElementById("ul");
+    //			ul.addEventListener("click",function(){
+    //				alert(1)
+    //			},false);
+    ul.addEventListener("click", function (event) {
+        if (event.target.id == "one") {
+            alert(1)
+        } else if (event.target.id == "two") {
+            alert(2)
+        } else if (event.target.id == "thr") {
+            alert(3)
+        } else if (event.target.id == "four") {
+            alert(4)
+        } else if (event.target.id == "fiv") {
+            alert(5)
+        } else {
+            alert(6)
+        }
+    }, false);
+</script>
+</body>
+</html>
