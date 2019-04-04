@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title></title>
+</head>
+<body>
+<!-- <p class="odd2      odd    ">1</p>
+<p class="even">2</p>
+<p class="odd">3</p>
+<p class="even">4</p> -->
+<script>
+    // var str = 'html js';
+    // var pattern = /^js/;
+    // console.log(pattern.exec(str));
+    // /[^0-9]/
+
+    // var str = 'html js css';
+    // var pattern = /js$/;
+    // console.log(pattern.exec(str));
+
+    // var str = '110119120';
+    // var pattern = /^\d+$/;
+    // console.log(pattern.exec(str));
+    // if (pattern.test(str)) {
+    // 	console.log('全是数字！');
+    // } else {
+    // 	console.log('不全是数字！');
+    // }
+
+    // var str = '11011a9120';
+    // var pattern = /\D/;
+    // console.log(pattern.exec(str));
+    // if (pattern.test(str)) {
+    // 	console.log('不全是数字！');
+    // } else {
+    // 	console.log('全是数字！');
+    // }
+
+    // var str = 'js html';
+    // var pattern = /js\b/;
+    // console.log(pattern.exec(str));
+
+    // var str = '@@@js@@@';
+    // var pattern = /\bjs\b/;
+    // console.log(pattern.exec(str));
+
+    // var oddP = getByClassName('odd');
+    // var evenP = getByClassName('even');
+    // for (var i = 0; i < oddP.length; i++) {
+    // 	oddP[i].style.backgroundColor = 'red';
+    // }
+    // for (var i = 0; i < evenP.length; i++) {
+    // 	evenP[i].style.backgroundColor = 'yellow';
+    // }
+
+    // function getByClassName(className, parentNode) {
+    // 	if (document.getElementsByClassName) {
+    // 		return document.getElementsByClassName(className);
+    // 	} else {console.log(1);
+    // 		parentNode = parentNode || document;
+    // 		var nodeList = [];
+    // 		var allNodes = parentNode.getElementsByTagName('*');
+    // 		var pattern = new RegExp('\\b' + className + '\\b');
+
+    // 		for (var i = 0; i < allNodes.length; i++) {
+    // 			if (pattern.test(allNodes[i].className)) {
+    // 				nodeList.push(allNodes[i]);
+    // 			}
+    // 		}
+
+    // 		return nodeList;
+    // 	}
+    // }
+
+    // function getByClassName(className, parentNode) {
+    // 	if (document.getElementsByClassName) {
+    // 		return document.getElementsByClassName(className);
+    // 	} else {console.log(1);
+    // 		parentNode = parentNode || document;
+    // 		var nodeList = [];
+    // 		var allNodes = parentNode.getElementsByTagName('*');
+    // 		var pattern = new RegExp('(^|\\s+)' + className + '($|\\s+)');
+
+    // 		for (var i = 0; i < allNodes.length; i++) {
+    // 			if (pattern.test(allNodes[i].className)) {
+    // 				nodeList.push(allNodes[i]);
+    // 			}
+    // 		}
+
+    // 		return nodeList;
+    // 	}
+    // }
+
+    // function getByClassName(className, parentNode) {
+    // 	if (document.getElementsByClassName) {
+    // 		return document.getElementsByClassName(className);
+    // 	} else {console.log(1);
+    // 		parentNode = parentNode || document;
+    // 		var nodeList = [];
+    // 		var allNodes = parentNode.getElementsByTagName('*');
+
+    // 		for (var i = 0; i < allNodes.length; i++) {
+    // 			if (allNodes[i].className === className) {
+    // 				nodeList.push(allNodes[i]);
+    // 			}
+    // 		}
+
+    // 		return nodeList;
+    // 	}
+    // }
+
+    // var str = 'java';
+    // var pattern = /java(?=script)/;
+    // console.log(pattern.exec(str));
+
+    var str = 'javasda';
+    var pattern = /java(?!script)/;
+    console.log(pattern.exec(str));
+</script>
+</body>
+</html>
