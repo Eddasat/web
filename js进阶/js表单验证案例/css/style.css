@@ -79,3 +79,39 @@ body {
     box-shadow: 1px 1px 10px #6385d1, 1px 1px 10px #6385d1;
 }
 
+#Total .item.item_, #Total .item_.item_ {
+    width: 60%;
+    height: 30px;
+    border-bottom: .5px solid #6385d1;
+    border-radius: 2px;
+    font-size: 15px;
+    color: rgba(0, 0, 0, 0.6);
+    letter-spacing: 2px;
+    font-weight: lighter;
+    padding-left: 10px;
+    margin: 0 0 0 5%;
+}
+
+#Total #end {
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    border-top: 1px solid rgba(0, 0, 0, 0.8);
+    width: 100%;
+    letter-spacing: 2px;
+}
+
+#Total #end #choose {
+    margin-right: 20px;
+}
+
+#Total #end #handup {
+    width: 130px;
+    height: 30px;
+    border: none;
+    background: #6385d1;
+    color: white;
+    border-radius: 3px;
+    margin-left: 10px;
+}
+
