@@ -1,0 +1,106 @@
+/*nav-site*/
+.nav-site { /*站点导航整体设置*/
+    width: 100%;
+    background-color: #f3f5f7;
+}
+
+.nav-site .container { /*站点导航内容块整体设置*/
+    height: 44px;
+    line-height: 44px;
+    border-bottom: 1px solid #cdd0d4;
+}
+
+.nav-site-login { /*站点导航“亲，请登陆”设置*/
+    margin-left: 15px;
+    color: #f01414;
+}
+
+.nav-site-signup,
+.nav-site-mobile { /*站点导航“注册和手机购买”设置*/
+    margin-left: 10px;
+}
+
+.nav-site-category {
+    margin: 0 10px;
+}
+
+.nav-site-service {
+    margin-right: 15px;
+}
+
+/*下拉菜单样式dropdown*/
+.dropdown {
+    position: relative;
+}
+
+.dropdown-toggle {
+    position: relative;
+    z-index: 2;
+    display: block;
+    height: 100%;
+    padding: 0 16px 0 12px;
+    border-left: 1px solid #f3f5f7;
+    border-right: 1px solid #f3f5f7;
+
+}
+
+.dropdown-arrow {
+    display: inline-block;
+    width: 8px;
+    height: 6px;
+    background: url(../img/dropdown-arrow.png) no-repeat;
+    margin-left: 8px;
+    vertical-align: middle;
+
+}
+
+.dropdown-layer {
+    display: none;
+    position: absolute;
+    top: 43px;
+    background-color: #fff;
+    z-index: 1;
+    border: 1px solid #cdd0d4;
+}
+
+.dropdown-left {
+    left: 0;
+    right: auto;
+
+}
+
+.dropdown-right {
+    right: 0;
+    left: auto;
+
+}
+
+.dropdown-item {
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 12px;
+    color: #4d555d;
+    white-space: nowrap;
+
+}
+
+.dropdown-item:hover {
+    background-color: #f3f5f7;
+}
+
+.dropdown-active .dropdown-toggle,
+.dropdown:hover .dropdown-toggle {
+    background-color: #fff;
+    border-color: #cdd0d4;
+}
+
+.dropdown-active .dropdown-arrow,
+.dropdown:hover .dropdown-arrow {
+    background-image: url(../img/dropdown-arrow-active.png);
+}
+
+.dropdown-active .dropdown-layer,
+.dropdown:hover .dropdown-layer {
+    display: block;
+}

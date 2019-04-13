@@ -1,0 +1,13 @@
+/*公共样式*/
+.container { /*站点导航*/
+    width: 1200px;
+    margin: 0 auto;
+}
+
+a.link { /*链接正常颜色*/
+    color: #4d555d;
+}
+
+a.link:hover { /*链接经过颜色*/
+    color: #f01414 !important;
+}
