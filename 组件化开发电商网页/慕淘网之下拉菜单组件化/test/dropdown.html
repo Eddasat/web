@@ -233,7 +233,133 @@
 <script src="../js/showHide.js"></script>
 <script src="../js/dropdown.js"></script>
 <script type="text/javascript">
+    // -----简单写法-----
+    // $('.dropdown').hover(function() {
+    //  var $this=$(this); // 缓存this，以避免重复加载
+    //     $this.addClass($this.data('active')+'-active');
+    // }, function() {
+    //  var $this=$(this);
+    //     $this.removeClass($this.data('active')+'-active');
+    // });
 
+
+    //------封装代码方式--------
+    //   function dropdown(elem) {
+    //    var $elem = $(elem),
+    //        activeClass = $elem.data('active') + '-active';
+    //    $elem.hover(function() {
+    //        $elem.addClass(activeClass);
+    //    }, function() {
+    //        $elem.removeClass(activeClass);
+    //    });
+
+    // }
+    //单个下拉菜单 dropdown($('.dropdown')[0])
+
+    //多个下拉菜单
+
+    // $('.dropdown').each(function(){
+    //  dropdown($(this));
+    // });
+
+
+    // ------插件方式-------
+
+    // function dropdown(elem) {
+    //     var $elem = $(elem),
+    //         activeClass = $elem.data('active') + '-active';
+    //     $elem.hover(function() {
+    //         $elem.addClass(activeClass);
+    //     }, function() {
+    //         $elem.removeClass(activeClass);
+    //     });
+
+    //  }
+
+    // $.fn.extend({
+    //  dropdown:function(){
+    //      return this.each(function(){
+    //          dropdown(this);
+
+    //      });
+
+    //  }
+    // });
+
+    // $('.dropdown').dropdown(); // 插件为了更好的调用
+    // $('.dropdown').on('dropdown-show dropdown-shown dropdown-hide dropdown-hidden',function (e) {
+    //     console.log(e.type);
+
+    // })
+
+
+    // $('.dropdown').on('dropdown-show', function(e) {
+    //     var $this=$(this),
+    //          dataLoad=$(this).data('load');
+    //          if(!dataLoad) return;
+
+    //         // $layer.html('<li class="dropdown-loading"></li>');
+    //    if(!$this.data('loaded')){
+
+    //     var $layer = $(this).find('.dropdown-layer'),
+    //         html = '';
+    //      $.getJSON(dataLoad, function(data) {
+    //         console.log(1);
+    //         setTimeout(function() {
+    //             for (var i = 0; i < data.length; i++) {
+    //                 html += '<li><a href="' + data[i].url + '"  target="_blank" class="menu-item">' + data[i].name + '</a></li>'
+    //             }
+    //             $layer.html(html);
+    //             $this.data('loaded',true);
+
+    //         }, 1000);
+    //     });
+    //    }
+
+    // });
+
+
+    $('.dropdown').on('dropdown-show', function (e) {
+        var $this = $(this),
+            dataLoad = $this.data('load');
+
+        if (!dataLoad) return;
+
+        if (!$this.data('loaded')) {
+            var $layer = $this.find('.dropdown-layer'),
+                html = '';
+
+            $.getJSON(dataLoad, function (data) {
+                console.log(1);
+                setTimeout(function () {
+                    for (var i = 0; i < data.length; i++) {
+                        html += '<li><a href="' + data[i].url + '" target="_blank" class="menu-item">' + data[i].name + '</a></li>'
+                    }
+                    $layer.html(html);
+                    $this.data('loaded', true);
+                }, 1000);
+            });
+        }
+    });
+
+    $('.dropdown').dropdown({
+        event: 'hover',
+        delay: 1000,
+        css3: true,
+        js: true,
+        animation: 'fade'
+        // active:'menu'
+
+    });
+
+    $('#btn-show').on('click', function () {
+        $('.dropdown').dropdown('show');
+
+    });
+
+    $('#btn-hide').on('click', function () {
+        $('.dropdown').dropdown('hide');
+    });
 </script>
 </body>
 </html>
