@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>显示隐藏模块</title>
+    <link rel="stylesheet" href="../css/base.css" />
+    <style>
+    body {
+        width: 400px;
+        margin: 0 auto;
+    }
+
+    .btn {
+        width: 50%;
+        height: 30px;
+    }
+
+    #box {
+        /*display: none;*/
+        /*position: absolute;*/
+       /* visibility: hidden;
+        opacity: 0;*/
+        width: 100%;
+        /*height: 200px;
+        padding:100px 0;*/
+        background-color: red;
+        overflow: hidden;
+    }
+
+    .transition {
+            -o-transition: all 0.5s;
+            -ms-transition: all 0.5s;
+            -moz-transition: all 0.5s;
+            -webkit-transition: all 0.5s;
+            transition: all 0.5s;
+        }
+
+    .fadeOut {
+            visibility: hidden !important;
+            opacity: 0 !important;
+        }  
+    .slideUpDownCollapse{
+        height:0 !important;
+        padding-top:0 !important;
+        padding-bottom:0 !important;
+    }  
+
+    .slideLeftRightCollapse{
+        width:0 !important;
+        padding-left:0 !important;
+        padding-right:0 !important;
+    } 
+    </style>
+</head>
+
+<body>
+    <button id="btn-show" class="btn">显示</button><button id="btn-hide" class="btn">隐藏</button>
+    <div id="box" class="">
+        <p>12</p>
+        <p>12</p>
+        <p>12</p>
+        <p>12</p>
+        <p>12</p>
+    </div>
+    <button class="btn">显示2</button>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/transition.js"></script>
+    <script src="../js/showHide.js"></script>
+    <script>
+   
+    // console.log(window.mt.transition.end);
+    // console.log(window.mt.transition.isSupport);
+
+    var $box = $('#box');
+    // var showHide=window.mt.showHide($box,{
+    //     css3:true,
+    //     animation:'fade'
+    // });
+
+    $box.showHide({
+        css3:true,
+        js:false,
+        animation:'fade'
+    });
+    // js.fadeslideLeftRight.init($box);
+    $('#btn-show').on('click', function() {
+        // js.fadeslideLeftRight.show($box);
+        // showHide.show();
+        $box.showHide('show');
+               
+          }); 
+    $('#btn-hide').on('click', function() {
+         // js.fadeslideLeftRight.hide($box);
+         // showHide.hide();
+         $box.showHide('hide');
+         
+    });
+    
+     $box.on('show shown hide hidden',function(e){
+     	console.log(e.type);
+         
+     });
+
+    
+    </script>
+</body>
+
+</html>
