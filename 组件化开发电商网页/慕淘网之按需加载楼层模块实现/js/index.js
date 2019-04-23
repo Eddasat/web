@@ -866,4 +866,173 @@
             }]
         ]
     }];
+    floor.buildFloor = function (floorData) {
+        var html = '';
+
+        html += '<div class="container">';
+        html += floor.buildFloorHead(floorData);
+        html += floor.buildFloorBody(floorData);
+        html += '</div>';
+
+        return html;
+    };
+
+    floor.buildFloorHead = function (floorData) {
+        var html = '';
+        html += '<div class="floor-head">';
+        html += '<h2 class="floor-title fl"><span class="floor-title-num">' + floorData.num + 'F</span><span class="floor-title-text">' + floorData.text + '</span></h2>';
+        html += '<ul class="tab-item-wrap fr">';
+        for (var i = 0; i < floorData.tabs.length; i++) {
+            html += '<li class="fl"><a href="javascript:;" class="tab-item">' + floorData.tabs[i] + '</a></li>';
+            if (i !== floorData.tabs.length - 1) {
+                html += '<li class="floor-divider fl text-hidden">分隔线</li>';
+            }
+        }
+        html += '</ul>';
+        html += '</div>';
+        return html;
+    };
+
+    floor.buildFloorBody = function (floorData) {
+        var html = '';
+        html += '<div class="floor-body">';
+        for (var i = 0; i < floorData.items.length; i++) {
+            html += '<ul class="tab-panel">';
+            for (var j = 0; j < floorData.items[i].length; j++) {
+                html += '<li class="floor-item fl">';
+                html += '<p class="floor-item-pic"><a href="###" target="_blank"><img src="img/floor/loading.gif" class="floor-img" data-src="img/floor/' + floorData.num + '/' + (i + 1) + '/' + (j + 1) + '.png" alt="" /></a></p>';
+                html += '<p class="floor-item-name"><a href="###" target="_blank" class="link">' + floorData.items[i][j].name + '</a></p>';
+                html += '<p class="floor-item-price">' + floorData.items[i][j].price + '</p>';
+                html += '</li>';
+            }
+
+            html += '</ul>';
+        }
+
+        html += '</div>';
+
+        return html;
+    };
+
+    var browser = {};
+
+    browser.$win = $(window);
+    browser.$doc = $(document);
+
+
+    floor.timeToShow = function () {
+        console.log('time to show');
+        floor.$floor.each(function (index, elem) {
+            if (lazyLoad.isVisible(floor.floorData[index].offsetTop, floor.floorData[index].height)) {
+                // console.log('the'+(index+1)+'floor is visible');
+                browser.$doc.trigger('floor-show', [index, elem]);
+            }
+        });
+    }
+
+    browser.$win.on('scroll resize', floor.showFloor = function () {
+        clearTimeout(floor.floorTimer);
+        floor.floorTimer = setTimeout(floor.timeToShow, 250);
+    });
+
+    floor.$floor.on('floor-loadItem', function (e, index, elem, success) {
+
+        imgLoader.loadImgs($(elem).find('.floor-img'), success, function ($img, url) {
+            $img.attr('src', 'img/floor.placeholder.png');
+        });
+    });
+
+    browser.$doc.on('floors-loadItem', function (e, index, elem, success) {
+
+        var html = floor.buildFloor(floor.floorData[index]),
+            $elem = $(elem);
+        success();
+        // setTimeout(function() {
+        $elem.html(html);
+        lazyLoad.loadUntil({
+            $container: $elem,
+            totalItemNum: $elem.find('.floor-img').length,
+            triggerEvent: 'tab-show',
+            id: 'floor'
+        });
+        $elem.tab({
+            event: 'mouseenter', // mouseenter或click
+            css3: false,
+            js: false,
+            animation: 'fade',
+            activeIndex: 0,
+            interval: 0,
+            delay: 0
+        });
+
+        // }, 1000);
+    });
+
+    browser.$doc.on('floors-itemsLoaded', function () {
+        browser.$win.off('scroll resize', floor.showFloor);
+    });
+
+    lazyLoad.loadUntil({
+        $container: browser.$doc,
+        totalItemNum: floor.$floor.length,
+        triggerEvent: 'floor-show',
+        id: 'floors'
+    });
+
+    floor.timeToShow();
+
+
+// elevator
+    floor.whichFloor = function () {
+        var num = -1;
+
+        floor.$floor.each(function (index, elem) {
+            var floorData = floor.floorData[index];
+
+            num = index;
+
+            if (browser.$win.scrollTop() + browser.$win.height() / 2 < floorData.offsetTop) {
+                num = index - 1;
+                return false;
+            }
+        });
+
+        return num;
+    };
+    console.log(floor.whichFloor());
+
+    floor.$elevator = $('#elevator');
+    floor.$elevator.$items = floor.$elevator.find('.elevator-item');
+    floor.setElevator = function () {
+        var num = floor.whichFloor();
+
+        if (num === -1) { // hide
+            floor.$elevator.fadeOut();
+        } else { // show
+            floor.$elevator.fadeIn();
+            floor.$elevator.$items.removeClass('elevator-active');
+            floor.$elevator.$items.eq(num).addClass('elevator-active');
+        }
+    };
+
+    floor.setElevator();
+
+    browser.$win.on('scroll resize', function () {
+        clearTimeout(floor.elevatorTimer);
+        floor.elevatorTimer = setTimeout(floor.setElevator, 250);
+    });
+
+    floor.$elevator.on('click', '.elevator-item', function () {
+        $('html, body').animate({
+            scrollTop: floor.floorData[$(this).index()].offsetTop
+        });
+    });
+
+
+    $('#backToTop').on('click', function () {
+        $('html, body').animate({
+            scrollTop: 0
+        });
+    });
+
 })(jQuery);
